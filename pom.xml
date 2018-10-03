@@ -7,13 +7,12 @@
 	<groupId>cz.opendata.mvcr</groupId>
 	<artifactId>isds</artifactId>
 	<version>0.0.0</version>
+	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>10</maven.compiler.source>
 		<maven.compiler.target>10</maven.compiler.target>
-		<!-- -->
-		<cxf.version>2.2.3</cxf.version>
 	</properties>
 
 	<dependencies>
@@ -35,9 +34,7 @@
 			<version>1.0-MR1</version>
 		</dependency>
 
-		<!-- Our implementation of choice. -->
-
-		<!-- JAX-WS Reference Implementation Runtime -->
+		<!-- JAX-WS Reference Implementation Runtime. -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>rt</artifactId>
@@ -120,6 +117,9 @@
 							</mainClass>
 						</manifest>
 					</archive>
+					<outputDirectory>
+						${basedir}/dist
+					</outputDirectory>
 				</configuration>
 			</plugin>
 
@@ -136,8 +136,35 @@
 						</goals>
 						<configuration>
 							<outputDirectory>
-								${project.build.directory}/lib
+								${basedir}/dist/lib
 							</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<copy todir="${basedir}/dist/certificates">
+									<fileset dir="${basedir}/certificates"/>
+								</copy>
+								<copy todir="${basedir}/dist">
+									<fileset file="${basedir}/configuration.properties"/>
+								</copy>
+							</tasks>
+							<tasks>
+							</tasks>
 						</configuration>
 					</execution>
 				</executions>

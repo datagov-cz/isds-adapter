@@ -8,14 +8,15 @@ Ignore any message older than one day.
  * git client
 
 ## Install from source
-Build the script.
+Clone this repository and use maven to build the program.
 ```
 git clone 
 mvn install https://github.com/opendata-mvcr/isds.git
 ```
-Update configuration file ```configuration.properties```.
-Run the program in ```target``` directory using.
+result of the build is saved into ```dist``` directory.
+Update configuration file ```dist/configuration.properties```.
 ```
-java -DconfigurationFile=../configuration.properties -jar isds-0.0.0.jar
+cd dist
+java -DconfigurationFile=./configuration.properties -jar isds-0.0.0.jar
 ```
 
