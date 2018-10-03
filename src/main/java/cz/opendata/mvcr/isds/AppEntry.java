@@ -145,16 +145,16 @@ public class AppEntry {
     }
 
     private void saveMessage(Message message) throws IOException {
-        saveMessageTrig(message);
+        saveMessageTtl(message);
         for (Attachment attachment : message.getAttachments()) {
             saveAttachment(message, attachment);
         }
     }
 
-    private void saveMessageTrig(Message message) throws IOException {
+    private void saveMessageTtl(Message message) throws IOException {
         File output = new File(
                 configuration.getOutputMessages(),
-                message.getId() + ".trig");
+                message.getId() + ".ttl");
         try (BufferedWriter writer = new BufferedWriter(
                 new FileWriterWithEncoding(output, "UTF-8"))) {
             writer.write("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n");
@@ -162,7 +162,7 @@ public class AppEntry {
             writer.write("@prefix ds: <https://data.gov.cz/zdroj/datové-schránky/> .\n");
             writer.write("\n");
             writer.write("<https://data.gov.cz/zdroj/nkod/přijaté-záznamy/" + message.getId() + ">\n");
-            writer.write("    a nkod:PřijatýZáznam\n");
+            writer.write("    a nkod:PřijatýZáznam ;\n");
             writer.write("    nkod:id-datové-zprávy \"" + message.getId() + "\" ;\n");
             writer.write("    nkod:datová-schránka-poskytovatele ds:" + message.getSender() + " ;\n");
             writer.write("    nkod:datová-zpráva-přijata \"" + message.getDeliveryTime() + "\"^^xsd:dateTime ;\n");
