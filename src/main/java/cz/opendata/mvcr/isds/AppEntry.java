@@ -63,6 +63,7 @@ public class AppEntry {
 
             try {
                 saveMessage(message);
+                logMessageInfo(message);
             } catch (Exception ex) {
                 LOG.info("Can't save message: {} ", message.getId(), ex);
             }
@@ -188,8 +189,8 @@ public class AppEntry {
         }
     }
 
-    private void printMessageInfo(Message message) {
-        System.out.println("Message:" +
+    private void logMessageInfo(Message message) {
+        LOG.info("Message:" +
                 "\n\tid: " + message.getId() +
                 "\n\tstatus: " + message.getStatus() +
                 "\n\tsender: " + message.getSender() +
@@ -199,7 +200,7 @@ public class AppEntry {
                 "\n\tdelivery: " + message.getDeliveryTime() +
                 "\n\tfiles: ");
         for (Attachment attachment : message.getAttachments()) {
-            System.out.println("\t\t" + attachment.getType() +
+            LOG.info("\t\t" + attachment.getType() +
                     "\t" + attachment.getMimeType() +
                     "\t" + attachment.getDescription());
         }
