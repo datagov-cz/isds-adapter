@@ -181,7 +181,7 @@ public class AppEntry {
     private void saveAttachment(Message message, Attachment attachment)
             throws IOException {
         File outputFile = new File(
-                configuration.getOutputMessages(),
+                configuration.getOutputAttachments(),
                 getAttachmentName(message, attachment));
         try (OutputStream stream = new FileOutputStream(outputFile)) {
             stream.write(attachment.getContent());
