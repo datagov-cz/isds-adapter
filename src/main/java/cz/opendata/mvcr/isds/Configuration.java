@@ -3,7 +3,10 @@ package cz.opendata.mvcr.isds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 class Configuration {
@@ -63,27 +66,27 @@ class Configuration {
     }
 
     public String getLogin() {
-        return login;
+        return this.login;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public String getUrl() {
-        return url;
+        return this.url;
     }
 
     public String getOutputMessages() {
-        return outputMessages;
+        return this.outputMessages;
     }
 
     public String getOutputAttachments() {
-        return outputAttachments;
+        return this.outputAttachments;
     }
 
     public String getCertificatesDirectory() {
-        return certificatesDirectory;
+        return this.certificatesDirectory;
     }
 
 }

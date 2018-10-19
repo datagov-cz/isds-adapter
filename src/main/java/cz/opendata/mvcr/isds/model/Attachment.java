@@ -20,19 +20,19 @@ public class Attachment {
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public String getMimeType() {
-        return mimeType;
+        return this.mimeType;
     }
 
     public byte[] getContent() {
-        return content;
+        return this.content;
     }
 
 }

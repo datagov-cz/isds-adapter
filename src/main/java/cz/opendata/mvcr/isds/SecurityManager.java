@@ -1,7 +1,6 @@
 package cz.opendata.mvcr.isds;
 
 import com.sun.xml.ws.developer.JAXWSProperties;
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,9 +10,7 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.xml.ws.BindingProvider;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
@@ -21,10 +18,8 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 class SecurityManager {
 
@@ -42,11 +37,11 @@ class SecurityManager {
             throws Exception {
         this.username = username;
         this.password = password;
-        this.socketFactory = createSSLSocketFactory(
+        this.socketFactory = createSslSocketFactory(
                 new File(certificatesDirectory));
     }
 
-    private SSLSocketFactory createSSLSocketFactory(File directory)
+    private SSLSocketFactory createSslSocketFactory(File directory)
             throws Exception {
         String algorithm = TrustManagerFactory.getDefaultAlgorithm();
         TrustManagerFactory trustManagerFactory =

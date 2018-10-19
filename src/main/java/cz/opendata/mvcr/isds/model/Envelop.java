@@ -32,31 +32,31 @@ public class Envelop {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getAnnotation() {
-        return annotation;
+        return this.annotation;
     }
 
     public String getSender() {
-        return sender;
+        return this.sender;
     }
 
     public String getRecipient() {
-        return recipient;
+        return this.recipient;
     }
 
     public BigInteger getStatus() {
-        return status;
+        return this.status;
     }
 
     public XMLGregorianCalendar getDeliveryTime() {
-        return deliveryTime;
+        return this.deliveryTime;
     }
 
     public XMLGregorianCalendar getAcceptanceTime() {
-        return acceptanceTime;
+        return this.acceptanceTime;
     }
 
 }

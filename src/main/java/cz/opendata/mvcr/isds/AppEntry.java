@@ -1,7 +1,13 @@
 package cz.opendata.mvcr.isds;
 
-
-import cz.czechpoint.isds.v20.*;
+import cz.czechpoint.isds.v20.DmInfoPortType;
+import cz.czechpoint.isds.v20.DmInfoWebService;
+import cz.czechpoint.isds.v20.DmOperationsPortType;
+import cz.czechpoint.isds.v20.DmOperationsWebService;
+import cz.czechpoint.isds.v20.TRecord;
+import cz.czechpoint.isds.v20.TRecordsArray;
+import cz.czechpoint.isds.v20.TReturnedMessage;
+import cz.czechpoint.isds.v20.TStatus;
 import cz.opendata.mvcr.isds.model.Attachment;
 import cz.opendata.mvcr.isds.model.Message;
 import cz.opendata.mvcr.isds.model.MessageBuilder;
@@ -14,7 +20,12 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Holder;
-import java.io.*;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.Calendar;
 import java.util.List;
@@ -22,6 +33,10 @@ import java.util.List;
 public class AppEntry {
 
     private static final Logger LOG = LoggerFactory.getLogger(AppEntry.class);
+
+    private static final int MINUTE_AS_MS = 3600000;
+
+    private static final int MAX_RETRIEVE_COUNT = 100000;
 
     static {
         SLF4JBridgeHandler.install();
@@ -74,7 +89,8 @@ public class AppEntry {
         DmInfoWebService service = new DmInfoWebService();
         DmInfoPortType port = service.getDmInfoPortType();
         this.security.bindService(
-                (BindingProvider) port, configuration.getUrl() + "dx");
+                (BindingProvider) port,
+                this.configuration.getUrl() + "dx");
         return port;
     }
 
@@ -91,7 +107,7 @@ public class AppEntry {
                         from.get(Calendar.MONTH) + 1,
                         from.get(Calendar.DAY_OF_MONTH),
                         0, 0, 0, 0,
-                        from.get(Calendar.ZONE_OFFSET) / 3600000);
+                        from.get(Calendar.ZONE_OFFSET) / MINUTE_AS_MS);
 
         Calendar to = Calendar.getInstance();
         to.add(Calendar.DAY_OF_MONTH, 1);
@@ -101,12 +117,12 @@ public class AppEntry {
                         to.get(Calendar.MONTH) + 1,
                         to.get(Calendar.DAY_OF_MONTH),
                         0, 0, 0, 0,
-                        to.get(Calendar.ZONE_OFFSET) / 3600000);
+                        to.get(Calendar.ZONE_OFFSET) / MINUTE_AS_MS);
 
         BigInteger dmRecipientOrgUnitNum = null;
         String dmStatusFilter = null;
         BigInteger dmOffset = BigInteger.valueOf(1);
-        BigInteger dmLimit = BigInteger.valueOf(100000);
+        BigInteger dmLimit = BigInteger.valueOf(MAX_RETRIEVE_COUNT);
         Holder<TRecordsArray> dmRecords = new Holder<>();
         Holder<TStatus> dmStatus = new Holder<>();
 
@@ -129,7 +145,7 @@ public class AppEntry {
         DmOperationsPortType port = service.getDmOperationsPortType();
         this.security.bindService(
                 (BindingProvider) port,
-                configuration.getUrl() + "dz");
+                this.configuration.getUrl() + "dz");
         return port;
     }
 
@@ -154,55 +170,39 @@ public class AppEntry {
 
     private void saveMessageTtl(Message message) throws IOException {
         File output = new File(
-                configuration.getOutputMessages(),
+                this.configuration.getOutputMessages(),
                 message.getId() + ".ttl");
         try (BufferedWriter writer = new BufferedWriter(
                 new FileWriterWithEncoding(output, "UTF-8"))) {
-            writer.write("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n");
-            writer.write("@prefix nkod: <https://data.gov.cz/slovník/nkod/> .\n");
-            writer.write("@prefix ds: <https://data.gov.cz/zdroj/datové-schránky/> .\n");
-            writer.write("\n");
-            writer.write("<https://data.gov.cz/zdroj/nkod/přijaté-záznamy/" + message.getId() + ">\n");
-            writer.write("    a nkod:PřijatýZáznam ;\n");
-            writer.write("    nkod:id-datové-zprávy \"" + message.getId() + "\" ;\n");
-            writer.write("    nkod:datová-schránka-poskytovatele ds:" + message.getSender() + " ;\n");
-            writer.write("    nkod:datová-zpráva-přijata \"" + message.getDeliveryTime() + "\"^^xsd:dateTime ;\n");
-            for (Attachment attachment : message.getAttachments()) {
-                writer.write("    nkod:jméno-souboru \"" + getAttachmentName(message, attachment) + "\" ;\n");
-            }
-            writer.write(".\n");
+            writer.write(MessageTrigBuilder.build(message));
             writer.flush();
         }
-    }
-
-    private String getAttachmentName(Message message, Attachment attachment) {
-        return message.getId() + "-" + attachment.getDescription();
     }
 
     private void saveAttachment(Message message, Attachment attachment)
             throws IOException {
         File outputFile = new File(
-                configuration.getOutputAttachments(),
-                getAttachmentName(message, attachment));
+                this.configuration.getOutputAttachments(),
+                message.getAttachmentName(attachment));
         try (OutputStream stream = new FileOutputStream(outputFile)) {
             stream.write(attachment.getContent());
         }
     }
 
     private void logMessageInfo(Message message) {
-        LOG.info("Message:" +
-                "\n\tid: " + message.getId() +
-                "\n\tstatus: " + message.getStatus() +
-                "\n\tsender: " + message.getSender() +
-                "\n\trecipient: " + message.getRecipient() +
-                "\n\tannotation: " + message.getAnnotation() +
-                "\n\taccepted: " + message.getAcceptanceTime() +
-                "\n\tdelivery: " + message.getDeliveryTime() +
-                "\n\tfiles: ");
+        LOG.info("Message:"
+                + "\n\tid: " + message.getId()
+                + "\n\tstatus: " + message.getStatus()
+                + "\n\tsender: " + message.getSender()
+                + "\n\trecipient: " + message.getRecipient()
+                + "\n\tannotation: " + message.getAnnotation()
+                + "\n\taccepted: " + message.getAcceptanceTime()
+                + "\n\tdelivery: " + message.getDeliveryTime()
+                + "\n\tfiles: ");
         for (Attachment attachment : message.getAttachments()) {
-            LOG.info("\t\t" + attachment.getType() +
-                    "\t" + attachment.getMimeType() +
-                    "\t" + attachment.getDescription());
+            LOG.info("\t\t" + attachment.getType()
+                    + "\t" + attachment.getMimeType()
+                    + "\t" + attachment.getDescription());
         }
     }
 

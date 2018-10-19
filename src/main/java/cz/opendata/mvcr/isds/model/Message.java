@@ -15,7 +15,11 @@ public class Message extends Envelop {
     }
 
     public List<Attachment> getAttachments() {
-        return Collections.unmodifiableList(attachments);
+        return Collections.unmodifiableList(this.attachments);
+    }
+
+    public String getAttachmentName(Attachment attachment) {
+        return this.getId() + "-" + attachment.getDescription();
     }
 
 }

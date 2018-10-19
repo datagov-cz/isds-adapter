@@ -3,21 +3,18 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>cz.opendata.mvcr</groupId>
 	<artifactId>isds</artifactId>
 	<version>0.0.0</version>
 	<packaging>jar</packaging>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>10</maven.compiler.source>
 		<maven.compiler.target>10</maven.compiler.target>
+		<checkstyle.config.location>checkstyle.xml</checkstyle.config.location>
 	</properties>
-
 	<dependencies>
 		<!-- Java EE API. -->
-
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
@@ -33,7 +30,6 @@
 			<artifactId>jsr181-api</artifactId>
 			<version>1.0-MR1</version>
 		</dependency>
-
 		<!-- JAX-WS Reference Implementation Runtime. -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
@@ -45,9 +41,7 @@
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-
 		<!-- -->
-
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
@@ -58,9 +52,7 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
-
 		<!-- Logging. -->
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -94,7 +86,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -102,7 +93,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -122,7 +112,6 @@
 					</outputDirectory>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -142,7 +131,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -159,14 +147,44 @@
 								<copy todir="${basedir}/dist/certificates">
 									<fileset dir="${basedir}/certificates"/>
 								</copy>
-								<copy file="${basedir}/configuration.properties" todir="${basedir}/dist" overwrite="false"/>
+								<copy file="${basedir}/configuration.properties"
+									  todir="${basedir}/dist"
+									  overwrite="false"/>
 							</target>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<includeTestSourceDirectory>
+						true
+					</includeTestSourceDirectory>
+					<consoleOutput>true</consoleOutput>
+					<failOnError>true</failOnError>
+					<failOnViolation>true</failOnViolation>
+					<violationSeverity>warning</violationSeverity>
+					<linkXRef>false</linkXRef>
+					<excludes>**/cz/czechpoint/**/*</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>8.13</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>
