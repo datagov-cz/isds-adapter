@@ -155,16 +155,12 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-							<tasks>
+							<target>
 								<copy todir="${basedir}/dist/certificates">
 									<fileset dir="${basedir}/certificates"/>
 								</copy>
-								<copy todir="${basedir}/dist">
-									<fileset file="${basedir}/configuration.properties"/>
-								</copy>
-							</tasks>
-							<tasks>
-							</tasks>
+								<copy file="${basedir}/configuration.properties" todir="${basedir}/dist" overwrite="false"/>
+							</target>
 						</configuration>
 					</execution>
 				</executions>
