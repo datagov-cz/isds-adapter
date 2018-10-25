@@ -49,7 +49,7 @@ public enum EnvelopStatus {
     UNDELIVERABLE(8),
     /**
      * Obsah zprávy byl smazán, obálka zprávy včetně hashů přesunuta do
-     * archivu (jen některé služby umí přistupovat k archivním obálkám zpráv)
+     * archivu (jen některé služby umí přistupovat k archivním obálkám zpráv).
      */
     DELETED(9),
     /**

@@ -49,7 +49,7 @@ public class AppEntry {
 
     private SecurityManager security;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         AppEntry instance = new AppEntry();
         instance.main();
     }
@@ -164,9 +164,9 @@ public class AppEntry {
     private void checkStatus(TStatus status) {
         if (status.getDmStatusCode().compareTo("0000") != 0) {
             throw new RuntimeException(
-                    "Invalid status: " +
-                            status.getDmStatusMessage() + " (" +
-                            status.getDmStatusCode() + ")");
+                    "Invalid status: "
+                            + status.getDmStatusMessage() + " ("
+                            + status.getDmStatusCode() + ")");
         }
     }
 
