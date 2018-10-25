@@ -15,7 +15,7 @@ public class Envelop {
 
     private final String recipient;
 
-    private final BigInteger status;
+    private final EnvelopStatus status;
 
     private final XMLGregorianCalendar deliveryTime;
 
@@ -26,7 +26,7 @@ public class Envelop {
         this.annotation = record.getDmAnnotation();
         this.sender = record.getDbIDSender();
         this.recipient = record.getDbIDRecipient();
-        this.status = record.getDmMessageStatus();
+        this.status = EnvelopStatus.fromNumber(record.getDmMessageStatus());
         this.deliveryTime = record.getDmDeliveryTime();
         this.acceptanceTime = record.getDmAcceptanceTime();
     }
@@ -47,7 +47,7 @@ public class Envelop {
         return this.recipient;
     }
 
-    public BigInteger getStatus() {
+    public EnvelopStatus getStatus() {
         return this.status;
     }
 
