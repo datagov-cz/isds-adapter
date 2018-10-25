@@ -54,7 +54,7 @@ public class AppEntry {
         instance.main();
     }
 
-    private void main()  {
+    private void main() {
         try {
             this.configuration = new Configuration();
         } catch (IOException ex) {
@@ -164,7 +164,9 @@ public class AppEntry {
     private void checkStatus(TStatus status) {
         if (status.getDmStatusCode().compareTo("0000") != 0) {
             throw new RuntimeException(
-                    "Invalid status: " + status.getDmStatusCode());
+                    "Invalid status: " +
+                            status.getDmStatusMessage() + " (" +
+                            status.getDmStatusCode() + ")");
         }
     }
 
