@@ -200,20 +200,24 @@ public class AppEntry {
     }
 
     private void logMessageInfo(Message message) {
-        LOG.info("Message:"
-                + "\n\tid: " + message.getId()
-                + "\n\tstatus: " + message.getStatus()
-                + "\n\tsender: " + message.getSender()
-                + "\n\trecipient: " + message.getRecipient()
-                + "\n\tannotation: " + message.getAnnotation()
-                + "\n\taccepted: " + message.getAcceptanceTime()
-                + "\n\tdelivery: " + message.getDeliveryTime()
-                + "\n\tfiles: ");
+        StringBuilder messageInfo = new StringBuilder();
+        messageInfo.append("Message:");
+        messageInfo.append("\n\tid: " + message.getId());
+        messageInfo.append("\n\tstatus: " + message.getStatus());
+        messageInfo.append("\n\tsender: " + message.getSender());
+        messageInfo.append("\n\trecipient: " + message.getRecipient());
+        messageInfo.append("\n\tannotation: " + message.getAnnotation());
+        messageInfo.append("\n\taccepted: " + message.getAcceptanceTime());
+        messageInfo.append("\n\tdelivery: " + message.getDeliveryTime());
+        messageInfo.append("\n\tfiles: ");
         for (Attachment attachment : message.getAttachments()) {
-            LOG.info("\t\t" + attachment.getType()
-                    + "\t" + attachment.getMimeType()
-                    + "\t" + attachment.getDescription());
+            messageInfo.append("\n\t\t" + attachment.getType());
+            messageInfo.append("\t" + attachment.getMimeType());
+            messageInfo.append("\t" + attachment.getDescription());
         }
+        LOG.info(messageInfo.toString());
+    }
+
     private void markAsRead(DmInfoPortType port, Message message) {
         port.markMessageAsDownloaded(message.getId());
     }
