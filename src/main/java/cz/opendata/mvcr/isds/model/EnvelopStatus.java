@@ -1,6 +1,7 @@
 package cz.opendata.mvcr.isds.model;
 
 import java.math.BigInteger;
+import java.util.EnumSet;
 
 /**
  * Details can be found in:
@@ -14,12 +15,12 @@ public enum EnvelopStatus {
     /**
      * Datová zpráva včetně písemností podepsána podacím časovým razítkem.
      */
-    HAS_TIME_STAMP(2),
+    HAS_TIMESTAMP(2),
     /**
      * Datová zpráva neprošla AV kontrolou - zpráva není ani dodána;
      * konečný stav zprávy před smazáním.
      */
-    INVALID_MESSGE(3),
+    VIRUS_FOUND(3),
     /**
      * Datová zpráva dodána do schránky adresáta (zapsán čas dodání),
      * je přístupná adresátovi.
@@ -59,26 +60,33 @@ public enum EnvelopStatus {
     /**
      * Any other.
      */
-    UNKNOWN(-1)
-    ;
+    UNKNOWN(-1);
 
-    private BigInteger value;
+    private int value;
 
     EnvelopStatus(int value) {
-        this.value = BigInteger.valueOf(value);
-    }
-
-    public BigInteger getValue() {
-        return value;
+        this.value = value;
     }
 
     public static EnvelopStatus fromNumber(BigInteger value) {
+        int valueAsInt = value.intValue();
         for (EnvelopStatus status : EnvelopStatus.values()) {
-            if (status.value.equals(value)) {
+            if (status.value == valueAsInt) {
                 return status;
             }
         }
         return UNKNOWN;
+    }
+
+    public static int toInt(EnumSet<EnvelopStatus> states) {
+        if (states == null || states.size() == 0) {
+            return -1;
+        }
+        int result = 0;
+        for (EnvelopStatus state : states) {
+            result |= (1 << state.value);
+        }
+        return result;
     }
 
 }
