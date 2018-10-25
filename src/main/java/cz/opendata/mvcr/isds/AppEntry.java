@@ -9,6 +9,7 @@ import cz.czechpoint.isds.v20.TRecordsArray;
 import cz.czechpoint.isds.v20.TReturnedMessage;
 import cz.czechpoint.isds.v20.TStatus;
 import cz.opendata.mvcr.isds.model.Attachment;
+import cz.opendata.mvcr.isds.model.EnvelopStatus;
 import cz.opendata.mvcr.isds.model.Message;
 import cz.opendata.mvcr.isds.model.MessageBuilder;
 import org.apache.commons.io.output.FileWriterWithEncoding;
@@ -28,7 +29,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.Calendar;
+import java.util.EnumSet;
 import java.util.List;
+
 
 public class AppEntry {
 
@@ -75,10 +78,10 @@ public class AppEntry {
             TReturnedMessage returnedMessage =
                     downloadMessage(operationsPort, record);
             Message message = builder.build(record, returnedMessage);
-
             try {
                 saveMessage(message);
                 logMessageInfo(message);
+                markAsRead(infoPort, message);
             } catch (Exception ex) {
                 LOG.info("Can't save message: {} ", message.getId(), ex);
             }
@@ -99,7 +102,7 @@ public class AppEntry {
         DatatypeFactory dataTypeFactory = DatatypeFactory.newInstance();
 
         Calendar from = Calendar.getInstance();
-        from.add(Calendar.DATE, -1);
+        from.add(Calendar.MONTH, -1);
 
         XMLGregorianCalendar dmFromTime =
                 dataTypeFactory.newXMLGregorianCalendar(
@@ -120,7 +123,13 @@ public class AppEntry {
                         to.get(Calendar.ZONE_OFFSET) / MINUTE_AS_MS);
 
         BigInteger dmRecipientOrgUnitNum = null;
-        String dmStatusFilter = null;
+        // Aby bylo možno došlou zprávu stáhnout, musí být ve stavu 5,6,7 nebo
+        // 10. Stažením netrezorové zprávy se obvykle mění její stav na 7
+        // (v ESS ne automaticky, ale explicitním voláním WS MarkAsDownloaded).
+        String dmStatusFilter = String.valueOf(EnvelopStatus.toInt(EnumSet.of(
+                EnvelopStatus.IN_INBOX,
+                EnvelopStatus.DELIVERED_BY_FICTION,
+                EnvelopStatus.DELIVERED_BY_LOGIN)));
         BigInteger dmOffset = BigInteger.valueOf(1);
         BigInteger dmLimit = BigInteger.valueOf(MAX_RETRIEVE_COUNT);
         Holder<TRecordsArray> dmRecords = new Holder<>();
@@ -136,8 +145,9 @@ public class AppEntry {
                 dmRecords,
                 dmStatus);
 
-        List<TRecord> messages = dmRecords.value.getDmRecord();
-        return messages;
+        return dmRecords.value.getDmRecord();
+    }
+
     }
 
     private DmOperationsPortType createOperationsPort() {
@@ -204,6 +214,8 @@ public class AppEntry {
                     + "\t" + attachment.getMimeType()
                     + "\t" + attachment.getDescription());
         }
+    private void markAsRead(DmInfoPortType port, Message message) {
+        port.markMessageAsDownloaded(message.getId());
     }
 
 }
