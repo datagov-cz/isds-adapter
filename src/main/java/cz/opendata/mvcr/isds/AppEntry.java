@@ -54,18 +54,30 @@ public class AppEntry {
         instance.main();
     }
 
-    private void main() throws Exception {
-        this.configuration = new Configuration();
+    private void main()  {
+        try {
+            this.configuration = new Configuration();
+        } catch (IOException ex) {
+            LOG.error("Can't load configuration.", ex);
+        }
         LOG.info("Creating security manager ...");
-        this.security = new SecurityManager(
-                this.configuration.getLogin(),
-                this.configuration.getPassword(),
-                this.configuration.getCertificatesDirectory());
+        try {
+            this.security = new SecurityManager(
+                    this.configuration.getLogin(),
+                    this.configuration.getPassword(),
+                    this.configuration.getCertificatesDirectory());
+        } catch (Exception ex) {
+            LOG.error("Can't create security manager.", ex);
+        }
         LOG.info("Creating output directories ...");
         (new File(configuration.getOutputMessages())).mkdirs();
         (new File(configuration.getOutputAttachments())).mkdirs();
         LOG.info("Downloading messages ...");
-        downloadMessages();
+        try {
+            downloadMessages();
+        } catch (Exception ex) {
+            LOG.error("Can't download messages.", ex);
+        }
         LOG.info("Done");
     }
 
@@ -145,9 +157,15 @@ public class AppEntry {
                 dmRecords,
                 dmStatus);
 
+        checkStatus(dmStatus.value);
         return dmRecords.value.getDmRecord();
     }
 
+    private void checkStatus(TStatus status) {
+        if (status.getDmStatusCode().compareTo("0000") != 0) {
+            throw new RuntimeException(
+                    "Invalid status: " + status.getDmStatusCode());
+        }
     }
 
     private DmOperationsPortType createOperationsPort() {
@@ -164,10 +182,7 @@ public class AppEntry {
         Holder<TReturnedMessage> dmMessage = new Holder<>();
         Holder<TStatus> dmStatus = new Holder<>();
         port.messageDownload(record.getDmID(), dmMessage, dmStatus);
-        if (dmStatus.value.getDmStatusCode().compareTo("0000") != 0) {
-            throw new RuntimeException(
-                    "Invalid status: " + dmStatus.value.getDmStatusCode());
-        }
+        checkStatus(dmStatus.value);
         return dmMessage.value;
     }
 
