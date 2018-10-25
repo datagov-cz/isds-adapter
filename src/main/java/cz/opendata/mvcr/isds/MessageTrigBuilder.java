@@ -16,11 +16,11 @@ public class MessageTrigBuilder {
 
     public static String build(Message message) {
         StringBuilder builder = new StringBuilder();
-        builder.append("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .");
+        builder.append("@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n");
         builder.append("@prefix nkod: <" + NKOD_PREFIX + "> .\n");
         builder.append("@prefix ds: <" + NKOD_DS + "> .\n");
         builder.append("\n");
-        builder.append("</" + RESOURCE_PREFIX + "/" + message.getId() + ">\n");
+        builder.append("<" + RESOURCE_PREFIX + message.getId() + ">\n");
         builder.append("  a nkod:PřijatýZáznam ;\n");
         builder.append("    nkod:id-datové-zprávy \""
                 + message.getId() + "\" ;\n");
