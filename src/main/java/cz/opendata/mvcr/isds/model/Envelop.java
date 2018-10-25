@@ -3,7 +3,6 @@ package cz.opendata.mvcr.isds.model;
 import cz.czechpoint.isds.v20.TRecord;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.math.BigInteger;
 
 public class Envelop {
 
@@ -17,8 +16,15 @@ public class Envelop {
 
     private final EnvelopStatus status;
 
+    /**
+     * Datum a čas dodání.
+     */
     private final XMLGregorianCalendar deliveryTime;
 
+    /**
+     * Datum a čas doručení (prvního doručení, tedy v případě doručení fikcí
+     * a následného doručení přečtením zde bude čas doručení fikcí).
+     */
     private final XMLGregorianCalendar acceptanceTime;
 
     public Envelop(TRecord record) {
