@@ -144,16 +144,30 @@
 						</goals>
 						<configuration>
 							<target>
+								<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 								<copy todir="${basedir}/dist/certificates">
 									<fileset dir="${basedir}/certificates"/>
 								</copy>
-								<copy file="${basedir}/configuration.properties"
-									  todir="${basedir}/dist"
-									  overwrite="false"/>
+								<if>
+									<not>
+										<available file="${basedir}/dist/configuration.properties"/>
+									</not>
+									<then>
+										<copy file="${basedir}/configuration.properties"
+											  todir="${basedir}/dist" overwrite="true"/>
+									</then>
+								</if>
 							</target>
 						</configuration>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>20020829</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
