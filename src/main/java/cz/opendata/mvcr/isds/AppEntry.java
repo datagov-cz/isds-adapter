@@ -108,7 +108,7 @@ public class AppEntry {
         XMLGregorianCalendar dmFromTime = CalendarFactory.create(
                 Calendar.MINUTE, -configuration.getDownloadInterval());
         XMLGregorianCalendar dmToTime = CalendarFactory.create(
-                Calendar.HOUR, 1);
+                Calendar.DAY_OF_MONTH, 1);
 
         BigInteger dmRecipientOrgUnitNum = null;
         String dmStatusFilter = null;
