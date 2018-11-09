@@ -26,6 +26,8 @@ class Configuration {
 
     private String certificatesDirectory;
 
+    private int downloadInterval;
+
     public Configuration() throws IOException {
         String configurationPath = System.getProperty("configurationFile");
         if (configurationPath == null) {
@@ -47,6 +49,8 @@ class Configuration {
         this.outputMessages = getProperty(properties, "output.messages");
         this.outputAttachments = getProperty(properties, "output.attachments");
         this.certificatesDirectory = getProperty(properties, "certificates");
+        this.downloadInterval = Integer.parseInt(
+                getProperty(properties, "download_interval_in_minutes"));
     }
 
     private String getProperty(Properties properties, String name) {
@@ -87,6 +91,10 @@ class Configuration {
 
     public String getCertificatesDirectory() {
         return this.certificatesDirectory;
+    }
+
+    public int getDownloadInterval() {
+        return downloadInterval;
     }
 
 }

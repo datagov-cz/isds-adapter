@@ -89,4 +89,14 @@ public enum EnvelopStatus {
         return result;
     }
 
+    public static String unreadFilter() {
+        // Aby bylo možno došlou zprávu stáhnout, musí být ve stavu 5,6,7 nebo
+        // 10. Stažením netrezorové zprávy se obvykle mění její stav na 7
+        // (v ESS ne automaticky, ale explicitním voláním WS MarkAsDownloaded).
+        return String.valueOf(EnvelopStatus.toInt(EnumSet.of(
+                EnvelopStatus.IN_INBOX,
+                EnvelopStatus.DELIVERED_BY_FICTION,
+                EnvelopStatus.DELIVERED_BY_LOGIN)));
+    }
+
 }

@@ -83,7 +83,6 @@ class SecurityManager {
         return keyStore;
     }
 
-
     private X509Certificate readCertificate(
             CertificateFactory certificateFactory, InputStream stream)
             throws CertificateException {

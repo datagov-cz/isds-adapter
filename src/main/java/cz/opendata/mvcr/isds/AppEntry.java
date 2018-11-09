@@ -9,7 +9,6 @@ import cz.czechpoint.isds.v20.TRecordsArray;
 import cz.czechpoint.isds.v20.TReturnedMessage;
 import cz.czechpoint.isds.v20.TStatus;
 import cz.opendata.mvcr.isds.model.Attachment;
-import cz.opendata.mvcr.isds.model.EnvelopStatus;
 import cz.opendata.mvcr.isds.model.Message;
 import cz.opendata.mvcr.isds.model.MessageBuilder;
 import org.apache.commons.io.output.FileWriterWithEncoding;
@@ -17,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Holder;
@@ -29,7 +27,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.Calendar;
-import java.util.EnumSet;
 import java.util.List;
 
 
@@ -37,9 +34,7 @@ public class AppEntry {
 
     private static final Logger LOG = LoggerFactory.getLogger(AppEntry.class);
 
-    private static final int MINUTE_AS_MS = 3600000;
-
-    private static final int MAX_RETRIEVE_COUNT = 100000;
+    private static final int MAX_RETRIEVE_COUNT = 10000;
 
     static {
         SLF4JBridgeHandler.install();
@@ -91,9 +86,8 @@ public class AppEntry {
                     downloadMessage(operationsPort, record);
             Message message = builder.build(record, returnedMessage);
             try {
-                saveMessage(message);
                 logMessageInfo(message);
-                markAsRead(infoPort, message);
+                processMessage(infoPort, message);
             } catch (Exception ex) {
                 LOG.info("Can't save message: {} ", message.getId(), ex);
             }
@@ -111,37 +105,14 @@ public class AppEntry {
 
     private List<TRecord> getReceivedMessages(DmInfoPortType port)
             throws Exception {
-        DatatypeFactory dataTypeFactory = DatatypeFactory.newInstance();
-
-        Calendar from = Calendar.getInstance();
-        from.add(Calendar.MONTH, -1);
-
-        XMLGregorianCalendar dmFromTime =
-                dataTypeFactory.newXMLGregorianCalendar(
-                        from.get(Calendar.YEAR),
-                        from.get(Calendar.MONTH) + 1,
-                        from.get(Calendar.DAY_OF_MONTH),
-                        0, 0, 0, 0,
-                        from.get(Calendar.ZONE_OFFSET) / MINUTE_AS_MS);
-
-        Calendar to = Calendar.getInstance();
-        to.add(Calendar.DAY_OF_MONTH, 1);
-        XMLGregorianCalendar dmToTime =
-                dataTypeFactory.newXMLGregorianCalendar(
-                        to.get(Calendar.YEAR),
-                        to.get(Calendar.MONTH) + 1,
-                        to.get(Calendar.DAY_OF_MONTH),
-                        0, 0, 0, 0,
-                        to.get(Calendar.ZONE_OFFSET) / MINUTE_AS_MS);
+        XMLGregorianCalendar dmFromTime = CalendarFactory.create(
+                Calendar.MINUTE, -configuration.getDownloadInterval());
+        XMLGregorianCalendar dmToTime = CalendarFactory.create(
+                Calendar.HOUR, 1);
 
         BigInteger dmRecipientOrgUnitNum = null;
-        // Aby bylo možno došlou zprávu stáhnout, musí být ve stavu 5,6,7 nebo
-        // 10. Stažením netrezorové zprávy se obvykle mění její stav na 7
-        // (v ESS ne automaticky, ale explicitním voláním WS MarkAsDownloaded).
-        String dmStatusFilter = String.valueOf(EnvelopStatus.toInt(EnumSet.of(
-                EnvelopStatus.IN_INBOX,
-                EnvelopStatus.DELIVERED_BY_FICTION,
-                EnvelopStatus.DELIVERED_BY_LOGIN)));
+        String dmStatusFilter = null;
+
         BigInteger dmOffset = BigInteger.valueOf(1);
         BigInteger dmLimit = BigInteger.valueOf(MAX_RETRIEVE_COUNT);
         Holder<TRecordsArray> dmRecords = new Holder<>();
@@ -188,20 +159,31 @@ public class AppEntry {
         return dmMessage.value;
     }
 
-    private void saveMessage(Message message) throws IOException {
-        saveMessageTtl(message);
-        for (Attachment attachment : message.getAttachments()) {
-            saveAttachment(message, attachment);
+    private void processMessage(DmInfoPortType infoPort, Message message)
+            throws IOException {
+        if (isForNkodMessage(message)) {
+            saveMessageTtl(message, TrigBuilder.acceptedMessage(message));
+            for (Attachment attachment : message.getAttachments()) {
+                saveAttachment(message, attachment);
+            }
+            markAsRead(infoPort, message);
+        } else {
+            saveMessageTtl(message, TrigBuilder.rejectedMessage(message));
         }
     }
 
-    private void saveMessageTtl(Message message) throws IOException {
+    private boolean isForNkodMessage(Message message) {
+        return message.getAnnotation().toLowerCase().contains("nkod");
+    }
+
+    private void saveMessageTtl(Message message, String trig)
+            throws IOException {
         File output = new File(
                 this.configuration.getOutputMessages(),
                 message.getId() + ".ttl");
         try (BufferedWriter writer = new BufferedWriter(
                 new FileWriterWithEncoding(output, "UTF-8"))) {
-            writer.write(MessageTrigBuilder.build(message));
+            writer.write(trig);
             writer.flush();
         }
     }
