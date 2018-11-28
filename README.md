@@ -10,8 +10,9 @@ Ignore any message older than one day.
 ## Install from source
 Clone this repository and use maven to build the program.
 ```
-git clone 
-mvn install https://github.com/opendata-mvcr/isds.git
+git clone https://github.com/opendata-mvcr/nkod-isds.git
+cd nkod-isds
+mvn install
 ```
 result of the build is saved into ```dist``` directory.
 Update configuration file ```dist/configuration.properties```.
