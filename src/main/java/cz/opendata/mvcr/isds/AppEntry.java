@@ -173,7 +173,8 @@ public class AppEntry {
     }
 
     private boolean isForNkodMessage(Message message) {
-        return message.getAnnotation().toLowerCase().contains("nkod");
+        return message.getAnnotation().toLowerCase().contains("nkod") &&
+                message.getAttachments().size() == 1;
     }
 
     private void saveMessageTtl(Message message, String trig)
