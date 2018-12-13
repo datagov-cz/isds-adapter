@@ -12,11 +12,11 @@ public class TrigBuilder {
             "https://data.gov.cz/zdroj/datové-schránky/";
 
     private static final String ACCEPTED_PREFIX =
-        "https://data.gov.cz/zdroj/nkod/přijaté-záznamy/";
+            "https://data.gov.cz/zdroj/nkod/přijaté-záznamy/";
 
     private static final String REJECTED_PREFIX =
-         "https://data.gov.cz/zdroj/nkod/nezpracované-záznamy/";   
-    
+            "https://data.gov.cz/zdroj/nkod/nezpracované-záznamy/";
+
     public static String acceptedMessage(Message message) {
         StringBuilder builder = new StringBuilder();
         addPrefixes(builder);
