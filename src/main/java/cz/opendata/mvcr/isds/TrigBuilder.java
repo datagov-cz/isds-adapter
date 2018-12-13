@@ -11,13 +11,16 @@ public class TrigBuilder {
     private static final String NKOD_DS =
             "https://data.gov.cz/zdroj/datové-schránky/";
 
-    private static final String RESOURCE_PREFIX =
-            "https://data.gov.cz/zdroj/nkod/přijaté-záznamy/";
+    private static final String ACCEPTED_PREFIX =
+        "https://data.gov.cz/zdroj/nkod/přijaté-záznamy/";
 
+    private static final String REJECTED_PREFIX =
+         "https://data.gov.cz/zdroj/nkod/nezpracované-záznamy/";   
+    
     public static String acceptedMessage(Message message) {
         StringBuilder builder = new StringBuilder();
         addPrefixes(builder);
-        builder.append("<" + RESOURCE_PREFIX + message.getId() + ">\n");
+        builder.append("<" + ACCEPTED_PREFIX + message.getId() + ">\n");
         builder.append("  a nkod:PřijatýZáznam ;\n");
         addMetadata(builder, message);
         return builder.toString();
@@ -49,7 +52,7 @@ public class TrigBuilder {
     public static String rejectedMessage(Message message) {
         StringBuilder builder = new StringBuilder();
         addPrefixes(builder);
-        builder.append("<" + RESOURCE_PREFIX + message.getId() + ">\n");
+        builder.append("<" + REJECTED_PREFIX + message.getId() + ">\n");
         builder.append("  a nkod:NezpracovanýZáznam ;\n");
         addMetadata(builder, message);
         return builder.toString();
