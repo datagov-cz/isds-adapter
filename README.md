@@ -21,3 +21,19 @@ cd dist
 java -DconfigurationFile=./configuration.properties -jar isds-0.0.0.jar
 ```
 
+## Basic workflow
+This program connects to the ISDS service and list all messages, delivered
+in last 1440 minutes (can be set in the configuration).
+For every message a following conditions are evaluated:
+ * Does the title contains (case insensitive) 'nkod' ?
+ * Does the message have exactly one attachment?
+
+If either of the conditions does not hold, an ignore entry is created and 
+the message is not further processed. 
+Otherwise an accept record for the message is created, the attachment 
+is downloaded and the message is _markMessageAsDownloaded_ in the ISDS. 
+   
+
+
+
+
