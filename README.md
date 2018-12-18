@@ -21,3 +21,4 @@ cd dist
 java -DconfigurationFile=./configuration.properties -jar isds-0.0.0.jar
 ```
 
+For production ISDS, put the certificate downloaded according to [this post](https://www.datoveschranky.info/-/novy-ssl-certifikat-produkcniho-prostredi-isds) into ```dist/certificates```.
