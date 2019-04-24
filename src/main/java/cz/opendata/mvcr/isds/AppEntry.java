@@ -162,10 +162,11 @@ public class AppEntry {
     private void processMessage(DmInfoPortType infoPort, Message message)
             throws IOException {
         if (isForNkodMessage(message)) {
-            saveMessageTtl(message, TrigBuilder.acceptedMessage(message));
-            for (Attachment attachment : message.getAttachments()) {
-                saveAttachment(message, attachment);
-            }
+            Attachment attachment = getFirstTxtAttachment(message);
+            saveMessageTtl(
+                    message,
+                    TrigBuilder.acceptedMessage(message, attachment));
+            saveAttachment(message, attachment);
             markAsRead(infoPort, message);
         } else {
             saveMessageTtl(message, TrigBuilder.rejectedMessage(message));
@@ -173,8 +174,19 @@ public class AppEntry {
     }
 
     private boolean isForNkodMessage(Message message) {
+        boolean containsTxtMessage = getFirstTxtAttachment(message) != null;
         return message.getAnnotation().toLowerCase().contains("nkod")
-                && message.getAttachments().size() == 1;
+                && containsTxtMessage;
+    }
+
+    private Attachment getFirstTxtAttachment(Message message) {
+        for (Attachment attachment : message.getAttachments()) {
+            String name = message.getAttachmentName(attachment);
+            if (name.toLowerCase().endsWith(".txt")) {
+                return attachment;
+            }
+        }
+        return null;
     }
 
     private void saveMessageTtl(Message message, String trig)

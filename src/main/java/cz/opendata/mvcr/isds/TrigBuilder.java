@@ -17,12 +17,15 @@ public class TrigBuilder {
     private static final String REJECTED_PREFIX =
             "https://data.gov.cz/zdroj/nkod/nezpracované-záznamy/";
 
-    public static String acceptedMessage(Message message) {
+    public static String acceptedMessage(
+            Message message, Attachment attachment) {
         StringBuilder builder = new StringBuilder();
         addPrefixes(builder);
         builder.append("<" + ACCEPTED_PREFIX + message.getId() + ">\n");
         builder.append("  a nkod:PřijatýZáznam ;\n");
         addMetadata(builder, message);
+        addAttachment(builder, message, attachment);
+        builder.append(".\n");
         return builder.toString();
     }
 
@@ -42,11 +45,12 @@ public class TrigBuilder {
                 + message.getSender() + " ;\n");
         builder.append("    nkod:datová-zpráva-přijata \""
                 + message.getDeliveryTime() + "\"^^xsd:dateTime ;\n");
-        for (Attachment attachment : message.getAttachments()) {
-            builder.append("    nkod:jméno-souboru \""
-                    + message.getAttachmentName(attachment) + "\" ;\n");
-        }
-        builder.append(".\n");
+    }
+
+    private static void addAttachment(
+            StringBuilder builder, Message message, Attachment attachment) {
+        builder.append("    nkod:jméno-souboru \""
+                + message.getAttachmentName(attachment) + "\" ;\n");
     }
 
     public static String rejectedMessage(Message message) {
@@ -55,6 +59,7 @@ public class TrigBuilder {
         builder.append("<" + REJECTED_PREFIX + message.getId() + ">\n");
         builder.append("  a nkod:NezpracovanýZáznam ;\n");
         addMetadata(builder, message);
+        builder.append(".\n");
         return builder.toString();
     }
 
