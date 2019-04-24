@@ -3,7 +3,7 @@ Downloads messages and their attachments into target directory.
 Ignore any message older than one day.
 
 ## Requirements
- * Java 10
+ * Java 12
  * Maven
  * git client
 
@@ -29,9 +29,9 @@ This program connects to the ISDS service and list all messages, delivered
 in last 1440 minutes (can be set in the configuration).
 For every message a following conditions are evaluated:
  * Does the title contains (case insensitive) 'nkod' ?
- * Does the message have exactly one attachment?
+ * Does the message have at least one '.txt' attachment?
 
 If either of the conditions does not hold, an ignore entry is created and 
 the message is not further processed. 
-Otherwise an accept record for the message is created, the attachment 
+Otherwise an accept record for the message is created, the first `.txt` attachment 
 is downloaded and the message is _markMessageAsDownloaded_ in the ISDS. 
