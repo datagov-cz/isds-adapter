@@ -22,6 +22,7 @@ public class StringTurtleWriter {
     public StringTurtleWriter() {
         this.outputWriter = new StringWriter();
         this.writer = new TurtleWriter(this.outputWriter);
+        this.writer.startRDF();
     }
 
     public void addType(IRI s, IRI type) {
@@ -47,6 +48,7 @@ public class StringTurtleWriter {
 
     @Override
     public String toString() {
+        this.writer.endRDF();
         return this.outputWriter.getBuffer().toString();
     }
 
