@@ -11,6 +11,7 @@ import cz.czechpoint.isds.v20.TStatus;
 import cz.opendata.mvcr.isds.model.Attachment;
 import cz.opendata.mvcr.isds.model.Message;
 import cz.opendata.mvcr.isds.model.MessageBuilder;
+import cz.opendata.mvcr.isds.rdf.TurtleBuilder;
 import org.apache.commons.io.output.FileWriterWithEncoding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -165,11 +166,11 @@ public class AppEntry {
             Attachment attachment = getFirstTxtAttachment(message);
             saveMessageTtl(
                     message,
-                    TrigBuilder.acceptedMessage(message, attachment));
+                    TurtleBuilder.acceptedMessage(message, attachment));
             saveAttachment(message, attachment);
             markAsRead(infoPort, message);
         } else {
-            saveMessageTtl(message, TrigBuilder.rejectedMessage(message));
+            saveMessageTtl(message, TurtleBuilder.rejectedMessage(message));
         }
     }
 

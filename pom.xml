@@ -14,7 +14,12 @@
 		<checkstyle.config.location>checkstyle.xml</checkstyle.config.location>
 	</properties>
 	<dependencies>
-		<!-- Java EE API. -->
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-rio-trig</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+        <!-- Java EE API. -->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
