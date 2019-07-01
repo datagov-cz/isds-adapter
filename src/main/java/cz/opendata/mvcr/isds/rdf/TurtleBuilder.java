@@ -41,9 +41,10 @@ public class TurtleBuilder {
         writer.add(
                 iri, Vocabulary.anotace,
                 message.getAnnotation());
+        IRI poskytovatel = VALUE_FACTORY.createIRI(
+                Vocabulary.NKOD_DS + message.getSender());
         writer.add(
-                iri, Vocabulary.datovaSchrankaPoskytovatele,
-                message.getSender());
+                iri, Vocabulary.datovaSchrankaPoskytovatele, poskytovatel);
         writer.add(
                 iri, Vocabulary.datovaZpravaPrijata,
                 message.getDeliveryTime());
