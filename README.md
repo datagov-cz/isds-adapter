@@ -35,3 +35,7 @@ If either of the conditions does not hold, an ignore entry is created and
 the message is not further processed. 
 Otherwise an accept record for the message is created, the first `.txt` attachment 
 is downloaded and the message is _markMessageAsDownloaded_ in the ISDS. 
+
+
+Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0004172.
+![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)
