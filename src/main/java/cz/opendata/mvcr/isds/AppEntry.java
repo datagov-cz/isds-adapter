@@ -12,6 +12,7 @@ import cz.opendata.mvcr.isds.model.Attachment;
 import cz.opendata.mvcr.isds.model.Message;
 import cz.opendata.mvcr.isds.model.MessageBuilder;
 import cz.opendata.mvcr.isds.rdf.TurtleBuilder;
+
 import org.apache.commons.io.output.FileWriterWithEncoding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,6 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Holder;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;

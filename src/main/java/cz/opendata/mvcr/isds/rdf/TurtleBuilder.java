@@ -2,6 +2,7 @@ package cz.opendata.mvcr.isds.rdf;
 
 import cz.opendata.mvcr.isds.model.Attachment;
 import cz.opendata.mvcr.isds.model.Message;
+
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;

@@ -3,7 +3,7 @@ Downloads messages and their attachments into target directory.
 Ignore any message older than one day.
 
 ## Requirements
- * Java 12
+ * Java 16
  * Maven
  * git client
 
