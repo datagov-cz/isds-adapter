@@ -62,7 +62,7 @@ public enum EnvelopStatus {
      */
     UNKNOWN(-1);
 
-    private int value;
+    private final int value;
 
     EnvelopStatus(int value) {
         this.value = value;

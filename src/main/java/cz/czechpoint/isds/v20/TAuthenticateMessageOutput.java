@@ -1,10 +1,12 @@
 
 package cz.czechpoint.isds.v20;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -13,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tAuthenticateMessageOutput">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dmAuthResult" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="dmStatus" type="{http://isds.czechpoint.cz/v20}tStatus"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tAuthenticateMessageOutput"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dmAuthResult" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dmStatus" type="{http://isds.czechpoint.cz/v20}tStatus"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -34,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TAuthenticateMessageOutput {
 
-    @XmlElement(nillable = true)
-    protected Boolean dmAuthResult;
+    @XmlElementRef(name = "dmAuthResult", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> dmAuthResult;
     @XmlElement(required = true)
     protected TStatus dmStatus;
 
@@ -44,10 +46,10 @@ public class TAuthenticateMessageOutput {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public Boolean isDmAuthResult() {
+    public JAXBElement<Boolean> getDmAuthResult() {
         return dmAuthResult;
     }
 
@@ -56,10 +58,10 @@ public class TAuthenticateMessageOutput {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public void setDmAuthResult(Boolean value) {
+    public void setDmAuthResult(JAXBElement<Boolean> value) {
         this.dmAuthResult = value;
     }
 

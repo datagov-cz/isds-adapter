@@ -1,13 +1,13 @@
 package cz.opendata.mvcr.isds;
 
 import com.sun.xml.ws.developer.JAXWSProperties;
+import jakarta.xml.ws.BindingProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
-import javax.xml.ws.BindingProvider;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;

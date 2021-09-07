@@ -1,10 +1,11 @@
 
 package cz.czechpoint.isds.v20;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -13,16 +14,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tMessDownOutput">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dmReturnedMessage" type="{http://isds.czechpoint.cz/v20}tReturnedMessage" minOccurs="0"/>
- *         &lt;element name="dmStatus" type="{http://isds.czechpoint.cz/v20}tStatus" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tMessDownOutput"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dmReturnedMessage" type="{http://isds.czechpoint.cz/v20}tReturnedMessage" minOccurs="0"/&gt;
+ *         &lt;element name="dmStatus" type="{http://isds.czechpoint.cz/v20}tStatus" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -34,8 +35,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TMessDownOutput {
 
-    @XmlElement(nillable = true)
-    protected TReturnedMessage dmReturnedMessage;
+    @XmlElementRef(name = "dmReturnedMessage", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<TReturnedMessage> dmReturnedMessage;
     protected TStatus dmStatus;
 
     /**
@@ -43,10 +44,10 @@ public class TMessDownOutput {
      * 
      * @return
      *     possible object is
-     *     {@link TReturnedMessage }
+     *     {@link JAXBElement }{@code <}{@link TReturnedMessage }{@code >}
      *     
      */
-    public TReturnedMessage getDmReturnedMessage() {
+    public JAXBElement<TReturnedMessage> getDmReturnedMessage() {
         return dmReturnedMessage;
     }
 
@@ -55,10 +56,10 @@ public class TMessDownOutput {
      * 
      * @param value
      *     allowed object is
-     *     {@link TReturnedMessage }
+     *     {@link JAXBElement }{@code <}{@link TReturnedMessage }{@code >}
      *     
      */
-    public void setDmReturnedMessage(TReturnedMessage value) {
+    public void setDmReturnedMessage(JAXBElement<TReturnedMessage> value) {
         this.dmReturnedMessage = value;
     }
 

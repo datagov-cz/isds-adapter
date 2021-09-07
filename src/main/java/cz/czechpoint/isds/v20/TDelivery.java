@@ -2,12 +2,14 @@
 package cz.czechpoint.isds.v20;
 
 import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -18,29 +20,29 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tDelivery">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dmDm">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;group ref="{http://isds.czechpoint.cz/v20}gMessageEnvelope"/>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="dmHash" type="{http://isds.czechpoint.cz/v20}tHash"/>
- *         &lt;element name="dmQTimestamp" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
- *         &lt;element name="dmDeliveryTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *         &lt;element name="dmAcceptanceTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *         &lt;element name="dmMessageStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="dmEvents" type="{http://isds.czechpoint.cz/v20}tEventsArray"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tDelivery"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dmDm"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;group ref="{http://isds.czechpoint.cz/v20}gMessageEnvelope"/&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="dmHash" type="{http://isds.czechpoint.cz/v20}tHash"/&gt;
+ *         &lt;element name="dmQTimestamp" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/&gt;
+ *         &lt;element name="dmDeliveryTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *         &lt;element name="dmAcceptanceTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *         &lt;element name="dmMessageStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="dmEvents" type="{http://isds.czechpoint.cz/v20}tEventsArray"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -141,7 +143,7 @@ public class TDelivery {
      *     byte[]
      */
     public void setDmQTimestamp(byte[] value) {
-        this.dmQTimestamp = ((byte[]) value);
+        this.dmQTimestamp = value;
     }
 
     /**
@@ -247,13 +249,13 @@ public class TDelivery {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;group ref="{http://isds.czechpoint.cz/v20}gMessageEnvelope"/>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;group ref="{http://isds.czechpoint.cz/v20}gMessageEnvelope"/&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -302,8 +304,8 @@ public class TDelivery {
         protected String dmRecipient;
         @XmlElement(required = true, nillable = true)
         protected String dmRecipientAddress;
-        @XmlElement(nillable = true)
-        protected Boolean dmAmbiguousRecipient;
+        @XmlElementRef(name = "dmAmbiguousRecipient", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+        protected JAXBElement<Boolean> dmAmbiguousRecipient;
         @XmlElement(required = true, nillable = true)
         protected String dmSenderOrgUnit;
         @XmlElement(required = true, nillable = true)
@@ -506,10 +508,10 @@ public class TDelivery {
          * 
          * @return
          *     possible object is
-         *     {@link Boolean }
+         *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
          *     
          */
-        public Boolean isDmAmbiguousRecipient() {
+        public JAXBElement<Boolean> getDmAmbiguousRecipient() {
             return dmAmbiguousRecipient;
         }
 
@@ -518,10 +520,10 @@ public class TDelivery {
          * 
          * @param value
          *     allowed object is
-         *     {@link Boolean }
+         *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
          *     
          */
-        public void setDmAmbiguousRecipient(Boolean value) {
+        public void setDmAmbiguousRecipient(JAXBElement<Boolean> value) {
             this.dmAmbiguousRecipient = value;
         }
 

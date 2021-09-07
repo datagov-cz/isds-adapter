@@ -15,9 +15,9 @@ public class StringTurtleWriter {
     private static final ValueFactory VALUE_FACTORY =
             SimpleValueFactory.getInstance();
 
-    private StringWriter outputWriter;
+    private final StringWriter outputWriter;
 
-    private TurtleWriter writer;
+    private final TurtleWriter writer;
 
     public StringTurtleWriter() {
         this.outputWriter = new StringWriter();
@@ -55,4 +55,5 @@ public class StringTurtleWriter {
     public TurtleWriter getWriter() {
         return writer;
     }
+
 }

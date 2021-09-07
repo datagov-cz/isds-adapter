@@ -2,13 +2,13 @@
 package cz.czechpoint.isds.v20;
 
 import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -17,32 +17,32 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tRecord">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence minOccurs="0">
- *         &lt;element name="dmOrdinal">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="1"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;group ref="{http://isds.czechpoint.cz/v20}gMessageEnvelope"/>
- *         &lt;element name="dmMessageStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="dmAttachmentSize" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="dmDeliveryTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *         &lt;element name="dmAcceptanceTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *       &lt;/sequence>
- *       &lt;attribute name="dmType">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://isds.czechpoint.cz/v20}tDmType">
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tRecord"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence minOccurs="0"&gt;
+ *         &lt;element name="dmOrdinal"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;group ref="{http://isds.czechpoint.cz/v20}gMessageEnvelope"/&gt;
+ *         &lt;element name="dmMessageStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="dmAttachmentSize" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *         &lt;element name="dmDeliveryTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *         &lt;element name="dmAcceptanceTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="dmType"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://isds.czechpoint.cz/v20}tDmType"&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -85,65 +85,63 @@ public class TRecord {
 
     protected Integer dmOrdinal;
     protected String dmID;
-    @XmlElement(nillable = true)
-    protected String dbIDSender;
-    @XmlElement(nillable = true)
-    protected String dmSender;
-    @XmlElement(nillable = true)
-    protected String dmSenderAddress;
+    @XmlElementRef(name = "dbIDSender", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dbIDSender;
+    @XmlElementRef(name = "dmSender", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmSender;
+    @XmlElementRef(name = "dmSenderAddress", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmSenderAddress;
     protected Integer dmSenderType;
-    @XmlElement(nillable = true)
-    protected String dmRecipient;
-    @XmlElement(nillable = true)
-    protected String dmRecipientAddress;
-    @XmlElement(nillable = true)
-    protected Boolean dmAmbiguousRecipient;
-    @XmlElement(nillable = true)
-    protected String dmSenderOrgUnit;
-    @XmlElement(nillable = true)
-    protected BigInteger dmSenderOrgUnitNum;
-    @XmlElement(nillable = true)
-    protected String dbIDRecipient;
-    @XmlElement(nillable = true)
-    protected String dmRecipientOrgUnit;
-    @XmlElement(nillable = true)
-    protected BigInteger dmRecipientOrgUnitNum;
-    @XmlElement(nillable = true)
-    protected String dmToHands;
-    @XmlElement(nillable = true)
-    protected String dmAnnotation;
-    @XmlElement(nillable = true)
-    protected String dmRecipientRefNumber;
-    @XmlElement(nillable = true)
-    protected String dmSenderRefNumber;
-    @XmlElement(nillable = true)
-    protected String dmRecipientIdent;
-    @XmlElement(nillable = true)
-    protected String dmSenderIdent;
-    @XmlElement(nillable = true)
-    protected BigInteger dmLegalTitleLaw;
-    @XmlElement(nillable = true)
-    protected BigInteger dmLegalTitleYear;
-    @XmlElement(nillable = true)
-    protected String dmLegalTitleSect;
-    @XmlElement(nillable = true)
-    protected String dmLegalTitlePar;
-    @XmlElement(nillable = true)
-    protected String dmLegalTitlePoint;
-    @XmlElement(nillable = true)
-    protected Boolean dmPersonalDelivery;
-    @XmlElement(nillable = true)
-    protected Boolean dmAllowSubstDelivery;
+    @XmlElementRef(name = "dmRecipient", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmRecipient;
+    @XmlElementRef(name = "dmRecipientAddress", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmRecipientAddress;
+    @XmlElementRef(name = "dmAmbiguousRecipient", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> dmAmbiguousRecipient;
+    @XmlElementRef(name = "dmSenderOrgUnit", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmSenderOrgUnit;
+    @XmlElementRef(name = "dmSenderOrgUnitNum", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<BigInteger> dmSenderOrgUnitNum;
+    @XmlElementRef(name = "dbIDRecipient", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dbIDRecipient;
+    @XmlElementRef(name = "dmRecipientOrgUnit", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmRecipientOrgUnit;
+    @XmlElementRef(name = "dmRecipientOrgUnitNum", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<BigInteger> dmRecipientOrgUnitNum;
+    @XmlElementRef(name = "dmToHands", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmToHands;
+    @XmlElementRef(name = "dmAnnotation", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmAnnotation;
+    @XmlElementRef(name = "dmRecipientRefNumber", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmRecipientRefNumber;
+    @XmlElementRef(name = "dmSenderRefNumber", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmSenderRefNumber;
+    @XmlElementRef(name = "dmRecipientIdent", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmRecipientIdent;
+    @XmlElementRef(name = "dmSenderIdent", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmSenderIdent;
+    @XmlElementRef(name = "dmLegalTitleLaw", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<BigInteger> dmLegalTitleLaw;
+    @XmlElementRef(name = "dmLegalTitleYear", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<BigInteger> dmLegalTitleYear;
+    @XmlElementRef(name = "dmLegalTitleSect", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmLegalTitleSect;
+    @XmlElementRef(name = "dmLegalTitlePar", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmLegalTitlePar;
+    @XmlElementRef(name = "dmLegalTitlePoint", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmLegalTitlePoint;
+    @XmlElementRef(name = "dmPersonalDelivery", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> dmPersonalDelivery;
+    @XmlElementRef(name = "dmAllowSubstDelivery", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> dmAllowSubstDelivery;
     protected BigInteger dmMessageStatus;
-    @XmlElement(nillable = true)
-    protected BigInteger dmAttachmentSize;
-    @XmlElement(nillable = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dmDeliveryTime;
-    @XmlElement(nillable = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dmAcceptanceTime;
-    @XmlAttribute
+    @XmlElementRef(name = "dmAttachmentSize", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<BigInteger> dmAttachmentSize;
+    @XmlElementRef(name = "dmDeliveryTime", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<XMLGregorianCalendar> dmDeliveryTime;
+    @XmlElementRef(name = "dmAcceptanceTime", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<XMLGregorianCalendar> dmAcceptanceTime;
+    @XmlAttribute(name = "dmType")
     protected String dmType;
 
     /**
@@ -199,10 +197,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDbIDSender() {
+    public JAXBElement<String> getDbIDSender() {
         return dbIDSender;
     }
 
@@ -211,10 +209,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDbIDSender(String value) {
+    public void setDbIDSender(JAXBElement<String> value) {
         this.dbIDSender = value;
     }
 
@@ -223,10 +221,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmSender() {
+    public JAXBElement<String> getDmSender() {
         return dmSender;
     }
 
@@ -235,10 +233,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmSender(String value) {
+    public void setDmSender(JAXBElement<String> value) {
         this.dmSender = value;
     }
 
@@ -247,10 +245,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmSenderAddress() {
+    public JAXBElement<String> getDmSenderAddress() {
         return dmSenderAddress;
     }
 
@@ -259,10 +257,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmSenderAddress(String value) {
+    public void setDmSenderAddress(JAXBElement<String> value) {
         this.dmSenderAddress = value;
     }
 
@@ -295,10 +293,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmRecipient() {
+    public JAXBElement<String> getDmRecipient() {
         return dmRecipient;
     }
 
@@ -307,10 +305,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmRecipient(String value) {
+    public void setDmRecipient(JAXBElement<String> value) {
         this.dmRecipient = value;
     }
 
@@ -319,10 +317,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmRecipientAddress() {
+    public JAXBElement<String> getDmRecipientAddress() {
         return dmRecipientAddress;
     }
 
@@ -331,10 +329,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmRecipientAddress(String value) {
+    public void setDmRecipientAddress(JAXBElement<String> value) {
         this.dmRecipientAddress = value;
     }
 
@@ -343,10 +341,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public Boolean isDmAmbiguousRecipient() {
+    public JAXBElement<Boolean> getDmAmbiguousRecipient() {
         return dmAmbiguousRecipient;
     }
 
@@ -355,10 +353,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public void setDmAmbiguousRecipient(Boolean value) {
+    public void setDmAmbiguousRecipient(JAXBElement<Boolean> value) {
         this.dmAmbiguousRecipient = value;
     }
 
@@ -367,10 +365,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmSenderOrgUnit() {
+    public JAXBElement<String> getDmSenderOrgUnit() {
         return dmSenderOrgUnit;
     }
 
@@ -379,10 +377,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmSenderOrgUnit(String value) {
+    public void setDmSenderOrgUnit(JAXBElement<String> value) {
         this.dmSenderOrgUnit = value;
     }
 
@@ -391,10 +389,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public BigInteger getDmSenderOrgUnitNum() {
+    public JAXBElement<BigInteger> getDmSenderOrgUnitNum() {
         return dmSenderOrgUnitNum;
     }
 
@@ -403,10 +401,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public void setDmSenderOrgUnitNum(BigInteger value) {
+    public void setDmSenderOrgUnitNum(JAXBElement<BigInteger> value) {
         this.dmSenderOrgUnitNum = value;
     }
 
@@ -415,10 +413,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDbIDRecipient() {
+    public JAXBElement<String> getDbIDRecipient() {
         return dbIDRecipient;
     }
 
@@ -427,10 +425,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDbIDRecipient(String value) {
+    public void setDbIDRecipient(JAXBElement<String> value) {
         this.dbIDRecipient = value;
     }
 
@@ -439,10 +437,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmRecipientOrgUnit() {
+    public JAXBElement<String> getDmRecipientOrgUnit() {
         return dmRecipientOrgUnit;
     }
 
@@ -451,10 +449,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmRecipientOrgUnit(String value) {
+    public void setDmRecipientOrgUnit(JAXBElement<String> value) {
         this.dmRecipientOrgUnit = value;
     }
 
@@ -463,10 +461,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public BigInteger getDmRecipientOrgUnitNum() {
+    public JAXBElement<BigInteger> getDmRecipientOrgUnitNum() {
         return dmRecipientOrgUnitNum;
     }
 
@@ -475,10 +473,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public void setDmRecipientOrgUnitNum(BigInteger value) {
+    public void setDmRecipientOrgUnitNum(JAXBElement<BigInteger> value) {
         this.dmRecipientOrgUnitNum = value;
     }
 
@@ -487,10 +485,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmToHands() {
+    public JAXBElement<String> getDmToHands() {
         return dmToHands;
     }
 
@@ -499,10 +497,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmToHands(String value) {
+    public void setDmToHands(JAXBElement<String> value) {
         this.dmToHands = value;
     }
 
@@ -511,10 +509,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmAnnotation() {
+    public JAXBElement<String> getDmAnnotation() {
         return dmAnnotation;
     }
 
@@ -523,10 +521,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmAnnotation(String value) {
+    public void setDmAnnotation(JAXBElement<String> value) {
         this.dmAnnotation = value;
     }
 
@@ -535,10 +533,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmRecipientRefNumber() {
+    public JAXBElement<String> getDmRecipientRefNumber() {
         return dmRecipientRefNumber;
     }
 
@@ -547,10 +545,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmRecipientRefNumber(String value) {
+    public void setDmRecipientRefNumber(JAXBElement<String> value) {
         this.dmRecipientRefNumber = value;
     }
 
@@ -559,10 +557,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmSenderRefNumber() {
+    public JAXBElement<String> getDmSenderRefNumber() {
         return dmSenderRefNumber;
     }
 
@@ -571,10 +569,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmSenderRefNumber(String value) {
+    public void setDmSenderRefNumber(JAXBElement<String> value) {
         this.dmSenderRefNumber = value;
     }
 
@@ -583,10 +581,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmRecipientIdent() {
+    public JAXBElement<String> getDmRecipientIdent() {
         return dmRecipientIdent;
     }
 
@@ -595,10 +593,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmRecipientIdent(String value) {
+    public void setDmRecipientIdent(JAXBElement<String> value) {
         this.dmRecipientIdent = value;
     }
 
@@ -607,10 +605,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmSenderIdent() {
+    public JAXBElement<String> getDmSenderIdent() {
         return dmSenderIdent;
     }
 
@@ -619,10 +617,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmSenderIdent(String value) {
+    public void setDmSenderIdent(JAXBElement<String> value) {
         this.dmSenderIdent = value;
     }
 
@@ -631,10 +629,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public BigInteger getDmLegalTitleLaw() {
+    public JAXBElement<BigInteger> getDmLegalTitleLaw() {
         return dmLegalTitleLaw;
     }
 
@@ -643,10 +641,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public void setDmLegalTitleLaw(BigInteger value) {
+    public void setDmLegalTitleLaw(JAXBElement<BigInteger> value) {
         this.dmLegalTitleLaw = value;
     }
 
@@ -655,10 +653,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public BigInteger getDmLegalTitleYear() {
+    public JAXBElement<BigInteger> getDmLegalTitleYear() {
         return dmLegalTitleYear;
     }
 
@@ -667,10 +665,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public void setDmLegalTitleYear(BigInteger value) {
+    public void setDmLegalTitleYear(JAXBElement<BigInteger> value) {
         this.dmLegalTitleYear = value;
     }
 
@@ -679,10 +677,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmLegalTitleSect() {
+    public JAXBElement<String> getDmLegalTitleSect() {
         return dmLegalTitleSect;
     }
 
@@ -691,10 +689,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmLegalTitleSect(String value) {
+    public void setDmLegalTitleSect(JAXBElement<String> value) {
         this.dmLegalTitleSect = value;
     }
 
@@ -703,10 +701,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmLegalTitlePar() {
+    public JAXBElement<String> getDmLegalTitlePar() {
         return dmLegalTitlePar;
     }
 
@@ -715,10 +713,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmLegalTitlePar(String value) {
+    public void setDmLegalTitlePar(JAXBElement<String> value) {
         this.dmLegalTitlePar = value;
     }
 
@@ -727,10 +725,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmLegalTitlePoint() {
+    public JAXBElement<String> getDmLegalTitlePoint() {
         return dmLegalTitlePoint;
     }
 
@@ -739,10 +737,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmLegalTitlePoint(String value) {
+    public void setDmLegalTitlePoint(JAXBElement<String> value) {
         this.dmLegalTitlePoint = value;
     }
 
@@ -751,10 +749,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public Boolean isDmPersonalDelivery() {
+    public JAXBElement<Boolean> getDmPersonalDelivery() {
         return dmPersonalDelivery;
     }
 
@@ -763,10 +761,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public void setDmPersonalDelivery(Boolean value) {
+    public void setDmPersonalDelivery(JAXBElement<Boolean> value) {
         this.dmPersonalDelivery = value;
     }
 
@@ -775,10 +773,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public Boolean isDmAllowSubstDelivery() {
+    public JAXBElement<Boolean> getDmAllowSubstDelivery() {
         return dmAllowSubstDelivery;
     }
 
@@ -787,10 +785,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public void setDmAllowSubstDelivery(Boolean value) {
+    public void setDmAllowSubstDelivery(JAXBElement<Boolean> value) {
         this.dmAllowSubstDelivery = value;
     }
 
@@ -823,10 +821,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public BigInteger getDmAttachmentSize() {
+    public JAXBElement<BigInteger> getDmAttachmentSize() {
         return dmAttachmentSize;
     }
 
@@ -835,10 +833,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public void setDmAttachmentSize(BigInteger value) {
+    public void setDmAttachmentSize(JAXBElement<BigInteger> value) {
         this.dmAttachmentSize = value;
     }
 
@@ -847,10 +845,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
      *     
      */
-    public XMLGregorianCalendar getDmDeliveryTime() {
+    public JAXBElement<XMLGregorianCalendar> getDmDeliveryTime() {
         return dmDeliveryTime;
     }
 
@@ -859,10 +857,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
      *     
      */
-    public void setDmDeliveryTime(XMLGregorianCalendar value) {
+    public void setDmDeliveryTime(JAXBElement<XMLGregorianCalendar> value) {
         this.dmDeliveryTime = value;
     }
 
@@ -871,10 +869,10 @@ public class TRecord {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
      *     
      */
-    public XMLGregorianCalendar getDmAcceptanceTime() {
+    public JAXBElement<XMLGregorianCalendar> getDmAcceptanceTime() {
         return dmAcceptanceTime;
     }
 
@@ -883,10 +881,10 @@ public class TRecord {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
      *     
      */
-    public void setDmAcceptanceTime(XMLGregorianCalendar value) {
+    public void setDmAcceptanceTime(JAXBElement<XMLGregorianCalendar> value) {
         this.dmAcceptanceTime = value;
     }
 

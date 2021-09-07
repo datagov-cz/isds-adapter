@@ -1,11 +1,11 @@
 
 package cz.czechpoint.isds.v20;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -14,25 +14,25 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tMultipleMessageCreateInput">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dmRecipients" type="{http://isds.czechpoint.cz/v20}tMultipleMessageRecipients"/>
- *         &lt;element name="dmEnvelope">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;extension base="{http://isds.czechpoint.cz/v20}tMultipleMessageEnvelopeSub">
- *                 &lt;attribute name="dmType" type="{http://isds.czechpoint.cz/v20}tDmType" />
- *               &lt;/extension>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="dmFiles" type="{http://isds.czechpoint.cz/v20}tFilesArray"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tMultipleMessageCreateInput"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dmRecipients" type="{http://isds.czechpoint.cz/v20}tMultipleMessageRecipients"/&gt;
+ *         &lt;element name="dmEnvelope"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;extension base="{http://isds.czechpoint.cz/v20}tMultipleMessageEnvelopeSub"&gt;
+ *                 &lt;attribute name="dmType" type="{http://isds.czechpoint.cz/v20}tDmType" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="dmFiles" type="{http://isds.czechpoint.cz/v20}tFilesArray"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -131,13 +131,13 @@ public class TMultipleMessageCreateInput {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://isds.czechpoint.cz/v20}tMultipleMessageEnvelopeSub">
-     *       &lt;attribute name="dmType" type="{http://isds.czechpoint.cz/v20}tDmType" />
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://isds.czechpoint.cz/v20}tMultipleMessageEnvelopeSub"&gt;
+     *       &lt;attribute name="dmType" type="{http://isds.czechpoint.cz/v20}tDmType" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -148,7 +148,7 @@ public class TMultipleMessageCreateInput {
         extends TMultipleMessageEnvelopeSub
     {
 
-        @XmlAttribute
+        @XmlAttribute(name = "dmType")
         protected String dmType;
 
         /**

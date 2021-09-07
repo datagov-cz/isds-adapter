@@ -1,10 +1,11 @@
 
 package cz.czechpoint.isds.v20;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -13,16 +14,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tDeliveryMessageOutput">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dmDelivery" type="{http://isds.czechpoint.cz/v20}tDelivery" minOccurs="0"/>
- *         &lt;element name="dmStatus" type="{http://isds.czechpoint.cz/v20}tStatus" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tDeliveryMessageOutput"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dmDelivery" type="{http://isds.czechpoint.cz/v20}tDelivery" minOccurs="0"/&gt;
+ *         &lt;element name="dmStatus" type="{http://isds.czechpoint.cz/v20}tStatus" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -34,8 +35,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TDeliveryMessageOutput {
 
-    @XmlElement(nillable = true)
-    protected TDelivery dmDelivery;
+    @XmlElementRef(name = "dmDelivery", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<TDelivery> dmDelivery;
     protected TStatus dmStatus;
 
     /**
@@ -43,10 +44,10 @@ public class TDeliveryMessageOutput {
      * 
      * @return
      *     possible object is
-     *     {@link TDelivery }
+     *     {@link JAXBElement }{@code <}{@link TDelivery }{@code >}
      *     
      */
-    public TDelivery getDmDelivery() {
+    public JAXBElement<TDelivery> getDmDelivery() {
         return dmDelivery;
     }
 
@@ -55,10 +56,10 @@ public class TDeliveryMessageOutput {
      * 
      * @param value
      *     allowed object is
-     *     {@link TDelivery }
+     *     {@link JAXBElement }{@code <}{@link TDelivery }{@code >}
      *     
      */
-    public void setDmDelivery(TDelivery value) {
+    public void setDmDelivery(JAXBElement<TDelivery> value) {
         this.dmDelivery = value;
     }
 

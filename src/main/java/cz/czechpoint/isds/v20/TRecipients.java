@@ -2,10 +2,12 @@
 package cz.czechpoint.isds.v20;
 
 import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -14,18 +16,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tRecipients">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="dbIDRecipient" type="{http://isds.czechpoint.cz/v20}tIdDb"/>
- *         &lt;element name="dmRecipientOrgUnit" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="dmRecipientOrgUnitNum" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *         &lt;element name="dmToHands" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tRecipients"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="dbIDRecipient" type="{http://isds.czechpoint.cz/v20}tIdDb"/&gt;
+ *         &lt;element name="dmRecipientOrgUnit" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="dmRecipientOrgUnitNum" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="dmToHands" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -41,10 +43,10 @@ public class TRecipients {
 
     @XmlElement(required = true)
     protected String dbIDRecipient;
-    @XmlElement(nillable = true)
-    protected String dmRecipientOrgUnit;
-    @XmlElement(nillable = true)
-    protected BigInteger dmRecipientOrgUnitNum;
+    @XmlElementRef(name = "dmRecipientOrgUnit", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> dmRecipientOrgUnit;
+    @XmlElementRef(name = "dmRecipientOrgUnitNum", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<BigInteger> dmRecipientOrgUnitNum;
     @XmlElement(required = true, nillable = true)
     protected String dmToHands;
 
@@ -77,10 +79,10 @@ public class TRecipients {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getDmRecipientOrgUnit() {
+    public JAXBElement<String> getDmRecipientOrgUnit() {
         return dmRecipientOrgUnit;
     }
 
@@ -89,10 +91,10 @@ public class TRecipients {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setDmRecipientOrgUnit(String value) {
+    public void setDmRecipientOrgUnit(JAXBElement<String> value) {
         this.dmRecipientOrgUnit = value;
     }
 
@@ -101,10 +103,10 @@ public class TRecipients {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public BigInteger getDmRecipientOrgUnitNum() {
+    public JAXBElement<BigInteger> getDmRecipientOrgUnitNum() {
         return dmRecipientOrgUnitNum;
     }
 
@@ -113,10 +115,10 @@ public class TRecipients {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      *     
      */
-    public void setDmRecipientOrgUnitNum(BigInteger value) {
+    public void setDmRecipientOrgUnitNum(JAXBElement<BigInteger> value) {
         this.dmRecipientOrgUnitNum = value;
     }
 

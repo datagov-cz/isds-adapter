@@ -2,11 +2,13 @@
 package cz.czechpoint.isds.v20;
 
 import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlSeeAlso;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -15,17 +17,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tMultipleMessageEnvelopeSub">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{http://isds.czechpoint.cz/v20}gMultipleMessageEnvelopeSub"/>
- *         &lt;element name="dmOVM" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="dmPublishOwnID" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="tMultipleMessageEnvelopeSub"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;group ref="{http://isds.czechpoint.cz/v20}gMultipleMessageEnvelopeSub"/&gt;
+ *         &lt;element name="dmOVM" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dmPublishOwnID" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -82,10 +84,10 @@ public class TMultipleMessageEnvelopeSub {
     protected Boolean dmPersonalDelivery;
     @XmlElement(required = true, type = Boolean.class, nillable = true)
     protected Boolean dmAllowSubstDelivery;
-    @XmlElement(nillable = true)
-    protected Boolean dmOVM;
-    @XmlElement(nillable = true)
-    protected Boolean dmPublishOwnID;
+    @XmlElementRef(name = "dmOVM", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> dmOVM;
+    @XmlElementRef(name = "dmPublishOwnID", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
+    protected JAXBElement<Boolean> dmPublishOwnID;
 
     /**
      * Gets the value of the dmSenderOrgUnit property.
@@ -428,10 +430,10 @@ public class TMultipleMessageEnvelopeSub {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public Boolean isDmOVM() {
+    public JAXBElement<Boolean> getDmOVM() {
         return dmOVM;
     }
 
@@ -440,10 +442,10 @@ public class TMultipleMessageEnvelopeSub {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public void setDmOVM(Boolean value) {
+    public void setDmOVM(JAXBElement<Boolean> value) {
         this.dmOVM = value;
     }
 
@@ -452,10 +454,10 @@ public class TMultipleMessageEnvelopeSub {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public Boolean isDmPublishOwnID() {
+    public JAXBElement<Boolean> getDmPublishOwnID() {
         return dmPublishOwnID;
     }
 
@@ -464,10 +466,10 @@ public class TMultipleMessageEnvelopeSub {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      *     
      */
-    public void setDmPublishOwnID(Boolean value) {
+    public void setDmPublishOwnID(JAXBElement<Boolean> value) {
         this.dmPublishOwnID = value;
     }
 

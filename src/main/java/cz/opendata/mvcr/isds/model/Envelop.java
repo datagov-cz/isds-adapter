@@ -29,12 +29,12 @@ public class Envelop {
 
     public Envelop(TRecord record) {
         this.id = record.getDmID();
-        this.annotation = record.getDmAnnotation();
-        this.sender = record.getDbIDSender();
-        this.recipient = record.getDbIDRecipient();
+        this.annotation = record.getDmAnnotation().getValue();
+        this.sender = record.getDbIDSender().getValue();
+        this.recipient = record.getDbIDRecipient().getValue();
         this.status = EnvelopStatus.fromNumber(record.getDmMessageStatus());
-        this.deliveryTime = record.getDmDeliveryTime();
-        this.acceptanceTime = record.getDmAcceptanceTime();
+        this.deliveryTime = record.getDmDeliveryTime().getValue();
+        this.acceptanceTime = record.getDmAcceptanceTime().getValue();
     }
 
     public String getId() {
