@@ -17,7 +17,7 @@ import jakarta.xml.ws.WebServiceFeature;
  * Generated source version: 3.0
  * 
  */
-@WebServiceClient(name = "dmInfoWebService", targetNamespace = "http://isds.czechpoint.cz/v20", wsdlLocation = "file:/D:/Projects/mvcr/nkod-isds/src/main/resources/wsdl/dm_info.wsdl")
+@WebServiceClient(name = "dmInfoWebService", targetNamespace = "http://isds.czechpoint.cz/v20", wsdlLocation = "https://www.czebox.cz/static/wsdl/v20/dm_info.wsdl")
 public class DmInfoWebService
     extends Service
 {
@@ -30,7 +30,7 @@ public class DmInfoWebService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/D:/Projects/mvcr/nkod-isds/src/main/resources/wsdl/dm_info.wsdl");
+            url = new URL("https://www.czebox.cz/static/wsdl/v20/dm_info.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

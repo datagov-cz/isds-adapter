@@ -25,14 +25,17 @@ For production ISDS, put the certificate downloaded according to
 into ```dist/certificates```.
 
 ### Generating WSDL client code
+The repository already contains the generated code. The following steps can
+be used to update the generated code should the WSDL change.
+
 First [download Metro](https://search.maven.org/search?q=a:metro-standalone) 
 and unpack into ```./metro``` (we used version 3.0.2). 
 
 The next step is to run the ```wsimport.bat``` located in ```metro/bin```. 
 As we import two files we need to run the script twice:
 ```
-.\wsimport.bat ..\..\src\main\resources\wsdl\dm_info.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8
-.\wsimport.bat ..\..\src\main\resources\wsdl\dm_operations.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8 
+.\wsimport.bat ..\..\src\main\resources\wsdl\dm_info.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8 -wsdllocation https://www.czebox.cz/static/wsdl/v20/dm_info.wsdl
+.\wsimport.bat ..\..\src\main\resources\wsdl\dm_operations.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8  -wsdllocation https://www.czebox.cz/static/wsdl/v20/dm_operations.wsdl
 ```
 We need to specify the ```utf-8``` as there are Czech characters in the definitions.
 
