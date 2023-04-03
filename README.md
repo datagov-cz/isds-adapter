@@ -1,6 +1,8 @@
 # ISDS Downloader
-Downloads messages and their attachments into target directory. 
+Download messages and their attachments into target directory. 
 Ignore any message older than one day.
+
+For documentation about ISIS see [Poradna ISDS](https://www.poradnaisds.cz/) or [Provozní řád ISDS](https://info.mojedatovaschranka.cz/info/cs/80.html).
 
 ## Requirements
  * Java 16
@@ -20,9 +22,7 @@ Update configuration file ```dist/configuration.properties```.
 cd dist
 java -DconfigurationFile=./configuration.properties -jar isds-0.0.0.jar
 ```
-For production ISDS, put the certificate downloaded according to 
-[this post](https://www.datoveschranky.info/-/novy-ssl-certifikat-produkcniho-prostredi-isds) 
-into ```dist/certificates```.
+You may need to remove certificates in ```dist/certificates``` and download valid production/test certificate.
 
 ### Generating WSDL client code
 The repository already contains the generated code. The following steps can
@@ -39,21 +39,18 @@ As we import two files we need to run the script twice:
 ```
 We need to specify the ```utf-8``` as there are Czech characters in the definitions.
 
-The WSDL definitions can be downloaded from the 
-[ISDS developer](http://team.smartadministration.cz) section *Dokumentace a formuláře*.
+The WSDL definitions can be downloaded from the [ISDS developer](https://www.poradnaisds.cz/) section *Testovací prostředí* > *Dokumentace a formuláře*.
 
 ## Basic workflow
 This program connects to the ISDS service and list all messages, delivered
 in last 1440 minutes (can be set in the configuration).
 For every message a following conditions are evaluated:
- * Does the title contains (case insensitive) 'nkod' ?
+ * Does the title contains (case-insensitive) 'nkod' ?
  * Does the message have at least one '.txt' attachment?
 
-If either of the conditions does not hold, an ignore entry is created, and 
-the message is not further processed. 
-Otherwise, an accept record for the message is created, the first `.txt` attachment 
+If either of the conditions does not hold, an _ignore_ entry is created, and the message is not further processed. 
+Otherwise, an _accept_ record for the message is created, the first `.txt` attachment 
 is downloaded, and the message is _markMessageAsDownloaded_ in the ISDS. 
-
 
 Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0013983.
 ![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)
