@@ -1,4 +1,4 @@
-package cz.opendata.mvcr.isds;
+package cz.gov.data.isds;
 
 import cz.czechpoint.isds.v20.DmInfoPortType;
 import cz.czechpoint.isds.v20.DmInfoWebService;
@@ -8,10 +8,10 @@ import cz.czechpoint.isds.v20.TRecord;
 import cz.czechpoint.isds.v20.TRecordsArray;
 import cz.czechpoint.isds.v20.TReturnedMessage;
 import cz.czechpoint.isds.v20.TStatus;
-import cz.opendata.mvcr.isds.model.Attachment;
-import cz.opendata.mvcr.isds.model.Message;
-import cz.opendata.mvcr.isds.model.MessageBuilder;
-import cz.opendata.mvcr.isds.rdf.TurtleBuilder;
+import cz.gov.data.isds.model.Attachment;
+import cz.gov.data.isds.model.Message;
+import cz.gov.data.isds.model.MessageBuilder;
+import cz.gov.data.isds.rdf.TurtleBuilder;
 
 import jakarta.xml.ws.BindingProvider;
 import jakarta.xml.ws.Holder;

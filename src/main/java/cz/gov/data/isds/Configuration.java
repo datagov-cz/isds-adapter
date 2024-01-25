@@ -1,4 +1,4 @@
-package cz.opendata.mvcr.isds;
+package cz.gov.data.isds;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package cz.opendata.mvcr.isds.model;
+package cz.gov.data.isds.model;
 
 import java.math.BigInteger;
 import java.util.EnumSet;

@@ -1,4 +1,4 @@
-package cz.opendata.mvcr.isds.rdf;
+package cz.gov.data.isds.rdf;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.ValueFactory;

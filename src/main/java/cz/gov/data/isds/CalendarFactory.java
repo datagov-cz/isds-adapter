@@ -1,4 +1,4 @@
-package cz.opendata.mvcr.isds;
+package cz.gov.data.isds;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;

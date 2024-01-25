@@ -1,4 +1,4 @@
-package cz.opendata.mvcr.isds;
+package cz.gov.data.isds;
 
 import com.sun.xml.ws.developer.JAXWSProperties;
 import jakarta.xml.ws.BindingProvider;
