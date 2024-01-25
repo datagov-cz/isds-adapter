@@ -2,17 +2,13 @@
 	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
 		<resetJUL>true</resetJUL>
 	</contextListener>
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>INFO</level>
-		</filter>
-		<encoder>
-			<pattern>
-				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
-			</pattern>
-		</encoder>
+
+	<appender name="json" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="cz.gov.data.logging.LogEncoder"/>
 	</appender>
-	<root level="ALL">
-		<appender-ref ref="STDOUT"/>
+
+	<root level="INFO">
+		<appender-ref ref="json"/>
 	</root>
+
 </configuration>
