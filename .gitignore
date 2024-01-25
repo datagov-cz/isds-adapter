@@ -1,10 +1,11 @@
-# Set the default behavior, in case people don't have core.autocrlf set.
-* text eol=lf
-.*
-
 # Build, tools, ...
-target/
-dist/
-metro/
-output/
+.*
 *.iml
+/target/
+/dist/
+/data/
+/metro/
+
+#
+!.mvn/
+!.github
