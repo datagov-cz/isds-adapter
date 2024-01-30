@@ -5,8 +5,7 @@ Ignore any message older than one day.
 For documentation about ISIS see [Poradna ISDS](https://www.poradnaisds.cz/) or [Provozní řád ISDS](https://info.mojedatovaschranka.cz/info/cs/80.html).
 
 ## Requirements
- * Java 16
- * Maven
+ * Java 21
  * git client
 
 ## Install from source
@@ -14,13 +13,13 @@ Clone this repository and use maven to build the program.
 ```
 git clone https://github.com/opendata-mvcr/nkod-isds.git
 cd nkod-isds
-mvn install
+mvnw package
 ```
 result of the build is saved into ```dist``` directory.
 Update configuration file ```dist/configuration.properties```.
 ```
 cd dist
-java -DconfigurationFile=./configuration.properties -jar isds-0.0.0.jar
+java -DconfigurationFile=./configuration.properties -jar isds-adapter.jar
 ```
 You may need to remove certificates in ```dist/certificates``` and download valid production/test certificate.
 
@@ -51,6 +50,13 @@ For every message a following conditions are evaluated:
 If either of the conditions does not hold, an _ignore_ entry is created, and the message is not further processed. 
 Otherwise, an _accept_ record for the message is created, the first `.txt` attachment 
 is downloaded, and the message is _markMessageAsDownloaded_ in the ISDS. 
+
+## Environment properties
+Configuration from the configuration file can be overwritten using environment variables. 
+Program support following environment properties:
+- ISDS_LOGIN - replace `login`.
+- ISDS_PASSWORD - replace `password`.
+- ISDS_URL - replace `url`.
 
 Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0013983.
 ![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)

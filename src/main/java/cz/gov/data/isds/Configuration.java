@@ -43,14 +43,24 @@ class Configuration {
             properties.load(stream);
         }
         //
-        this.login = getProperty(properties, "login");
-        this.password = getProperty(properties, "password");
-        this.url = getProperty(properties, "url");
+        this.login = getEnvOrProperty(properties, "login", "ISDS_LOGIN");
+        this.password = getEnvOrProperty(properties, "password", "ISDS_PASSWORD");
+        this.url = getEnvOrProperty(properties, "url", "ISDS_URL");
+        //
         this.outputMessages = getProperty(properties, "output.messages");
         this.outputAttachments = getProperty(properties, "output.attachments");
         this.certificatesDirectory = getProperty(properties, "certificates");
         this.downloadInterval = Integer.parseInt(
                 getProperty(properties, "download_interval_in_minutes"));
+    }
+
+    private String getEnvOrProperty(
+            Properties properties, String property, String environment) {
+        String environmentValue = System.getenv(environment);
+        if (environmentValue != null) {
+            return environmentValue;
+        }
+        return getProperty(properties, property);
     }
 
     private String getProperty(Properties properties, String name) {

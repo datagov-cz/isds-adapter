@@ -92,9 +92,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>
-                                cz.gov.data.isds.AppEntry
-                            </mainClass>
+                            <mainClass>cz.gov.data.isds.AppEntry</mainClass>
                         </manifest>
                     </archive>
                     <outputDirectory>
