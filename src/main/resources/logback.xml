@@ -4,7 +4,7 @@
 	</contextListener>
 
 	<appender name="json" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder class="cz.gov.data.logging.LogEncoder"/>
+		<encoder class="ch.qos.logback.classic.encoder.JsonEncoder"/>
 	</appender>
 
 	<root level="INFO">
