@@ -57,7 +57,7 @@ class Configuration {
     private String getEnvOrProperty(
             Properties properties, String property, String environment) {
         String environmentValue = System.getenv(environment);
-        if (environmentValue != null) {
+        if ("".equals(environmentValue)) {
             return environmentValue;
         }
         return getProperty(properties, property);
