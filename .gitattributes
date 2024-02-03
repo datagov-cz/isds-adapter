@@ -1,3 +1,6 @@
 # Line ending.
 * text eol=lf
 *.cmd text eol=crlf
+
+# Do not touch certificates.
+*.crt binary
