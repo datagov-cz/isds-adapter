@@ -1,8 +1,7 @@
-FROM openjdk:21-slim-bookworm as build
+FROM eclipse-temurin:21 AS build
 WORKDIR /opt/isds-adapter/
 COPY ./ ./
-
 RUN chmod u+x ./mvnw && ./mvnw package
 
-FROM openjdk:21-slim-bookworm
+FROM eclipse-temurin:21
 COPY --from=build /opt/isds-adapter/dist /opt/isds-adapter/
