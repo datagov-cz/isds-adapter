@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tEraseMessageIntput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tEraseMessageIntput"&gt;
  *   &lt;complexContent&gt;
@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tEraseMessageIntput", propOrder = {
@@ -40,11 +40,11 @@ public class TEraseMessageIntput {
 
     /**
      * Gets the value of the dmID property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmID() {
         return dmID;
@@ -52,11 +52,11 @@ public class TEraseMessageIntput {
 
     /**
      * Sets the value of the dmID property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmID(String value) {
         this.dmID = value;
@@ -64,7 +64,7 @@ public class TEraseMessageIntput {
 
     /**
      * Gets the value of the dmIncoming property.
-     * 
+     *
      */
     public boolean isDmIncoming() {
         return dmIncoming;
@@ -72,7 +72,7 @@ public class TEraseMessageIntput {
 
     /**
      * Sets the value of the dmIncoming property.
-     * 
+     *
      */
     public void setDmIncoming(boolean value) {
         this.dmIncoming = value;

@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tStatus complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tStatus"&gt;
  *   &lt;complexContent&gt;
@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tStatus", propOrder = {
@@ -41,11 +41,11 @@ public class TStatus {
 
     /**
      * Gets the value of the dmStatusCode property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmStatusCode() {
         return dmStatusCode;
@@ -53,11 +53,11 @@ public class TStatus {
 
     /**
      * Sets the value of the dmStatusCode property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmStatusCode(String value) {
         this.dmStatusCode = value;
@@ -65,11 +65,11 @@ public class TStatus {
 
     /**
      * Gets the value of the dmStatusMessage property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmStatusMessage() {
         return dmStatusMessage;
@@ -77,11 +77,11 @@ public class TStatus {
 
     /**
      * Sets the value of the dmStatusMessage property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmStatusMessage(String value) {
         this.dmStatusMessage = value;

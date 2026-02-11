@@ -15,11 +15,11 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * typ pro staženou DZ
- * 
+ *
  * <p>Java class for tReturnedMessage complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tReturnedMessage"&gt;
  *   &lt;complexContent&gt;
@@ -45,12 +45,13 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="dmAttachmentSize" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="dmType" type="{http://isds.czechpoint.cz/v20}tDmType" /&gt;
+ *       &lt;attribute name="specMessFlag" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tReturnedMessage", propOrder = {
@@ -82,14 +83,16 @@ public class TReturnedMessage {
     protected BigInteger dmAttachmentSize;
     @XmlAttribute(name = "dmType")
     protected String dmType;
+    @XmlAttribute(name = "specMessFlag")
+    protected BigInteger specMessFlag;
 
     /**
      * Gets the value of the dmDm property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TReturnedMessage.DmDm }
-     *     
+     *
      */
     public TReturnedMessage.DmDm getDmDm() {
         return dmDm;
@@ -97,11 +100,11 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmDm property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TReturnedMessage.DmDm }
-     *     
+     *
      */
     public void setDmDm(TReturnedMessage.DmDm value) {
         this.dmDm = value;
@@ -109,11 +112,11 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmHash property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link THash }
-     *     
+     *
      */
     public THash getDmHash() {
         return dmHash;
@@ -121,11 +124,11 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmHash property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link THash }
-     *     
+     *
      */
     public void setDmHash(THash value) {
         this.dmHash = value;
@@ -133,7 +136,7 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmQTimestamp property.
-     * 
+     *
      * @return
      *     possible object is
      *     byte[]
@@ -144,7 +147,7 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmQTimestamp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     byte[]
@@ -155,11 +158,11 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmDeliveryTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmDeliveryTime() {
         return dmDeliveryTime;
@@ -167,11 +170,11 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmDeliveryTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmDeliveryTime(XMLGregorianCalendar value) {
         this.dmDeliveryTime = value;
@@ -179,11 +182,11 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmAcceptanceTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmAcceptanceTime() {
         return dmAcceptanceTime;
@@ -191,11 +194,11 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmAcceptanceTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmAcceptanceTime(XMLGregorianCalendar value) {
         this.dmAcceptanceTime = value;
@@ -203,11 +206,11 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmMessageStatus property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmMessageStatus() {
         return dmMessageStatus;
@@ -215,11 +218,11 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmMessageStatus property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmMessageStatus(BigInteger value) {
         this.dmMessageStatus = value;
@@ -227,11 +230,11 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmAttachmentSize property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmAttachmentSize() {
         return dmAttachmentSize;
@@ -239,11 +242,11 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmAttachmentSize property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmAttachmentSize(BigInteger value) {
         this.dmAttachmentSize = value;
@@ -251,11 +254,11 @@ public class TReturnedMessage {
 
     /**
      * Gets the value of the dmType property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmType() {
         return dmType;
@@ -263,22 +266,46 @@ public class TReturnedMessage {
 
     /**
      * Sets the value of the dmType property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmType(String value) {
         this.dmType = value;
     }
 
+    /**
+     * Gets the value of the specMessFlag property.
+     *
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *
+     */
+    public BigInteger getSpecMessFlag() {
+        return specMessFlag;
+    }
+
+    /**
+     * Sets the value of the specMessFlag property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *
+     */
+    public void setSpecMessFlag(BigInteger value) {
+        this.specMessFlag = value;
+    }
+
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType&gt;
      *   &lt;complexContent&gt;
@@ -291,8 +318,8 @@ public class TReturnedMessage {
      *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -382,11 +409,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmID property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmID() {
             return dmID;
@@ -394,11 +421,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmID property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmID(String value) {
             this.dmID = value;
@@ -406,11 +433,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dbIDSender property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDbIDSender() {
             return dbIDSender;
@@ -418,11 +445,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dbIDSender property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDbIDSender(String value) {
             this.dbIDSender = value;
@@ -430,11 +457,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSender property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmSender() {
             return dmSender;
@@ -442,11 +469,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSender property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmSender(String value) {
             this.dmSender = value;
@@ -454,11 +481,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSenderAddress property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmSenderAddress() {
             return dmSenderAddress;
@@ -466,11 +493,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSenderAddress property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmSenderAddress(String value) {
             this.dmSenderAddress = value;
@@ -478,7 +505,7 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSenderType property.
-         * 
+         *
          */
         public int getDmSenderType() {
             return dmSenderType;
@@ -486,7 +513,7 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSenderType property.
-         * 
+         *
          */
         public void setDmSenderType(int value) {
             this.dmSenderType = value;
@@ -494,11 +521,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmRecipient property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmRecipient() {
             return dmRecipient;
@@ -506,11 +533,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmRecipient property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmRecipient(String value) {
             this.dmRecipient = value;
@@ -518,11 +545,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmRecipientAddress property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmRecipientAddress() {
             return dmRecipientAddress;
@@ -530,11 +557,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmRecipientAddress property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmRecipientAddress(String value) {
             this.dmRecipientAddress = value;
@@ -542,11 +569,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmAmbiguousRecipient property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-         *     
+         *
          */
         public JAXBElement<Boolean> getDmAmbiguousRecipient() {
             return dmAmbiguousRecipient;
@@ -554,11 +581,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmAmbiguousRecipient property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-         *     
+         *
          */
         public void setDmAmbiguousRecipient(JAXBElement<Boolean> value) {
             this.dmAmbiguousRecipient = value;
@@ -566,11 +593,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSenderOrgUnit property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmSenderOrgUnit() {
             return dmSenderOrgUnit;
@@ -578,11 +605,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSenderOrgUnit property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmSenderOrgUnit(String value) {
             this.dmSenderOrgUnit = value;
@@ -590,11 +617,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSenderOrgUnitNum property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public BigInteger getDmSenderOrgUnitNum() {
             return dmSenderOrgUnitNum;
@@ -602,11 +629,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSenderOrgUnitNum property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public void setDmSenderOrgUnitNum(BigInteger value) {
             this.dmSenderOrgUnitNum = value;
@@ -614,11 +641,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dbIDRecipient property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDbIDRecipient() {
             return dbIDRecipient;
@@ -626,11 +653,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dbIDRecipient property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDbIDRecipient(String value) {
             this.dbIDRecipient = value;
@@ -638,11 +665,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmRecipientOrgUnit property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmRecipientOrgUnit() {
             return dmRecipientOrgUnit;
@@ -650,11 +677,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmRecipientOrgUnit property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmRecipientOrgUnit(String value) {
             this.dmRecipientOrgUnit = value;
@@ -662,11 +689,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmRecipientOrgUnitNum property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public BigInteger getDmRecipientOrgUnitNum() {
             return dmRecipientOrgUnitNum;
@@ -674,11 +701,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmRecipientOrgUnitNum property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public void setDmRecipientOrgUnitNum(BigInteger value) {
             this.dmRecipientOrgUnitNum = value;
@@ -686,11 +713,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmToHands property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmToHands() {
             return dmToHands;
@@ -698,11 +725,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmToHands property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmToHands(String value) {
             this.dmToHands = value;
@@ -710,11 +737,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmAnnotation property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmAnnotation() {
             return dmAnnotation;
@@ -722,11 +749,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmAnnotation property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmAnnotation(String value) {
             this.dmAnnotation = value;
@@ -734,11 +761,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmRecipientRefNumber property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmRecipientRefNumber() {
             return dmRecipientRefNumber;
@@ -746,11 +773,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmRecipientRefNumber property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmRecipientRefNumber(String value) {
             this.dmRecipientRefNumber = value;
@@ -758,11 +785,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSenderRefNumber property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmSenderRefNumber() {
             return dmSenderRefNumber;
@@ -770,11 +797,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSenderRefNumber property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmSenderRefNumber(String value) {
             this.dmSenderRefNumber = value;
@@ -782,11 +809,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmRecipientIdent property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmRecipientIdent() {
             return dmRecipientIdent;
@@ -794,11 +821,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmRecipientIdent property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmRecipientIdent(String value) {
             this.dmRecipientIdent = value;
@@ -806,11 +833,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmSenderIdent property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmSenderIdent() {
             return dmSenderIdent;
@@ -818,11 +845,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmSenderIdent property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmSenderIdent(String value) {
             this.dmSenderIdent = value;
@@ -830,11 +857,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmLegalTitleLaw property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public BigInteger getDmLegalTitleLaw() {
             return dmLegalTitleLaw;
@@ -842,11 +869,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmLegalTitleLaw property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public void setDmLegalTitleLaw(BigInteger value) {
             this.dmLegalTitleLaw = value;
@@ -854,11 +881,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmLegalTitleYear property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public BigInteger getDmLegalTitleYear() {
             return dmLegalTitleYear;
@@ -866,11 +893,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmLegalTitleYear property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link BigInteger }
-         *     
+         *
          */
         public void setDmLegalTitleYear(BigInteger value) {
             this.dmLegalTitleYear = value;
@@ -878,11 +905,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmLegalTitleSect property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmLegalTitleSect() {
             return dmLegalTitleSect;
@@ -890,11 +917,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmLegalTitleSect property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmLegalTitleSect(String value) {
             this.dmLegalTitleSect = value;
@@ -902,11 +929,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmLegalTitlePar property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmLegalTitlePar() {
             return dmLegalTitlePar;
@@ -914,11 +941,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmLegalTitlePar property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmLegalTitlePar(String value) {
             this.dmLegalTitlePar = value;
@@ -926,11 +953,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmLegalTitlePoint property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmLegalTitlePoint() {
             return dmLegalTitlePoint;
@@ -938,11 +965,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmLegalTitlePoint property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmLegalTitlePoint(String value) {
             this.dmLegalTitlePoint = value;
@@ -950,11 +977,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmPersonalDelivery property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link Boolean }
-         *     
+         *
          */
         public Boolean isDmPersonalDelivery() {
             return dmPersonalDelivery;
@@ -962,11 +989,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmPersonalDelivery property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link Boolean }
-         *     
+         *
          */
         public void setDmPersonalDelivery(Boolean value) {
             this.dmPersonalDelivery = value;
@@ -974,11 +1001,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmAllowSubstDelivery property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link Boolean }
-         *     
+         *
          */
         public Boolean isDmAllowSubstDelivery() {
             return dmAllowSubstDelivery;
@@ -986,11 +1013,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmAllowSubstDelivery property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link Boolean }
-         *     
+         *
          */
         public void setDmAllowSubstDelivery(Boolean value) {
             this.dmAllowSubstDelivery = value;
@@ -998,11 +1025,11 @@ public class TReturnedMessage {
 
         /**
          * Gets the value of the dmFiles property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link TFilesArray }
-         *     
+         *
          */
         public TFilesArray getDmFiles() {
             return dmFiles;
@@ -1010,11 +1037,11 @@ public class TReturnedMessage {
 
         /**
          * Sets the value of the dmFiles property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link TFilesArray }
-         *     
+         *
          */
         public void setDmFiles(TFilesArray value) {
             this.dmFiles = value;

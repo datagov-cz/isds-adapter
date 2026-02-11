@@ -12,9 +12,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tFilesArray complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tFilesArray"&gt;
  *   &lt;complexContent&gt;
@@ -48,8 +48,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tFilesArray", propOrder = {
@@ -62,25 +62,25 @@ public class TFilesArray {
 
     /**
      * Gets the value of the dmFile property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the Jakarta XML Binding object.
      * This is why there is not a <CODE>set</CODE> method for the dmFile property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getDmFile().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TFilesArray.DmFile }
-     * 
-     * 
+     *
+     *
      */
     public List<TFilesArray.DmFile> getDmFile() {
         if (dmFile == null) {
@@ -92,9 +92,9 @@ public class TFilesArray {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType&gt;
      *   &lt;complexContent&gt;
@@ -118,8 +118,8 @@ public class TFilesArray {
      *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
@@ -142,11 +142,11 @@ public class TFilesArray {
 
         /**
          * Gets the value of the dmMimeType property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmMimeType() {
             return dmMimeType;
@@ -154,11 +154,11 @@ public class TFilesArray {
 
         /**
          * Sets the value of the dmMimeType property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmMimeType(String value) {
             this.dmMimeType = value;
@@ -166,11 +166,11 @@ public class TFilesArray {
 
         /**
          * Gets the value of the dmFileMetaType property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmFileMetaType() {
             return dmFileMetaType;
@@ -178,11 +178,11 @@ public class TFilesArray {
 
         /**
          * Sets the value of the dmFileMetaType property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmFileMetaType(String value) {
             this.dmFileMetaType = value;
@@ -190,11 +190,11 @@ public class TFilesArray {
 
         /**
          * Gets the value of the dmFileGuid property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmFileGuid() {
             return dmFileGuid;
@@ -202,11 +202,11 @@ public class TFilesArray {
 
         /**
          * Sets the value of the dmFileGuid property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmFileGuid(String value) {
             this.dmFileGuid = value;
@@ -214,11 +214,11 @@ public class TFilesArray {
 
         /**
          * Gets the value of the dmUpFileGuid property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmUpFileGuid() {
             return dmUpFileGuid;
@@ -226,11 +226,11 @@ public class TFilesArray {
 
         /**
          * Sets the value of the dmUpFileGuid property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmUpFileGuid(String value) {
             this.dmUpFileGuid = value;
@@ -238,11 +238,11 @@ public class TFilesArray {
 
         /**
          * Gets the value of the dmFileDescr property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmFileDescr() {
             return dmFileDescr;
@@ -250,11 +250,11 @@ public class TFilesArray {
 
         /**
          * Sets the value of the dmFileDescr property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmFileDescr(String value) {
             this.dmFileDescr = value;
@@ -262,11 +262,11 @@ public class TFilesArray {
 
         /**
          * Gets the value of the dmFormat property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmFormat() {
             return dmFormat;
@@ -274,11 +274,11 @@ public class TFilesArray {
 
         /**
          * Sets the value of the dmFormat property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmFormat(String value) {
             this.dmFormat = value;

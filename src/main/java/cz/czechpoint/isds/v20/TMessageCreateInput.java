@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tMessageCreateInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tMessageCreateInput"&gt;
  *   &lt;complexContent&gt;
@@ -31,8 +31,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tMessageCreateInput", propOrder = {
@@ -48,11 +48,11 @@ public class TMessageCreateInput {
 
     /**
      * Gets the value of the dmEnvelope property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TMessageCreateInput.DmEnvelope }
-     *     
+     *
      */
     public TMessageCreateInput.DmEnvelope getDmEnvelope() {
         return dmEnvelope;
@@ -60,11 +60,11 @@ public class TMessageCreateInput {
 
     /**
      * Sets the value of the dmEnvelope property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TMessageCreateInput.DmEnvelope }
-     *     
+     *
      */
     public void setDmEnvelope(TMessageCreateInput.DmEnvelope value) {
         this.dmEnvelope = value;
@@ -72,11 +72,11 @@ public class TMessageCreateInput {
 
     /**
      * Gets the value of the dmFiles property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TFilesArray }
-     *     
+     *
      */
     public TFilesArray getDmFiles() {
         return dmFiles;
@@ -84,11 +84,11 @@ public class TMessageCreateInput {
 
     /**
      * Sets the value of the dmFiles property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TFilesArray }
-     *     
+     *
      */
     public void setDmFiles(TFilesArray value) {
         this.dmFiles = value;
@@ -97,9 +97,9 @@ public class TMessageCreateInput {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType&gt;
      *   &lt;complexContent&gt;
@@ -108,8 +108,8 @@ public class TMessageCreateInput {
      *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")

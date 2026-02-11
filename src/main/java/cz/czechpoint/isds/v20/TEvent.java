@@ -11,9 +11,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tEvent complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tEvent"&gt;
  *   &lt;complexContent&gt;
@@ -25,8 +25,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tEvent", propOrder = {
@@ -43,11 +43,11 @@ public class TEvent {
 
     /**
      * Gets the value of the dmEventTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmEventTime() {
         return dmEventTime;
@@ -55,11 +55,11 @@ public class TEvent {
 
     /**
      * Sets the value of the dmEventTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmEventTime(XMLGregorianCalendar value) {
         this.dmEventTime = value;
@@ -67,11 +67,11 @@ public class TEvent {
 
     /**
      * Gets the value of the dmEventDescr property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmEventDescr() {
         return dmEventDescr;
@@ -79,11 +79,11 @@ public class TEvent {
 
     /**
      * Sets the value of the dmEventDescr property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmEventDescr(String value) {
         this.dmEventDescr = value;

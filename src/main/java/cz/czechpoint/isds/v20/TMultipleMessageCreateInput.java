@@ -10,9 +10,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tMultipleMessageCreateInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tMultipleMessageCreateInput"&gt;
  *   &lt;complexContent&gt;
@@ -34,8 +34,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tMultipleMessageCreateInput", propOrder = {
@@ -54,11 +54,11 @@ public class TMultipleMessageCreateInput {
 
     /**
      * Gets the value of the dmRecipients property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TMultipleMessageRecipients }
-     *     
+     *
      */
     public TMultipleMessageRecipients getDmRecipients() {
         return dmRecipients;
@@ -66,11 +66,11 @@ public class TMultipleMessageCreateInput {
 
     /**
      * Sets the value of the dmRecipients property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TMultipleMessageRecipients }
-     *     
+     *
      */
     public void setDmRecipients(TMultipleMessageRecipients value) {
         this.dmRecipients = value;
@@ -78,11 +78,11 @@ public class TMultipleMessageCreateInput {
 
     /**
      * Gets the value of the dmEnvelope property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TMultipleMessageCreateInput.DmEnvelope }
-     *     
+     *
      */
     public TMultipleMessageCreateInput.DmEnvelope getDmEnvelope() {
         return dmEnvelope;
@@ -90,11 +90,11 @@ public class TMultipleMessageCreateInput {
 
     /**
      * Sets the value of the dmEnvelope property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TMultipleMessageCreateInput.DmEnvelope }
-     *     
+     *
      */
     public void setDmEnvelope(TMultipleMessageCreateInput.DmEnvelope value) {
         this.dmEnvelope = value;
@@ -102,11 +102,11 @@ public class TMultipleMessageCreateInput {
 
     /**
      * Gets the value of the dmFiles property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TFilesArray }
-     *     
+     *
      */
     public TFilesArray getDmFiles() {
         return dmFiles;
@@ -114,11 +114,11 @@ public class TMultipleMessageCreateInput {
 
     /**
      * Sets the value of the dmFiles property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TFilesArray }
-     *     
+     *
      */
     public void setDmFiles(TFilesArray value) {
         this.dmFiles = value;
@@ -127,9 +127,9 @@ public class TMultipleMessageCreateInput {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType&gt;
      *   &lt;complexContent&gt;
@@ -139,8 +139,8 @@ public class TMultipleMessageCreateInput {
      *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
@@ -153,11 +153,11 @@ public class TMultipleMessageCreateInput {
 
         /**
          * Gets the value of the dmType property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getDmType() {
             return dmType;
@@ -165,11 +165,11 @@ public class TMultipleMessageCreateInput {
 
         /**
          * Sets the value of the dmType property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setDmType(String value) {
             this.dmType = value;

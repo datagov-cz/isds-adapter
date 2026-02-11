@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tPickUpAsyncInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tPickUpAsyncInput"&gt;
  *   &lt;complexContent&gt;
@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tPickUpAsyncInput", propOrder = {
@@ -41,11 +41,11 @@ public class TPickUpAsyncInput {
 
     /**
      * Gets the value of the asyncID property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAsyncID() {
         return asyncID;
@@ -53,11 +53,11 @@ public class TPickUpAsyncInput {
 
     /**
      * Sets the value of the asyncID property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAsyncID(String value) {
         this.asyncID = value;
@@ -65,11 +65,11 @@ public class TPickUpAsyncInput {
 
     /**
      * Gets the value of the asyncReqType property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAsyncReqType() {
         return asyncReqType;
@@ -77,11 +77,11 @@ public class TPickUpAsyncInput {
 
     /**
      * Sets the value of the asyncReqType property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAsyncReqType(String value) {
         this.asyncReqType = value;

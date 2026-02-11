@@ -5,17 +5,19 @@ import java.math.BigInteger;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementRef;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlValue;
 
 
 /**
  * <p>Java class for tMultipleMessageEnvelopeSub complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tMultipleMessageEnvelopeSub"&gt;
  *   &lt;complexContent&gt;
@@ -23,14 +25,22 @@ import jakarta.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;group ref="{http://isds.czechpoint.cz/v20}gMultipleMessageEnvelopeSub"/&gt;
  *         &lt;element name="dmOVM" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="dmPublishOwnID" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dmPublishOwnID" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;boolean"&gt;
+ *                 &lt;attribute name="IdLevel" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tMultipleMessageEnvelopeSub", propOrder = {
@@ -87,15 +97,15 @@ public class TMultipleMessageEnvelopeSub {
     @XmlElementRef(name = "dmOVM", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
     protected JAXBElement<Boolean> dmOVM;
     @XmlElementRef(name = "dmPublishOwnID", namespace = "http://isds.czechpoint.cz/v20", type = JAXBElement.class, required = false)
-    protected JAXBElement<Boolean> dmPublishOwnID;
+    protected JAXBElement<TMultipleMessageEnvelopeSub.DmPublishOwnID> dmPublishOwnID;
 
     /**
      * Gets the value of the dmSenderOrgUnit property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmSenderOrgUnit() {
         return dmSenderOrgUnit;
@@ -103,11 +113,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmSenderOrgUnit property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmSenderOrgUnit(String value) {
         this.dmSenderOrgUnit = value;
@@ -115,11 +125,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmSenderOrgUnitNum property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmSenderOrgUnitNum() {
         return dmSenderOrgUnitNum;
@@ -127,11 +137,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmSenderOrgUnitNum property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmSenderOrgUnitNum(BigInteger value) {
         this.dmSenderOrgUnitNum = value;
@@ -139,11 +149,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmAnnotation property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmAnnotation() {
         return dmAnnotation;
@@ -151,11 +161,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmAnnotation property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmAnnotation(String value) {
         this.dmAnnotation = value;
@@ -163,11 +173,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmRecipientRefNumber property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmRecipientRefNumber() {
         return dmRecipientRefNumber;
@@ -175,11 +185,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmRecipientRefNumber property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmRecipientRefNumber(String value) {
         this.dmRecipientRefNumber = value;
@@ -187,11 +197,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmSenderRefNumber property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmSenderRefNumber() {
         return dmSenderRefNumber;
@@ -199,11 +209,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmSenderRefNumber property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmSenderRefNumber(String value) {
         this.dmSenderRefNumber = value;
@@ -211,11 +221,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmRecipientIdent property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmRecipientIdent() {
         return dmRecipientIdent;
@@ -223,11 +233,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmRecipientIdent property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmRecipientIdent(String value) {
         this.dmRecipientIdent = value;
@@ -235,11 +245,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmSenderIdent property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmSenderIdent() {
         return dmSenderIdent;
@@ -247,11 +257,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmSenderIdent property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmSenderIdent(String value) {
         this.dmSenderIdent = value;
@@ -259,11 +269,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmLegalTitleLaw property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmLegalTitleLaw() {
         return dmLegalTitleLaw;
@@ -271,11 +281,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmLegalTitleLaw property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmLegalTitleLaw(BigInteger value) {
         this.dmLegalTitleLaw = value;
@@ -283,11 +293,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmLegalTitleYear property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmLegalTitleYear() {
         return dmLegalTitleYear;
@@ -295,11 +305,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmLegalTitleYear property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmLegalTitleYear(BigInteger value) {
         this.dmLegalTitleYear = value;
@@ -307,11 +317,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmLegalTitleSect property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmLegalTitleSect() {
         return dmLegalTitleSect;
@@ -319,11 +329,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmLegalTitleSect property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmLegalTitleSect(String value) {
         this.dmLegalTitleSect = value;
@@ -331,11 +341,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmLegalTitlePar property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmLegalTitlePar() {
         return dmLegalTitlePar;
@@ -343,11 +353,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmLegalTitlePar property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmLegalTitlePar(String value) {
         this.dmLegalTitlePar = value;
@@ -355,11 +365,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmLegalTitlePoint property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmLegalTitlePoint() {
         return dmLegalTitlePoint;
@@ -367,11 +377,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmLegalTitlePoint property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmLegalTitlePoint(String value) {
         this.dmLegalTitlePoint = value;
@@ -379,11 +389,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmPersonalDelivery property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isDmPersonalDelivery() {
         return dmPersonalDelivery;
@@ -391,11 +401,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmPersonalDelivery property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
      */
     public void setDmPersonalDelivery(Boolean value) {
         this.dmPersonalDelivery = value;
@@ -403,11 +413,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmAllowSubstDelivery property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isDmAllowSubstDelivery() {
         return dmAllowSubstDelivery;
@@ -415,11 +425,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmAllowSubstDelivery property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
      */
     public void setDmAllowSubstDelivery(Boolean value) {
         this.dmAllowSubstDelivery = value;
@@ -427,11 +437,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmOVM property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
+     *
      */
     public JAXBElement<Boolean> getDmOVM() {
         return dmOVM;
@@ -439,11 +449,11 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Sets the value of the dmOVM property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
+     *
      */
     public void setDmOVM(JAXBElement<Boolean> value) {
         this.dmOVM = value;
@@ -451,26 +461,97 @@ public class TMultipleMessageEnvelopeSub {
 
     /**
      * Gets the value of the dmPublishOwnID property.
-     * 
+     *
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
+     *     {@link JAXBElement }{@code <}{@link TMultipleMessageEnvelopeSub.DmPublishOwnID }{@code >}
+     *
      */
-    public JAXBElement<Boolean> getDmPublishOwnID() {
+    public JAXBElement<TMultipleMessageEnvelopeSub.DmPublishOwnID> getDmPublishOwnID() {
         return dmPublishOwnID;
     }
 
     /**
      * Sets the value of the dmPublishOwnID property.
-     * 
+     *
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     *     
+     *     {@link JAXBElement }{@code <}{@link TMultipleMessageEnvelopeSub.DmPublishOwnID }{@code >}
+     *
      */
-    public void setDmPublishOwnID(JAXBElement<Boolean> value) {
+    public void setDmPublishOwnID(JAXBElement<TMultipleMessageEnvelopeSub.DmPublishOwnID> value) {
         this.dmPublishOwnID = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     *
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;boolean"&gt;
+     *       &lt;attribute name="IdLevel" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "value"
+    })
+    public static class DmPublishOwnID {
+
+        @XmlValue
+        protected boolean value;
+        @XmlAttribute(name = "IdLevel")
+        protected BigInteger idLevel;
+
+        /**
+         * Gets the value of the value property.
+         *
+         */
+        public boolean isValue() {
+            return value;
+        }
+
+        /**
+         * Sets the value of the value property.
+         *
+         */
+        public void setValue(boolean value) {
+            this.value = value;
+        }
+
+        /**
+         * Gets the value of the idLevel property.
+         *
+         * @return
+         *     possible object is
+         *     {@link BigInteger }
+         *
+         */
+        public BigInteger getIdLevel() {
+            return idLevel;
+        }
+
+        /**
+         * Sets the value of the idLevel property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link BigInteger }
+         *
+         */
+        public void setIdLevel(BigInteger value) {
+            this.idLevel = value;
+        }
+
     }
 
 }

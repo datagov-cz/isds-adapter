@@ -12,9 +12,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tGetListOfErasedInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tGetListOfErasedInput"&gt;
  *   &lt;complexContent&gt;
@@ -51,8 +51,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tGetListOfErasedInput", propOrder = {
@@ -80,11 +80,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Gets the value of the dmFromDate property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmFromDate() {
         return dmFromDate;
@@ -92,11 +92,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Sets the value of the dmFromDate property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmFromDate(XMLGregorianCalendar value) {
         this.dmFromDate = value;
@@ -104,11 +104,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Gets the value of the dmToDate property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmToDate() {
         return dmToDate;
@@ -116,11 +116,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Sets the value of the dmToDate property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmToDate(XMLGregorianCalendar value) {
         this.dmToDate = value;
@@ -128,11 +128,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Gets the value of the dmYear property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmYear() {
         return dmYear;
@@ -140,11 +140,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Sets the value of the dmYear property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmYear(BigInteger value) {
         this.dmYear = value;
@@ -152,11 +152,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Gets the value of the dmMonth property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmMonth() {
         return dmMonth;
@@ -164,11 +164,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Sets the value of the dmMonth property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmMonth(BigInteger value) {
         this.dmMonth = value;
@@ -176,11 +176,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Gets the value of the dmMessageType property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmMessageType() {
         return dmMessageType;
@@ -188,11 +188,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Sets the value of the dmMessageType property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmMessageType(String value) {
         this.dmMessageType = value;
@@ -200,11 +200,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Gets the value of the dmOutFormat property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmOutFormat() {
         return dmOutFormat;
@@ -212,11 +212,11 @@ public class TGetListOfErasedInput {
 
     /**
      * Sets the value of the dmOutFormat property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmOutFormat(String value) {
         this.dmOutFormat = value;

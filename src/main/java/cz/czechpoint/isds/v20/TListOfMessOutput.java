@@ -11,9 +11,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tListOfMessOutput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tListOfMessOutput"&gt;
  *   &lt;complexContent&gt;
@@ -26,8 +26,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tListOfMessOutput", propOrder = {
@@ -43,11 +43,11 @@ public class TListOfMessOutput {
 
     /**
      * Gets the value of the dmRecords property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link TRecordsArray }{@code >}
-     *     
+     *
      */
     public JAXBElement<TRecordsArray> getDmRecords() {
         return dmRecords;
@@ -55,11 +55,11 @@ public class TListOfMessOutput {
 
     /**
      * Sets the value of the dmRecords property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link TRecordsArray }{@code >}
-     *     
+     *
      */
     public void setDmRecords(JAXBElement<TRecordsArray> value) {
         this.dmRecords = value;
@@ -67,11 +67,11 @@ public class TListOfMessOutput {
 
     /**
      * Gets the value of the dmStatus property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TStatus }
-     *     
+     *
      */
     public TStatus getDmStatus() {
         return dmStatus;
@@ -79,11 +79,11 @@ public class TListOfMessOutput {
 
     /**
      * Sets the value of the dmStatus property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TStatus }
-     *     
+     *
      */
     public void setDmStatus(TStatus value) {
         this.dmStatus = value;

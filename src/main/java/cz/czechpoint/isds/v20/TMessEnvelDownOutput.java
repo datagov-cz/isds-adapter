@@ -11,9 +11,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tMessEnvelDownOutput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tMessEnvelDownOutput"&gt;
  *   &lt;complexContent&gt;
@@ -26,8 +26,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tMessEnvelDownOutput", propOrder = {
@@ -43,11 +43,11 @@ public class TMessEnvelDownOutput {
 
     /**
      * Gets the value of the dmReturnedMessageEnvelope property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link TReturnedMessageEnvelope }{@code >}
-     *     
+     *
      */
     public JAXBElement<TReturnedMessageEnvelope> getDmReturnedMessageEnvelope() {
         return dmReturnedMessageEnvelope;
@@ -55,11 +55,11 @@ public class TMessEnvelDownOutput {
 
     /**
      * Sets the value of the dmReturnedMessageEnvelope property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link TReturnedMessageEnvelope }{@code >}
-     *     
+     *
      */
     public void setDmReturnedMessageEnvelope(JAXBElement<TReturnedMessageEnvelope> value) {
         this.dmReturnedMessageEnvelope = value;
@@ -67,11 +67,11 @@ public class TMessEnvelDownOutput {
 
     /**
      * Gets the value of the dmStatus property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TStatus }
-     *     
+     *
      */
     public TStatus getDmStatus() {
         return dmStatus;
@@ -79,11 +79,11 @@ public class TMessEnvelDownOutput {
 
     /**
      * Sets the value of the dmStatus property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TStatus }
-     *     
+     *
      */
     public void setDmStatus(TStatus value) {
         this.dmStatus = value;

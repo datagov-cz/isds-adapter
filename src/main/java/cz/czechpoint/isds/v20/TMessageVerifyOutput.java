@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tMessageVerifyOutput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tMessageVerifyOutput"&gt;
  *   &lt;complexContent&gt;
@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tMessageVerifyOutput", propOrder = {
@@ -40,11 +40,11 @@ public class TMessageVerifyOutput {
 
     /**
      * Gets the value of the dmHash property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link THash }
-     *     
+     *
      */
     public THash getDmHash() {
         return dmHash;
@@ -52,11 +52,11 @@ public class TMessageVerifyOutput {
 
     /**
      * Sets the value of the dmHash property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link THash }
-     *     
+     *
      */
     public void setDmHash(THash value) {
         this.dmHash = value;
@@ -64,11 +64,11 @@ public class TMessageVerifyOutput {
 
     /**
      * Gets the value of the dmStatus property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TStatus }
-     *     
+     *
      */
     public TStatus getDmStatus() {
         return dmStatus;
@@ -76,11 +76,11 @@ public class TMessageVerifyOutput {
 
     /**
      * Sets the value of the dmStatus property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TStatus }
-     *     
+     *
      */
     public void setDmStatus(TStatus value) {
         this.dmStatus = value;

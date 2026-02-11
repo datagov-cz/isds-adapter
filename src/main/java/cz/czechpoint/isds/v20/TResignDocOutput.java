@@ -11,9 +11,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tResignDocOutput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tResignDocOutput"&gt;
  *   &lt;complexContent&gt;
@@ -27,8 +27,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tResignDocOutput", propOrder = {
@@ -47,7 +47,7 @@ public class TResignDocOutput {
 
     /**
      * Gets the value of the dmResultDoc property.
-     * 
+     *
      * @return
      *     possible object is
      *     byte[]
@@ -58,7 +58,7 @@ public class TResignDocOutput {
 
     /**
      * Sets the value of the dmResultDoc property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     byte[]
@@ -69,11 +69,11 @@ public class TResignDocOutput {
 
     /**
      * Gets the value of the dmValidTo property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmValidTo() {
         return dmValidTo;
@@ -81,11 +81,11 @@ public class TResignDocOutput {
 
     /**
      * Sets the value of the dmValidTo property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmValidTo(XMLGregorianCalendar value) {
         this.dmValidTo = value;
@@ -93,11 +93,11 @@ public class TResignDocOutput {
 
     /**
      * Gets the value of the dmStatus property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TStatus }
-     *     
+     *
      */
     public TStatus getDmStatus() {
         return dmStatus;
@@ -105,11 +105,11 @@ public class TResignDocOutput {
 
     /**
      * Sets the value of the dmStatus property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TStatus }
-     *     
+     *
      */
     public void setDmStatus(TStatus value) {
         this.dmStatus = value;

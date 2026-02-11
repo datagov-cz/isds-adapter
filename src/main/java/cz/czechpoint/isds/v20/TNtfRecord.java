@@ -12,9 +12,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tNtfRecord complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tNtfRecord"&gt;
  *   &lt;complexContent&gt;
@@ -33,8 +33,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tNtfRecord", propOrder = {
@@ -69,11 +69,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the ntfType property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getNtfType() {
         return ntfType;
@@ -81,11 +81,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the ntfType property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setNtfType(BigInteger value) {
         this.ntfType = value;
@@ -93,11 +93,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dmID property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmID() {
         return dmID;
@@ -105,11 +105,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dmID property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmID(String value) {
         this.dmID = value;
@@ -117,11 +117,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dmPersonalDelivery property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmPersonalDelivery() {
         return dmPersonalDelivery;
@@ -129,11 +129,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dmPersonalDelivery property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmPersonalDelivery(BigInteger value) {
         this.dmPersonalDelivery = value;
@@ -141,11 +141,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dmDeliveryTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmDeliveryTime() {
         return dmDeliveryTime;
@@ -153,11 +153,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dmDeliveryTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmDeliveryTime(XMLGregorianCalendar value) {
         this.dmDeliveryTime = value;
@@ -165,11 +165,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dbIDRecipient property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDbIDRecipient() {
         return dbIDRecipient;
@@ -177,11 +177,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dbIDRecipient property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDbIDRecipient(String value) {
         this.dbIDRecipient = value;
@@ -189,11 +189,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dmAnnotation property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmAnnotation() {
         return dmAnnotation;
@@ -201,11 +201,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dmAnnotation property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmAnnotation(String value) {
         this.dmAnnotation = value;
@@ -213,11 +213,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dbIDSender property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDbIDSender() {
         return dbIDSender;
@@ -225,11 +225,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dbIDSender property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDbIDSender(String value) {
         this.dbIDSender = value;
@@ -237,11 +237,11 @@ public class TNtfRecord {
 
     /**
      * Gets the value of the dmSender property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmSender() {
         return dmSender;
@@ -249,11 +249,11 @@ public class TNtfRecord {
 
     /**
      * Sets the value of the dmSender property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmSender(String value) {
         this.dmSender = value;

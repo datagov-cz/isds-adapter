@@ -11,9 +11,9 @@ import org.w3c.dom.Element;
 
 /**
  * <p>Java class for tFile complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tFile"&gt;
  *   &lt;complexContent&gt;
@@ -36,8 +36,8 @@ import org.w3c.dom.Element;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tFile", propOrder = {
@@ -54,7 +54,7 @@ public class TFile {
 
     /**
      * Gets the value of the dmEncodedContent property.
-     * 
+     *
      * @return
      *     possible object is
      *     byte[]
@@ -65,7 +65,7 @@ public class TFile {
 
     /**
      * Sets the value of the dmEncodedContent property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     byte[]
@@ -76,11 +76,11 @@ public class TFile {
 
     /**
      * Gets the value of the dmXMLContent property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TFile.DmXMLContent }
-     *     
+     *
      */
     public TFile.DmXMLContent getDmXMLContent() {
         return dmXMLContent;
@@ -88,11 +88,11 @@ public class TFile {
 
     /**
      * Sets the value of the dmXMLContent property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TFile.DmXMLContent }
-     *     
+     *
      */
     public void setDmXMLContent(TFile.DmXMLContent value) {
         this.dmXMLContent = value;
@@ -101,9 +101,9 @@ public class TFile {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType&gt;
      *   &lt;complexContent&gt;
@@ -115,8 +115,8 @@ public class TFile {
      *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -129,11 +129,11 @@ public class TFile {
 
         /**
          * Gets the value of the any property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link Element }
-         *     
+         *
          */
         public Element getAny() {
             return any;
@@ -141,11 +141,11 @@ public class TFile {
 
         /**
          * Sets the value of the any property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link Element }
-         *     
+         *
          */
         public void setAny(Element value) {
             this.any = value;

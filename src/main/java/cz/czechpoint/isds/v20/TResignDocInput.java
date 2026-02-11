@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tResignDocInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tResignDocInput"&gt;
  *   &lt;complexContent&gt;
@@ -23,8 +23,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tResignDocInput", propOrder = {
@@ -37,7 +37,7 @@ public class TResignDocInput {
 
     /**
      * Gets the value of the dmDoc property.
-     * 
+     *
      * @return
      *     possible object is
      *     byte[]
@@ -48,7 +48,7 @@ public class TResignDocInput {
 
     /**
      * Sets the value of the dmDoc property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     byte[]

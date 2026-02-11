@@ -11,9 +11,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tGetStateChangesInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tGetStateChangesInput"&gt;
  *   &lt;complexContent&gt;
@@ -26,8 +26,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tGetStateChangesInput", propOrder = {
@@ -45,11 +45,11 @@ public class TGetStateChangesInput {
 
     /**
      * Gets the value of the dmFromTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmFromTime() {
         return dmFromTime;
@@ -57,11 +57,11 @@ public class TGetStateChangesInput {
 
     /**
      * Sets the value of the dmFromTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmFromTime(XMLGregorianCalendar value) {
         this.dmFromTime = value;
@@ -69,11 +69,11 @@ public class TGetStateChangesInput {
 
     /**
      * Gets the value of the dmToTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmToTime() {
         return dmToTime;
@@ -81,11 +81,11 @@ public class TGetStateChangesInput {
 
     /**
      * Sets the value of the dmToTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmToTime(XMLGregorianCalendar value) {
         this.dmToTime = value;

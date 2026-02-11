@@ -11,9 +11,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tStateChangesRecord complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tStateChangesRecord"&gt;
  *   &lt;complexContent&gt;
@@ -27,8 +27,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tStateChangesRecord", propOrder = {
@@ -47,11 +47,11 @@ public class TStateChangesRecord {
 
     /**
      * Gets the value of the dmID property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmID() {
         return dmID;
@@ -59,11 +59,11 @@ public class TStateChangesRecord {
 
     /**
      * Sets the value of the dmID property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmID(String value) {
         this.dmID = value;
@@ -71,11 +71,11 @@ public class TStateChangesRecord {
 
     /**
      * Gets the value of the dmEventTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmEventTime() {
         return dmEventTime;
@@ -83,11 +83,11 @@ public class TStateChangesRecord {
 
     /**
      * Sets the value of the dmEventTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmEventTime(XMLGregorianCalendar value) {
         this.dmEventTime = value;
@@ -95,7 +95,7 @@ public class TStateChangesRecord {
 
     /**
      * Gets the value of the dmMessageStatus property.
-     * 
+     *
      */
     public int getDmMessageStatus() {
         return dmMessageStatus;
@@ -103,7 +103,7 @@ public class TStateChangesRecord {
 
     /**
      * Sets the value of the dmMessageStatus property.
-     * 
+     *
      */
     public void setDmMessageStatus(int value) {
         this.dmMessageStatus = value;

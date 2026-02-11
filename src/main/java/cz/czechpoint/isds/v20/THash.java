@@ -10,9 +10,9 @@ import jakarta.xml.bind.annotation.XmlValue;
 
 /**
  * <p>Java class for tHash complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tHash"&gt;
  *   &lt;simpleContent&gt;
@@ -22,8 +22,8 @@ import jakarta.xml.bind.annotation.XmlValue;
  *   &lt;/simpleContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tHash", propOrder = {
@@ -38,7 +38,7 @@ public class THash {
 
     /**
      * Gets the value of the value property.
-     * 
+     *
      * @return
      *     possible object is
      *     byte[]
@@ -49,7 +49,7 @@ public class THash {
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     byte[]
@@ -60,11 +60,11 @@ public class THash {
 
     /**
      * Gets the value of the algorithm property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAlgorithm() {
         return algorithm;
@@ -72,11 +72,11 @@ public class THash {
 
     /**
      * Sets the value of the algorithm property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAlgorithm(String value) {
         this.algorithm = value;

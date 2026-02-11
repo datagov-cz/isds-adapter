@@ -12,9 +12,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tListOfFReceivedInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tListOfFReceivedInput"&gt;
  *   &lt;complexContent&gt;
@@ -31,8 +31,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tListOfFReceivedInput", propOrder = {
@@ -62,11 +62,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Gets the value of the dmFromTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmFromTime() {
         return dmFromTime;
@@ -74,11 +74,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Sets the value of the dmFromTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmFromTime(XMLGregorianCalendar value) {
         this.dmFromTime = value;
@@ -86,11 +86,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Gets the value of the dmToTime property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getDmToTime() {
         return dmToTime;
@@ -98,11 +98,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Sets the value of the dmToTime property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setDmToTime(XMLGregorianCalendar value) {
         this.dmToTime = value;
@@ -110,11 +110,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Gets the value of the dmRecipientOrgUnitNum property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmRecipientOrgUnitNum() {
         return dmRecipientOrgUnitNum;
@@ -122,11 +122,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Sets the value of the dmRecipientOrgUnitNum property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmRecipientOrgUnitNum(BigInteger value) {
         this.dmRecipientOrgUnitNum = value;
@@ -134,11 +134,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Gets the value of the dmStatusFilter property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDmStatusFilter() {
         return dmStatusFilter;
@@ -146,11 +146,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Sets the value of the dmStatusFilter property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDmStatusFilter(String value) {
         this.dmStatusFilter = value;
@@ -158,11 +158,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Gets the value of the dmOffset property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmOffset() {
         return dmOffset;
@@ -170,11 +170,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Sets the value of the dmOffset property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmOffset(BigInteger value) {
         this.dmOffset = value;
@@ -182,11 +182,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Gets the value of the dmLimit property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getDmLimit() {
         return dmLimit;
@@ -194,11 +194,11 @@ public class TListOfFReceivedInput {
 
     /**
      * Sets the value of the dmLimit property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setDmLimit(BigInteger value) {
         this.dmLimit = value;

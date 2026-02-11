@@ -9,9 +9,9 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tAuthenticateMessageInput complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tAuthenticateMessageInput"&gt;
  *   &lt;complexContent&gt;
@@ -23,8 +23,8 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tAuthenticateMessageInput", propOrder = {
@@ -37,7 +37,7 @@ public class TAuthenticateMessageInput {
 
     /**
      * Gets the value of the dmMessage property.
-     * 
+     *
      * @return
      *     possible object is
      *     byte[]
@@ -48,7 +48,7 @@ public class TAuthenticateMessageInput {
 
     /**
      * Sets the value of the dmMessage property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     byte[]

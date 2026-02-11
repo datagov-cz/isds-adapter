@@ -10,18 +10,18 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the cz.czechpoint.isds.v20 package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
+ * This object contains factory methods for each
+ * Java content interface and Java element interface
+ * generated in the cz.czechpoint.isds.v20 package.
+ * <p>An ObjectFactory allows you to programatically
+ * construct new instances of the Java representation
+ * for XML content. The Java representation of XML
+ * content can consist of schema derived interfaces
+ * and classes representing the binding of schema
+ * type definitions, element declarations and model
+ * groups.  Factory methods for each of these are
  * provided in this class.
- * 
+ *
  */
 @XmlRegistry
 public class ObjectFactory {
@@ -56,6 +56,7 @@ public class ObjectFactory {
     private final static QName _GetMessageStateChanges_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetMessageStateChanges");
     private final static QName _GetMessageStateChangesResponse_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetMessageStateChangesResponse");
     private final static QName _DummyOperation_QNAME = new QName("http://isds.czechpoint.cz/v20", "DummyOperation");
+    private final static QName _DummyOperationResponse_QNAME = new QName("http://isds.czechpoint.cz/v20", "DummyOperationResponse");
     private final static QName _GetMessageAuthor_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetMessageAuthor");
     private final static QName _GetMessageAuthorResponse_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetMessageAuthorResponse");
     private final static QName _EraseMessage_QNAME = new QName("http://isds.czechpoint.cz/v20", "EraseMessage");
@@ -68,79 +69,138 @@ public class ObjectFactory {
     private final static QName _PickUpAsyncResponseResponse_QNAME = new QName("http://isds.czechpoint.cz/v20", "PickUpAsyncResponseResponse");
     private final static QName _GetListForNotifications_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetListForNotifications");
     private final static QName _GetListForNotificationsResponse_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetListForNotificationsResponse");
+    private final static QName _CreateBigMessage_QNAME = new QName("http://isds.czechpoint.cz/v20", "CreateBigMessage");
+    private final static QName _CreateBigMessageResponse_QNAME = new QName("http://isds.czechpoint.cz/v20", "CreateBigMessageResponse");
+    private final static QName _GetMessageAuthor2_QNAME = new QName("http://isds.czechpoint.cz/v20", "GetMessageAuthor2");
+    private final static QName _AuthenticateBigMessageResponseDmAuthResult_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAuthResult");
+    private final static QName _BigMessageDownloadResponseDmReturnedMessage_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmReturnedMessage");
+    private final static QName _SentMessageEnvelopeDownloadResponseDmReturnedMessageEnvelope_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmReturnedMessageEnvelope");
+    private final static QName _TBigMessEnvelopeDmSenderOrgUnit_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderOrgUnit");
+    private final static QName _TBigMessEnvelopeDmSenderOrgUnitNum_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderOrgUnitNum");
+    private final static QName _TBigMessEnvelopeDmRecipientOrgUnit_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientOrgUnit");
+    private final static QName _TBigMessEnvelopeDmRecipientOrgUnitNum_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientOrgUnitNum");
+    private final static QName _TBigMessEnvelopeDmToHands_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmToHands");
+    private final static QName _TBigMessEnvelopeDmRecipientRefNumber_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientRefNumber");
+    private final static QName _TBigMessEnvelopeDmSenderRefNumber_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderRefNumber");
+    private final static QName _TBigMessEnvelopeDmRecipientIdent_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientIdent");
+    private final static QName _TBigMessEnvelopeDmSenderIdent_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderIdent");
+    private final static QName _TBigMessEnvelopeDmLegalTitleLaw_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitleLaw");
+    private final static QName _TBigMessEnvelopeDmLegalTitleYear_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitleYear");
+    private final static QName _TBigMessEnvelopeDmLegalTitleSect_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitleSect");
+    private final static QName _TBigMessEnvelopeDmLegalTitlePar_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitlePar");
+    private final static QName _TBigMessEnvelopeDmLegalTitlePoint_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitlePoint");
+    private final static QName _TBigMessEnvelopeDmPersonalDelivery_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmPersonalDelivery");
+    private final static QName _TBigMessEnvelopeDmAllowSubstDelivery_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAllowSubstDelivery");
+    private final static QName _TBigMessEnvelopeDmOVM_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmOVM");
+    private final static QName _TBigMessEnvelopeDmPublishOwnID_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmPublishOwnID");
     private final static QName _TRecordDbIDSender_QNAME = new QName("http://isds.czechpoint.cz/v20", "dbIDSender");
     private final static QName _TRecordDmSender_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSender");
     private final static QName _TRecordDmSenderAddress_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderAddress");
     private final static QName _TRecordDmRecipient_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipient");
     private final static QName _TRecordDmRecipientAddress_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientAddress");
     private final static QName _TRecordDmAmbiguousRecipient_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAmbiguousRecipient");
-    private final static QName _TRecordDmSenderOrgUnit_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderOrgUnit");
-    private final static QName _TRecordDmSenderOrgUnitNum_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderOrgUnitNum");
     private final static QName _TRecordDbIDRecipient_QNAME = new QName("http://isds.czechpoint.cz/v20", "dbIDRecipient");
-    private final static QName _TRecordDmRecipientOrgUnit_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientOrgUnit");
-    private final static QName _TRecordDmRecipientOrgUnitNum_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientOrgUnitNum");
-    private final static QName _TRecordDmToHands_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmToHands");
     private final static QName _TRecordDmAnnotation_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAnnotation");
-    private final static QName _TRecordDmRecipientRefNumber_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientRefNumber");
-    private final static QName _TRecordDmSenderRefNumber_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderRefNumber");
-    private final static QName _TRecordDmRecipientIdent_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecipientIdent");
-    private final static QName _TRecordDmSenderIdent_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmSenderIdent");
-    private final static QName _TRecordDmLegalTitleLaw_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitleLaw");
-    private final static QName _TRecordDmLegalTitleYear_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitleYear");
-    private final static QName _TRecordDmLegalTitleSect_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitleSect");
-    private final static QName _TRecordDmLegalTitlePar_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitlePar");
-    private final static QName _TRecordDmLegalTitlePoint_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmLegalTitlePoint");
-    private final static QName _TRecordDmPersonalDelivery_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmPersonalDelivery");
-    private final static QName _TRecordDmAllowSubstDelivery_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAllowSubstDelivery");
     private final static QName _TRecordDmAttachmentSize_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAttachmentSize");
     private final static QName _TRecordDmDeliveryTime_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmDeliveryTime");
     private final static QName _TRecordDmAcceptanceTime_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAcceptanceTime");
-    private final static QName _TMessageEnvelopeSubDmOVM_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmOVM");
-    private final static QName _TMessageEnvelopeSubDmPublishOwnID_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmPublishOwnID");
     private final static QName _TListForNotifOutputNtfRecords_QNAME = new QName("http://isds.czechpoint.cz/v20", "ntfRecords");
     private final static QName _TGetAuthorOutputUserType_QNAME = new QName("http://isds.czechpoint.cz/v20", "userType");
     private final static QName _TGetAuthorOutputAuthorName_QNAME = new QName("http://isds.czechpoint.cz/v20", "authorName");
     private final static QName _TGetStateChangesOutputDmRecords_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmRecords");
-    private final static QName _TAuthenticateMessageOutputDmAuthResult_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmAuthResult");
-    private final static QName _TMessEnvelDownOutputDmReturnedMessageEnvelope_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmReturnedMessageEnvelope");
-    private final static QName _TMessDownOutputDmReturnedMessage_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmReturnedMessage");
     private final static QName _TDeliveryMessageOutputDmDelivery_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmDelivery");
     private final static QName _TMultipleMessageCreateOutputDmMultipleStatus_QNAME = new QName("http://isds.czechpoint.cz/v20", "dmMultipleStatus");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: cz.czechpoint.isds.v20
-     * 
+     *
      */
     public ObjectFactory() {
     }
 
     /**
+     * Create an instance of {@link UploadAttachment }
+     *
+     */
+    public UploadAttachment createUploadAttachment() {
+        return new UploadAttachment();
+    }
+
+    /**
+     * Create an instance of {@link UploadAttachmentResponse }
+     *
+     */
+    public UploadAttachmentResponse createUploadAttachmentResponse() {
+        return new UploadAttachmentResponse();
+    }
+
+    /**
+     * Create an instance of {@link DownloadAttachmentResponse }
+     *
+     */
+    public DownloadAttachmentResponse createDownloadAttachmentResponse() {
+        return new DownloadAttachmentResponse();
+    }
+
+    /**
+     * Create an instance of {@link BigMessageDownloadResponse }
+     *
+     */
+    public BigMessageDownloadResponse createBigMessageDownloadResponse() {
+        return new BigMessageDownloadResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMessageAuthor2Response }
+     *
+     */
+    public GetMessageAuthor2Response createGetMessageAuthor2Response() {
+        return new GetMessageAuthor2Response();
+    }
+
+    /**
+     * Create an instance of {@link TBigMessEnvelope }
+     *
+     */
+    public TBigMessEnvelope createTBigMessEnvelope() {
+        return new TBigMessEnvelope();
+    }
+
+    /**
      * Create an instance of {@link TDelivery }
-     * 
+     *
      */
     public TDelivery createTDelivery() {
         return new TDelivery();
     }
 
     /**
-     * Create an instance of {@link TReturnedMessageEnvelope }
-     * 
+     * Create an instance of {@link TMessageEnvelopeSub }
+     *
      */
-    public TReturnedMessageEnvelope createTReturnedMessageEnvelope() {
-        return new TReturnedMessageEnvelope();
+    public TMessageEnvelopeSub createTMessageEnvelopeSub() {
+        return new TMessageEnvelopeSub();
     }
 
     /**
      * Create an instance of {@link TReturnedMessage }
-     * 
+     *
      */
     public TReturnedMessage createTReturnedMessage() {
         return new TReturnedMessage();
     }
 
     /**
+     * Create an instance of {@link TMultipleMessageEnvelopeSub }
+     *
+     */
+    public TMultipleMessageEnvelopeSub createTMultipleMessageEnvelopeSub() {
+        return new TMultipleMessageEnvelopeSub();
+    }
+
+    /**
      * Create an instance of {@link TFilesArray }
-     * 
+     *
      */
     public TFilesArray createTFilesArray() {
         return new TFilesArray();
@@ -148,15 +208,55 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TFile }
-     * 
+     *
      */
     public TFile createTFile() {
         return new TFile();
     }
 
     /**
+     * Create an instance of {@link TReturnedMessageEnvelope }
+     *
+     */
+    public TReturnedMessageEnvelope createTReturnedMessageEnvelope() {
+        return new TReturnedMessageEnvelope();
+    }
+
+    /**
+     * Create an instance of {@link GetMessageAuthor2Response.DmMessageAuthor }
+     *
+     */
+    public GetMessageAuthor2Response.DmMessageAuthor createGetMessageAuthor2ResponseDmMessageAuthor() {
+        return new GetMessageAuthor2Response.DmMessageAuthor();
+    }
+
+    /**
+     * Create an instance of {@link BigMessageDownloadResponse.DmReturnedMessage }
+     *
+     */
+    public BigMessageDownloadResponse.DmReturnedMessage createBigMessageDownloadResponseDmReturnedMessage() {
+        return new BigMessageDownloadResponse.DmReturnedMessage();
+    }
+
+    /**
+     * Create an instance of {@link TBigMessageInput }
+     *
+     */
+    public TBigMessageInput createTBigMessageInput() {
+        return new TBigMessageInput();
+    }
+
+    /**
+     * Create an instance of {@link TBigMessageInput.DmFiles }
+     *
+     */
+    public TBigMessageInput.DmFiles createTBigMessageInputDmFiles() {
+        return new TBigMessageInput.DmFiles();
+    }
+
+    /**
      * Create an instance of {@link TMessageCreateInput }
-     * 
+     *
      */
     public TMessageCreateInput createTMessageCreateInput() {
         return new TMessageCreateInput();
@@ -164,7 +264,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMultipleMessageCreateInput }
-     * 
+     *
      */
     public TMultipleMessageCreateInput createTMultipleMessageCreateInput() {
         return new TMultipleMessageCreateInput();
@@ -172,7 +272,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TStatus }
-     * 
+     *
      */
     public TStatus createTStatus() {
         return new TStatus();
@@ -180,7 +280,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMultipleMessageCreateOutput }
-     * 
+     *
      */
     public TMultipleMessageCreateOutput createTMultipleMessageCreateOutput() {
         return new TMultipleMessageCreateOutput();
@@ -188,7 +288,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMessageCreateOutput }
-     * 
+     *
      */
     public TMessageCreateOutput createTMessageCreateOutput() {
         return new TMessageCreateOutput();
@@ -196,7 +296,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TIDMessInput }
-     * 
+     *
      */
     public TIDMessInput createTIDMessInput() {
         return new TIDMessInput();
@@ -204,7 +304,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMessageVerifyOutput }
-     * 
+     *
      */
     public TMessageVerifyOutput createTMessageVerifyOutput() {
         return new TMessageVerifyOutput();
@@ -212,7 +312,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TDeliveryMessageOutput }
-     * 
+     *
      */
     public TDeliveryMessageOutput createTDeliveryMessageOutput() {
         return new TDeliveryMessageOutput();
@@ -220,7 +320,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TSignDelivMessOutput }
-     * 
+     *
      */
     public TSignDelivMessOutput createTSignDelivMessOutput() {
         return new TSignDelivMessOutput();
@@ -228,7 +328,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TListOfSentInput }
-     * 
+     *
      */
     public TListOfSentInput createTListOfSentInput() {
         return new TListOfSentInput();
@@ -236,7 +336,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TListOfMessOutput }
-     * 
+     *
      */
     public TListOfMessOutput createTListOfMessOutput() {
         return new TListOfMessOutput();
@@ -244,7 +344,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TListOfFReceivedInput }
-     * 
+     *
      */
     public TListOfFReceivedInput createTListOfFReceivedInput() {
         return new TListOfFReceivedInput();
@@ -252,7 +352,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMessDownOutput }
-     * 
+     *
      */
     public TMessDownOutput createTMessDownOutput() {
         return new TMessDownOutput();
@@ -260,7 +360,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMessEnvelDownOutput }
-     * 
+     *
      */
     public TMessEnvelDownOutput createTMessEnvelDownOutput() {
         return new TMessEnvelDownOutput();
@@ -268,7 +368,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TSignedMessDownOutput }
-     * 
+     *
      */
     public TSignedMessDownOutput createTSignedMessDownOutput() {
         return new TSignedMessDownOutput();
@@ -276,7 +376,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMarkMessOutput }
-     * 
+     *
      */
     public TMarkMessOutput createTMarkMessOutput() {
         return new TMarkMessOutput();
@@ -284,7 +384,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TAuthenticateMessageInput }
-     * 
+     *
      */
     public TAuthenticateMessageInput createTAuthenticateMessageInput() {
         return new TAuthenticateMessageInput();
@@ -292,7 +392,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TAuthenticateMessageOutput }
-     * 
+     *
      */
     public TAuthenticateMessageOutput createTAuthenticateMessageOutput() {
         return new TAuthenticateMessageOutput();
@@ -300,7 +400,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TGetStateChangesInput }
-     * 
+     *
      */
     public TGetStateChangesInput createTGetStateChangesInput() {
         return new TGetStateChangesInput();
@@ -308,15 +408,23 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TGetStateChangesOutput }
-     * 
+     *
      */
     public TGetStateChangesOutput createTGetStateChangesOutput() {
         return new TGetStateChangesOutput();
     }
 
     /**
+     * Create an instance of {@link TDummyOutput }
+     *
+     */
+    public TDummyOutput createTDummyOutput() {
+        return new TDummyOutput();
+    }
+
+    /**
      * Create an instance of {@link TGetAuthorInput }
-     * 
+     *
      */
     public TGetAuthorInput createTGetAuthorInput() {
         return new TGetAuthorInput();
@@ -324,7 +432,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TGetAuthorOutput }
-     * 
+     *
      */
     public TGetAuthorOutput createTGetAuthorOutput() {
         return new TGetAuthorOutput();
@@ -332,7 +440,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TEraseMessageIntput }
-     * 
+     *
      */
     public TEraseMessageIntput createTEraseMessageIntput() {
         return new TEraseMessageIntput();
@@ -340,7 +448,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TEraseMessageOutput }
-     * 
+     *
      */
     public TEraseMessageOutput createTEraseMessageOutput() {
         return new TEraseMessageOutput();
@@ -348,7 +456,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TResignDocInput }
-     * 
+     *
      */
     public TResignDocInput createTResignDocInput() {
         return new TResignDocInput();
@@ -356,7 +464,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TResignDocOutput }
-     * 
+     *
      */
     public TResignDocOutput createTResignDocOutput() {
         return new TResignDocOutput();
@@ -364,7 +472,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TGetListOfErasedInput }
-     * 
+     *
      */
     public TGetListOfErasedInput createTGetListOfErasedInput() {
         return new TGetListOfErasedInput();
@@ -372,7 +480,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TGetListOfErasedOutput }
-     * 
+     *
      */
     public TGetListOfErasedOutput createTGetListOfErasedOutput() {
         return new TGetListOfErasedOutput();
@@ -380,7 +488,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TPickUpAsyncInput }
-     * 
+     *
      */
     public TPickUpAsyncInput createTPickUpAsyncInput() {
         return new TPickUpAsyncInput();
@@ -388,7 +496,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TPickUpAsyncOutput }
-     * 
+     *
      */
     public TPickUpAsyncOutput createTPickUpAsyncOutput() {
         return new TPickUpAsyncOutput();
@@ -396,7 +504,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TListForNotifInput }
-     * 
+     *
      */
     public TListForNotifInput createTListForNotifInput() {
         return new TListForNotifInput();
@@ -404,7 +512,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TListForNotifOutput }
-     * 
+     *
      */
     public TListForNotifOutput createTListForNotifOutput() {
         return new TListForNotifOutput();
@@ -412,7 +520,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link RegisterForNotifications }
-     * 
+     *
      */
     public RegisterForNotifications createRegisterForNotifications() {
         return new RegisterForNotifications();
@@ -420,15 +528,167 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link RegisterForNotificationsResponse }
-     * 
+     *
      */
     public RegisterForNotificationsResponse createRegisterForNotificationsResponse() {
         return new RegisterForNotificationsResponse();
     }
 
     /**
+     * Create an instance of {@link UploadAttachment.DmFile }
+     *
+     */
+    public UploadAttachment.DmFile createUploadAttachmentDmFile() {
+        return new UploadAttachment.DmFile();
+    }
+
+    /**
+     * Create an instance of {@link UploadAttachmentResponse.DmAttHash1 }
+     *
+     */
+    public UploadAttachmentResponse.DmAttHash1 createUploadAttachmentResponseDmAttHash1() {
+        return new UploadAttachmentResponse.DmAttHash1();
+    }
+
+    /**
+     * Create an instance of {@link UploadAttachmentResponse.DmAttHash2 }
+     *
+     */
+    public UploadAttachmentResponse.DmAttHash2 createUploadAttachmentResponseDmAttHash2() {
+        return new UploadAttachmentResponse.DmAttHash2();
+    }
+
+    /**
+     * Create an instance of {@link DownloadAttachment }
+     *
+     */
+    public DownloadAttachment createDownloadAttachment() {
+        return new DownloadAttachment();
+    }
+
+    /**
+     * Create an instance of {@link DownloadAttachmentResponse.DmFile }
+     *
+     */
+    public DownloadAttachmentResponse.DmFile createDownloadAttachmentResponseDmFile() {
+        return new DownloadAttachmentResponse.DmFile();
+    }
+
+    /**
+     * Create an instance of {@link TBigMessageOutput }
+     *
+     */
+    public TBigMessageOutput createTBigMessageOutput() {
+        return new TBigMessageOutput();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticateBigMessage }
+     *
+     */
+    public AuthenticateBigMessage createAuthenticateBigMessage() {
+        return new AuthenticateBigMessage();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticateBigMessageResponse }
+     *
+     */
+    public AuthenticateBigMessageResponse createAuthenticateBigMessageResponse() {
+        return new AuthenticateBigMessageResponse();
+    }
+
+    /**
+     * Create an instance of {@link SignedBigMessageDownload }
+     *
+     */
+    public SignedBigMessageDownload createSignedBigMessageDownload() {
+        return new SignedBigMessageDownload();
+    }
+
+    /**
+     * Create an instance of {@link SignedBigMessageDownloadResponse }
+     *
+     */
+    public SignedBigMessageDownloadResponse createSignedBigMessageDownloadResponse() {
+        return new SignedBigMessageDownloadResponse();
+    }
+
+    /**
+     * Create an instance of {@link SignedSentBigMessageDownload }
+     *
+     */
+    public SignedSentBigMessageDownload createSignedSentBigMessageDownload() {
+        return new SignedSentBigMessageDownload();
+    }
+
+    /**
+     * Create an instance of {@link SignedSentBigMessageDownloadResponse }
+     *
+     */
+    public SignedSentBigMessageDownloadResponse createSignedSentBigMessageDownloadResponse() {
+        return new SignedSentBigMessageDownloadResponse();
+    }
+
+    /**
+     * Create an instance of {@link BigMessageDownload }
+     *
+     */
+    public BigMessageDownload createBigMessageDownload() {
+        return new BigMessageDownload();
+    }
+
+    /**
+     * Create an instance of {@link SentMessageEnvelopeDownload }
+     *
+     */
+    public SentMessageEnvelopeDownload createSentMessageEnvelopeDownload() {
+        return new SentMessageEnvelopeDownload();
+    }
+
+    /**
+     * Create an instance of {@link SentMessageEnvelopeDownloadResponse }
+     *
+     */
+    public SentMessageEnvelopeDownloadResponse createSentMessageEnvelopeDownloadResponse() {
+        return new SentMessageEnvelopeDownloadResponse();
+    }
+
+    /**
+     * Create an instance of {@link SuspMessageReport }
+     *
+     */
+    public SuspMessageReport createSuspMessageReport() {
+        return new SuspMessageReport();
+    }
+
+    /**
+     * Create an instance of {@link SuspMessageReportResponse }
+     *
+     */
+    public SuspMessageReportResponse createSuspMessageReportResponse() {
+        return new SuspMessageReportResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArchiveISDSDocument }
+     *
+     */
+    public ArchiveISDSDocument createArchiveISDSDocument() {
+        return new ArchiveISDSDocument();
+    }
+
+    /**
+     * Create an instance of {@link ArchiveISDSDocumentResponse }
+     *
+     */
+    public ArchiveISDSDocumentResponse createArchiveISDSDocumentResponse() {
+        return new ArchiveISDSDocumentResponse();
+    }
+
+    /**
      * Create an instance of {@link THash }
-     * 
+     *
      */
     public THash createTHash() {
         return new THash();
@@ -436,7 +696,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TEvent }
-     * 
+     *
      */
     public TEvent createTEvent() {
         return new TEvent();
@@ -444,7 +704,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TEventsArray }
-     * 
+     *
      */
     public TEventsArray createTEventsArray() {
         return new TEventsArray();
@@ -452,23 +712,15 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TRecipients }
-     * 
+     *
      */
     public TRecipients createTRecipients() {
         return new TRecipients();
     }
 
     /**
-     * Create an instance of {@link TMultipleMessageEnvelopeSub }
-     * 
-     */
-    public TMultipleMessageEnvelopeSub createTMultipleMessageEnvelopeSub() {
-        return new TMultipleMessageEnvelopeSub();
-    }
-
-    /**
      * Create an instance of {@link TMultipleMessageRecipients }
-     * 
+     *
      */
     public TMultipleMessageRecipients createTMultipleMessageRecipients() {
         return new TMultipleMessageRecipients();
@@ -476,7 +728,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMultipleStatus }
-     * 
+     *
      */
     public TMultipleStatus createTMultipleStatus() {
         return new TMultipleStatus();
@@ -484,23 +736,15 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMStatus }
-     * 
+     *
      */
     public TMStatus createTMStatus() {
         return new TMStatus();
     }
 
     /**
-     * Create an instance of {@link TMessageEnvelopeSub }
-     * 
-     */
-    public TMessageEnvelopeSub createTMessageEnvelopeSub() {
-        return new TMessageEnvelopeSub();
-    }
-
-    /**
      * Create an instance of {@link TRecord }
-     * 
+     *
      */
     public TRecord createTRecord() {
         return new TRecord();
@@ -508,7 +752,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TRecordsArray }
-     * 
+     *
      */
     public TRecordsArray createTRecordsArray() {
         return new TRecordsArray();
@@ -516,7 +760,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TStateChangesRecord }
-     * 
+     *
      */
     public TStateChangesRecord createTStateChangesRecord() {
         return new TStateChangesRecord();
@@ -524,7 +768,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TStateChangesArray }
-     * 
+     *
      */
     public TStateChangesArray createTStateChangesArray() {
         return new TStateChangesArray();
@@ -532,7 +776,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TNtfRecordsArray }
-     * 
+     *
      */
     public TNtfRecordsArray createTNtfRecordsArray() {
         return new TNtfRecordsArray();
@@ -540,39 +784,55 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TNtfRecord }
-     * 
+     *
      */
     public TNtfRecord createTNtfRecord() {
         return new TNtfRecord();
     }
 
     /**
+     * Create an instance of {@link TBigMessEnvelope.DmPublishOwnID }
+     *
+     */
+    public TBigMessEnvelope.DmPublishOwnID createTBigMessEnvelopeDmPublishOwnID() {
+        return new TBigMessEnvelope.DmPublishOwnID();
+    }
+
+    /**
      * Create an instance of {@link TDelivery.DmDm }
-     * 
+     *
      */
     public TDelivery.DmDm createTDeliveryDmDm() {
         return new TDelivery.DmDm();
     }
 
     /**
-     * Create an instance of {@link TReturnedMessageEnvelope.DmDm }
-     * 
+     * Create an instance of {@link TMessageEnvelopeSub.DmPublishOwnID }
+     *
      */
-    public TReturnedMessageEnvelope.DmDm createTReturnedMessageEnvelopeDmDm() {
-        return new TReturnedMessageEnvelope.DmDm();
+    public TMessageEnvelopeSub.DmPublishOwnID createTMessageEnvelopeSubDmPublishOwnID() {
+        return new TMessageEnvelopeSub.DmPublishOwnID();
     }
 
     /**
      * Create an instance of {@link TReturnedMessage.DmDm }
-     * 
+     *
      */
     public TReturnedMessage.DmDm createTReturnedMessageDmDm() {
         return new TReturnedMessage.DmDm();
     }
 
     /**
+     * Create an instance of {@link TMultipleMessageEnvelopeSub.DmPublishOwnID }
+     *
+     */
+    public TMultipleMessageEnvelopeSub.DmPublishOwnID createTMultipleMessageEnvelopeSubDmPublishOwnID() {
+        return new TMultipleMessageEnvelopeSub.DmPublishOwnID();
+    }
+
+    /**
      * Create an instance of {@link TFilesArray.DmFile }
-     * 
+     *
      */
     public TFilesArray.DmFile createTFilesArrayDmFile() {
         return new TFilesArray.DmFile();
@@ -580,15 +840,55 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TFile.DmXMLContent }
-     * 
+     *
      */
     public TFile.DmXMLContent createTFileDmXMLContent() {
         return new TFile.DmXMLContent();
     }
 
     /**
+     * Create an instance of {@link TReturnedMessageEnvelope.DmDm }
+     *
+     */
+    public TReturnedMessageEnvelope.DmDm createTReturnedMessageEnvelopeDmDm() {
+        return new TReturnedMessageEnvelope.DmDm();
+    }
+
+    /**
+     * Create an instance of {@link GetMessageAuthor2Response.DmMessageAuthor.MaItem }
+     *
+     */
+    public GetMessageAuthor2Response.DmMessageAuthor.MaItem createGetMessageAuthor2ResponseDmMessageAuthorMaItem() {
+        return new GetMessageAuthor2Response.DmMessageAuthor.MaItem();
+    }
+
+    /**
+     * Create an instance of {@link BigMessageDownloadResponse.DmReturnedMessage.DmDm }
+     *
+     */
+    public BigMessageDownloadResponse.DmReturnedMessage.DmDm createBigMessageDownloadResponseDmReturnedMessageDmDm() {
+        return new BigMessageDownloadResponse.DmReturnedMessage.DmDm();
+    }
+
+    /**
+     * Create an instance of {@link TBigMessageInput.DmFiles.DmExtFile }
+     *
+     */
+    public TBigMessageInput.DmFiles.DmExtFile createTBigMessageInputDmFilesDmExtFile() {
+        return new TBigMessageInput.DmFiles.DmExtFile();
+    }
+
+    /**
+     * Create an instance of {@link TBigMessageInput.DmFiles.DmFile }
+     *
+     */
+    public TBigMessageInput.DmFiles.DmFile createTBigMessageInputDmFilesDmFile() {
+        return new TBigMessageInput.DmFiles.DmFile();
+    }
+
+    /**
      * Create an instance of {@link TMessageCreateInput.DmEnvelope }
-     * 
+     *
      */
     public TMessageCreateInput.DmEnvelope createTMessageCreateInputDmEnvelope() {
         return new TMessageCreateInput.DmEnvelope();
@@ -596,7 +896,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link TMultipleMessageCreateInput.DmEnvelope }
-     * 
+     *
      */
     public TMultipleMessageCreateInput.DmEnvelope createTMultipleMessageCreateInputDmEnvelope() {
         return new TMultipleMessageCreateInput.DmEnvelope();
@@ -604,7 +904,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TStatus }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -617,7 +917,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMultipleMessageCreateInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -630,7 +930,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMultipleMessageCreateOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -643,7 +943,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMessageCreateInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -656,7 +956,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMessageCreateOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -669,7 +969,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -682,7 +982,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMessageVerifyOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -695,7 +995,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -708,7 +1008,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TDeliveryMessageOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -721,7 +1021,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -734,7 +1034,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TSignDelivMessOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -747,7 +1047,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TListOfSentInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -760,7 +1060,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TListOfMessOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -773,7 +1073,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TListOfFReceivedInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -786,7 +1086,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TListOfMessOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -799,7 +1099,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -812,7 +1112,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMessDownOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -825,7 +1125,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -838,7 +1138,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMessEnvelDownOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -851,7 +1151,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -864,7 +1164,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TSignedMessDownOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -877,7 +1177,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -890,7 +1190,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMarkMessOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -903,7 +1203,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TIDMessInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -916,7 +1216,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TSignedMessDownOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -929,7 +1229,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TAuthenticateMessageInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -942,7 +1242,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TAuthenticateMessageOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -955,7 +1255,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TGetStateChangesInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -968,7 +1268,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TGetStateChangesOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -981,7 +1281,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -993,8 +1293,21 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TDummyOutput }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TDummyOutput }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "DummyOperationResponse")
+    public JAXBElement<TDummyOutput> createDummyOperationResponse(TDummyOutput value) {
+        return new JAXBElement<TDummyOutput>(_DummyOperationResponse_QNAME, TDummyOutput.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TGetAuthorInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1007,7 +1320,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TGetAuthorOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1020,7 +1333,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TEraseMessageIntput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1033,7 +1346,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TEraseMessageOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1046,7 +1359,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TResignDocInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1059,7 +1372,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TResignDocOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1072,7 +1385,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TGetListOfErasedInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1085,7 +1398,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TGetListOfErasedOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1098,7 +1411,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TPickUpAsyncInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1111,7 +1424,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TPickUpAsyncOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1124,7 +1437,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TListForNotifInput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1137,7 +1450,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TListForNotifOutput }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1149,8 +1462,320 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TBigMessageInput }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TBigMessageInput }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "CreateBigMessage")
+    public JAXBElement<TBigMessageInput> createCreateBigMessage(TBigMessageInput value) {
+        return new JAXBElement<TBigMessageInput>(_CreateBigMessage_QNAME, TBigMessageInput.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TBigMessageOutput }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TBigMessageOutput }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "CreateBigMessageResponse")
+    public JAXBElement<TBigMessageOutput> createCreateBigMessageResponse(TBigMessageOutput value) {
+        return new JAXBElement<TBigMessageOutput>(_CreateBigMessageResponse_QNAME, TBigMessageOutput.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TGetAuthorInput }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TGetAuthorInput }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "GetMessageAuthor2")
+    public JAXBElement<TGetAuthorInput> createGetMessageAuthor2(TGetAuthorInput value) {
+        return new JAXBElement<TGetAuthorInput>(_GetMessageAuthor2_QNAME, TGetAuthorInput.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAuthResult", scope = AuthenticateBigMessageResponse.class)
+    public JAXBElement<Boolean> createAuthenticateBigMessageResponseDmAuthResult(Boolean value) {
+        return new JAXBElement<Boolean>(_AuthenticateBigMessageResponseDmAuthResult_QNAME, Boolean.class, AuthenticateBigMessageResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigMessageDownloadResponse.DmReturnedMessage }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigMessageDownloadResponse.DmReturnedMessage }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmReturnedMessage", scope = BigMessageDownloadResponse.class)
+    public JAXBElement<BigMessageDownloadResponse.DmReturnedMessage> createBigMessageDownloadResponseDmReturnedMessage(BigMessageDownloadResponse.DmReturnedMessage value) {
+        return new JAXBElement<BigMessageDownloadResponse.DmReturnedMessage>(_BigMessageDownloadResponseDmReturnedMessage_QNAME, BigMessageDownloadResponse.DmReturnedMessage.class, BigMessageDownloadResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TReturnedMessageEnvelope }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TReturnedMessageEnvelope }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmReturnedMessageEnvelope", scope = SentMessageEnvelopeDownloadResponse.class)
+    public JAXBElement<TReturnedMessageEnvelope> createSentMessageEnvelopeDownloadResponseDmReturnedMessageEnvelope(TReturnedMessageEnvelope value) {
+        return new JAXBElement<TReturnedMessageEnvelope>(_SentMessageEnvelopeDownloadResponseDmReturnedMessageEnvelope_QNAME, TReturnedMessageEnvelope.class, SentMessageEnvelopeDownloadResponse.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderOrgUnit", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmSenderOrgUnit(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmSenderOrgUnit_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderOrgUnitNum", scope = TBigMessEnvelope.class)
+    public JAXBElement<BigInteger> createTBigMessEnvelopeDmSenderOrgUnitNum(BigInteger value) {
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmSenderOrgUnitNum_QNAME, BigInteger.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientOrgUnit", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmRecipientOrgUnit(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientOrgUnit_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientOrgUnitNum", scope = TBigMessEnvelope.class)
+    public JAXBElement<BigInteger> createTBigMessEnvelopeDmRecipientOrgUnitNum(BigInteger value) {
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmRecipientOrgUnitNum_QNAME, BigInteger.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmToHands", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmToHands(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmToHands_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientRefNumber", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmRecipientRefNumber(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientRefNumber_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderRefNumber", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmSenderRefNumber(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmSenderRefNumber_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientIdent", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmRecipientIdent(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientIdent_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderIdent", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmSenderIdent(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmSenderIdent_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitleLaw", scope = TBigMessEnvelope.class)
+    public JAXBElement<BigInteger> createTBigMessEnvelopeDmLegalTitleLaw(BigInteger value) {
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmLegalTitleLaw_QNAME, BigInteger.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitleYear", scope = TBigMessEnvelope.class)
+    public JAXBElement<BigInteger> createTBigMessEnvelopeDmLegalTitleYear(BigInteger value) {
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmLegalTitleYear_QNAME, BigInteger.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitleSect", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmLegalTitleSect(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmLegalTitleSect_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitlePar", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmLegalTitlePar(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmLegalTitlePar_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitlePoint", scope = TBigMessEnvelope.class)
+    public JAXBElement<String> createTBigMessEnvelopeDmLegalTitlePoint(String value) {
+        return new JAXBElement<String>(_TBigMessEnvelopeDmLegalTitlePoint_QNAME, String.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmPersonalDelivery", scope = TBigMessEnvelope.class)
+    public JAXBElement<Boolean> createTBigMessEnvelopeDmPersonalDelivery(Boolean value) {
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmPersonalDelivery_QNAME, Boolean.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAllowSubstDelivery", scope = TBigMessEnvelope.class)
+    public JAXBElement<Boolean> createTBigMessEnvelopeDmAllowSubstDelivery(Boolean value) {
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmAllowSubstDelivery_QNAME, Boolean.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmOVM", scope = TBigMessEnvelope.class)
+    public JAXBElement<Boolean> createTBigMessEnvelopeDmOVM(Boolean value) {
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmOVM_QNAME, Boolean.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TBigMessEnvelope.DmPublishOwnID }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TBigMessEnvelope.DmPublishOwnID }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmPublishOwnID", scope = TBigMessEnvelope.class)
+    public JAXBElement<TBigMessEnvelope.DmPublishOwnID> createTBigMessEnvelopeDmPublishOwnID(TBigMessEnvelope.DmPublishOwnID value) {
+        return new JAXBElement<TBigMessEnvelope.DmPublishOwnID>(_TBigMessEnvelopeDmPublishOwnID_QNAME, TBigMessEnvelope.DmPublishOwnID.class, TBigMessEnvelope.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1163,7 +1788,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1176,7 +1801,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1189,7 +1814,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1202,7 +1827,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1215,7 +1840,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1228,7 +1853,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1236,12 +1861,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderOrgUnit", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmSenderOrgUnit(String value) {
-        return new JAXBElement<String>(_TRecordDmSenderOrgUnit_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmSenderOrgUnit_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1249,12 +1874,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderOrgUnitNum", scope = TRecord.class)
     public JAXBElement<BigInteger> createTRecordDmSenderOrgUnitNum(BigInteger value) {
-        return new JAXBElement<BigInteger>(_TRecordDmSenderOrgUnitNum_QNAME, BigInteger.class, TRecord.class, value);
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmSenderOrgUnitNum_QNAME, BigInteger.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1267,7 +1892,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1275,12 +1900,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientOrgUnit", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmRecipientOrgUnit(String value) {
-        return new JAXBElement<String>(_TRecordDmRecipientOrgUnit_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientOrgUnit_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1288,12 +1913,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientOrgUnitNum", scope = TRecord.class)
     public JAXBElement<BigInteger> createTRecordDmRecipientOrgUnitNum(BigInteger value) {
-        return new JAXBElement<BigInteger>(_TRecordDmRecipientOrgUnitNum_QNAME, BigInteger.class, TRecord.class, value);
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmRecipientOrgUnitNum_QNAME, BigInteger.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1301,12 +1926,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmToHands", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmToHands(String value) {
-        return new JAXBElement<String>(_TRecordDmToHands_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmToHands_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1319,7 +1944,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1327,12 +1952,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientRefNumber", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmRecipientRefNumber(String value) {
-        return new JAXBElement<String>(_TRecordDmRecipientRefNumber_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientRefNumber_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1340,12 +1965,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderRefNumber", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmSenderRefNumber(String value) {
-        return new JAXBElement<String>(_TRecordDmSenderRefNumber_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmSenderRefNumber_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1353,12 +1978,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientIdent", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmRecipientIdent(String value) {
-        return new JAXBElement<String>(_TRecordDmRecipientIdent_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientIdent_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1366,12 +1991,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmSenderIdent", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmSenderIdent(String value) {
-        return new JAXBElement<String>(_TRecordDmSenderIdent_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmSenderIdent_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1379,12 +2004,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitleLaw", scope = TRecord.class)
     public JAXBElement<BigInteger> createTRecordDmLegalTitleLaw(BigInteger value) {
-        return new JAXBElement<BigInteger>(_TRecordDmLegalTitleLaw_QNAME, BigInteger.class, TRecord.class, value);
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmLegalTitleLaw_QNAME, BigInteger.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1392,12 +2017,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitleYear", scope = TRecord.class)
     public JAXBElement<BigInteger> createTRecordDmLegalTitleYear(BigInteger value) {
-        return new JAXBElement<BigInteger>(_TRecordDmLegalTitleYear_QNAME, BigInteger.class, TRecord.class, value);
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmLegalTitleYear_QNAME, BigInteger.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1405,12 +2030,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitleSect", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmLegalTitleSect(String value) {
-        return new JAXBElement<String>(_TRecordDmLegalTitleSect_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmLegalTitleSect_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1418,12 +2043,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitlePar", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmLegalTitlePar(String value) {
-        return new JAXBElement<String>(_TRecordDmLegalTitlePar_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmLegalTitlePar_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1431,12 +2056,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmLegalTitlePoint", scope = TRecord.class)
     public JAXBElement<String> createTRecordDmLegalTitlePoint(String value) {
-        return new JAXBElement<String>(_TRecordDmLegalTitlePoint_QNAME, String.class, TRecord.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmLegalTitlePoint_QNAME, String.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1444,12 +2069,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmPersonalDelivery", scope = TRecord.class)
     public JAXBElement<Boolean> createTRecordDmPersonalDelivery(Boolean value) {
-        return new JAXBElement<Boolean>(_TRecordDmPersonalDelivery_QNAME, Boolean.class, TRecord.class, value);
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmPersonalDelivery_QNAME, Boolean.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1457,12 +2082,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAllowSubstDelivery", scope = TRecord.class)
     public JAXBElement<Boolean> createTRecordDmAllowSubstDelivery(Boolean value) {
-        return new JAXBElement<Boolean>(_TRecordDmAllowSubstDelivery_QNAME, Boolean.class, TRecord.class, value);
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmAllowSubstDelivery_QNAME, Boolean.class, TRecord.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1475,7 +2100,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1488,7 +2113,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1501,7 +2126,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1514,7 +2139,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1522,38 +2147,25 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmOVM", scope = TMessageEnvelopeSub.class)
     public JAXBElement<Boolean> createTMessageEnvelopeSubDmOVM(Boolean value) {
-        return new JAXBElement<Boolean>(_TMessageEnvelopeSubDmOVM_QNAME, Boolean.class, TMessageEnvelopeSub.class, value);
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmOVM_QNAME, Boolean.class, TMessageEnvelopeSub.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link TMessageEnvelopeSub.DmPublishOwnID }{@code >}
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link TMessageEnvelopeSub.DmPublishOwnID }{@code >}
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmPublishOwnID", scope = TMessageEnvelopeSub.class)
-    public JAXBElement<Boolean> createTMessageEnvelopeSubDmPublishOwnID(Boolean value) {
-        return new JAXBElement<Boolean>(_TMessageEnvelopeSubDmPublishOwnID_QNAME, Boolean.class, TMessageEnvelopeSub.class, value);
+    public JAXBElement<TMessageEnvelopeSub.DmPublishOwnID> createTMessageEnvelopeSubDmPublishOwnID(TMessageEnvelopeSub.DmPublishOwnID value) {
+        return new JAXBElement<TMessageEnvelopeSub.DmPublishOwnID>(_TBigMessEnvelopeDmPublishOwnID_QNAME, TMessageEnvelopeSub.DmPublishOwnID.class, TMessageEnvelopeSub.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAmbiguousRecipient", scope = TReturnedMessageEnvelope.DmDm.class)
-    public JAXBElement<Boolean> createTReturnedMessageEnvelopeDmDmDmAmbiguousRecipient(Boolean value) {
-        return new JAXBElement<Boolean>(_TRecordDmAmbiguousRecipient_QNAME, Boolean.class, TReturnedMessageEnvelope.DmDm.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1566,7 +2178,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1574,25 +2186,25 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmOVM", scope = TMultipleMessageEnvelopeSub.class)
     public JAXBElement<Boolean> createTMultipleMessageEnvelopeSubDmOVM(Boolean value) {
-        return new JAXBElement<Boolean>(_TMessageEnvelopeSubDmOVM_QNAME, Boolean.class, TMultipleMessageEnvelopeSub.class, value);
+        return new JAXBElement<Boolean>(_TBigMessEnvelopeDmOVM_QNAME, Boolean.class, TMultipleMessageEnvelopeSub.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     * Create an instance of {@link JAXBElement }{@code <}{@link TMultipleMessageEnvelopeSub.DmPublishOwnID }{@code >}
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link TMultipleMessageEnvelopeSub.DmPublishOwnID }{@code >}
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmPublishOwnID", scope = TMultipleMessageEnvelopeSub.class)
-    public JAXBElement<Boolean> createTMultipleMessageEnvelopeSubDmPublishOwnID(Boolean value) {
-        return new JAXBElement<Boolean>(_TMessageEnvelopeSubDmPublishOwnID_QNAME, Boolean.class, TMultipleMessageEnvelopeSub.class, value);
+    public JAXBElement<TMultipleMessageEnvelopeSub.DmPublishOwnID> createTMultipleMessageEnvelopeSubDmPublishOwnID(TMultipleMessageEnvelopeSub.DmPublishOwnID value) {
+        return new JAXBElement<TMultipleMessageEnvelopeSub.DmPublishOwnID>(_TBigMessEnvelopeDmPublishOwnID_QNAME, TMultipleMessageEnvelopeSub.DmPublishOwnID.class, TMultipleMessageEnvelopeSub.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1600,12 +2212,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientOrgUnit", scope = TRecipients.class)
     public JAXBElement<String> createTRecipientsDmRecipientOrgUnit(String value) {
-        return new JAXBElement<String>(_TRecordDmRecipientOrgUnit_QNAME, String.class, TRecipients.class, value);
+        return new JAXBElement<String>(_TBigMessEnvelopeDmRecipientOrgUnit_QNAME, String.class, TRecipients.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1613,12 +2225,38 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmRecipientOrgUnitNum", scope = TRecipients.class)
     public JAXBElement<BigInteger> createTRecipientsDmRecipientOrgUnitNum(BigInteger value) {
-        return new JAXBElement<BigInteger>(_TRecordDmRecipientOrgUnitNum_QNAME, BigInteger.class, TRecipients.class, value);
+        return new JAXBElement<BigInteger>(_TBigMessEnvelopeDmRecipientOrgUnitNum_QNAME, BigInteger.class, TRecipients.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAmbiguousRecipient", scope = TReturnedMessageEnvelope.DmDm.class)
+    public JAXBElement<Boolean> createTReturnedMessageEnvelopeDmDmDmAmbiguousRecipient(Boolean value) {
+        return new JAXBElement<Boolean>(_TRecordDmAmbiguousRecipient_QNAME, Boolean.class, TReturnedMessageEnvelope.DmDm.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     *
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAmbiguousRecipient", scope = BigMessageDownloadResponse.DmReturnedMessage.DmDm.class)
+    public JAXBElement<Boolean> createBigMessageDownloadResponseDmReturnedMessageDmDmDmAmbiguousRecipient(Boolean value) {
+        return new JAXBElement<Boolean>(_TRecordDmAmbiguousRecipient_QNAME, Boolean.class, BigMessageDownloadResponse.DmReturnedMessage.DmDm.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TNtfRecordsArray }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1631,7 +2269,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1644,7 +2282,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1657,7 +2295,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TStateChangesArray }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1670,7 +2308,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1678,12 +2316,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmAuthResult", scope = TAuthenticateMessageOutput.class)
     public JAXBElement<Boolean> createTAuthenticateMessageOutputDmAuthResult(Boolean value) {
-        return new JAXBElement<Boolean>(_TAuthenticateMessageOutputDmAuthResult_QNAME, Boolean.class, TAuthenticateMessageOutput.class, value);
+        return new JAXBElement<Boolean>(_AuthenticateBigMessageResponseDmAuthResult_QNAME, Boolean.class, TAuthenticateMessageOutput.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TReturnedMessageEnvelope }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1691,12 +2329,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmReturnedMessageEnvelope", scope = TMessEnvelDownOutput.class)
     public JAXBElement<TReturnedMessageEnvelope> createTMessEnvelDownOutputDmReturnedMessageEnvelope(TReturnedMessageEnvelope value) {
-        return new JAXBElement<TReturnedMessageEnvelope>(_TMessEnvelDownOutputDmReturnedMessageEnvelope_QNAME, TReturnedMessageEnvelope.class, TMessEnvelDownOutput.class, value);
+        return new JAXBElement<TReturnedMessageEnvelope>(_SentMessageEnvelopeDownloadResponseDmReturnedMessageEnvelope_QNAME, TReturnedMessageEnvelope.class, TMessEnvelDownOutput.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TReturnedMessage }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1704,12 +2342,12 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://isds.czechpoint.cz/v20", name = "dmReturnedMessage", scope = TMessDownOutput.class)
     public JAXBElement<TReturnedMessage> createTMessDownOutputDmReturnedMessage(TReturnedMessage value) {
-        return new JAXBElement<TReturnedMessage>(_TMessDownOutputDmReturnedMessage_QNAME, TReturnedMessage.class, TMessDownOutput.class, value);
+        return new JAXBElement<TReturnedMessage>(_BigMessageDownloadResponseDmReturnedMessage_QNAME, TReturnedMessage.class, TMessDownOutput.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TRecordsArray }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1722,7 +2360,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TDelivery }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
@@ -1735,7 +2373,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TMultipleStatus }{@code >}
-     * 
+     *
      * @param value
      *     Java instance representing xml element's value.
      * @return
