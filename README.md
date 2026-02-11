@@ -48,8 +48,6 @@ As we import two files we need to run the script twice:
 ```
 We need to specify the `utf-8` as there are Czech characters in the definitions.
 
-
-
 The WSDL definitions can be downloaded from the [ISDS developer](https://www.poradnaisds.cz/) section *Testovací prostředí* > *Dokumentace a formuláře*.
 
 ## Basic workflow
