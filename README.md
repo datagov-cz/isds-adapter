@@ -14,7 +14,7 @@ For documentation about ISIS see [Poradna ISDS](https://www.poradnaisds.cz/) or 
 
 Clone this repository and use maven to build the program.
 ```shell
-git clone https://github.com/opendata-mvcr/nkod-isds.git
+git clone https://github.com/datagov-cz/isds-adapter
 cd nkod-isds
 mvnw package
 ```
@@ -43,10 +43,12 @@ Caused by: java.lang.ClassNotFoundException: jakarta.xml.ws.WebServiceException
 The next step is to run the `wsimport.bat` located in `metro/bin`. 
 As we import two files we need to run the script twice:
 ```shell
-.\wsimport.bat ..\..\src\main\resources\wsdl\dm_info.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8
-.\wsimport.bat ..\..\src\main\resources\wsdl\dm_operations.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8
+.\wsimport.bat ..\..\src\main\resources\wsdl\dm_info.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8 -wsdllocation https://www.mojedatovaschranka.cz/static/wsdl/v20/dm_info.wsdl
+.\wsimport.bat ..\..\src\main\resources\wsdl\dm_operations.wsdl -keep -Xnocompile -d ..\..\src\main\java -encoding utf-8 -wsdllocation https://www.mojedatovaschranka.cz/static/wsdl/v20/dm_operations.wsdl
 ```
 We need to specify the `utf-8` as there are Czech characters in the definitions.
+
+
 
 The WSDL definitions can be downloaded from the [ISDS developer](https://www.poradnaisds.cz/) section *Testovací prostředí* > *Dokumentace a formuláře*.
 
