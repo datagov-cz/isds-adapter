@@ -51,7 +51,6 @@ public class AppEntry {
     }
 
     private void main() {
-
         try {
             this.configuration = new Configuration();
         } catch (IOException ex) {
@@ -75,7 +74,7 @@ public class AppEntry {
         } catch (Exception ex) {
             LOG.error("Can't download messages.", ex);
         }
-        LOG.debug("Done");
+        LOG.info("Done");
     }
 
     private void downloadMessages() throws Exception {

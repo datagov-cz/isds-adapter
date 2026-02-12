@@ -29,7 +29,6 @@ class Configuration {
     private int downloadInterval;
 
     public Configuration() throws IOException {
-        LOG.info("Version 1");
         String configurationPath = System.getProperty("configurationFile");
         if (configurationPath == null) {
             configurationPath = "./configuration.properties";
