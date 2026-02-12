@@ -29,6 +29,7 @@ class Configuration {
     private int downloadInterval;
 
     public Configuration() throws IOException {
+        LOG.info("Version 1");
         String configurationPath = System.getProperty("configurationFile");
         if (configurationPath == null) {
             configurationPath = "./configuration.properties";
@@ -57,8 +58,7 @@ class Configuration {
     private String getEnvOrProperty(
             Properties properties, String property, String environment) {
         String environmentValue = System.getenv(environment);
-        if ("".equals(environmentValue)) {
-            LOG.debug("Loading configuration property '{}' from '{}'.", property, environment);
+        if (!"".equals(environmentValue)) {
             return environmentValue;
         }
         return getProperty(properties, property);
