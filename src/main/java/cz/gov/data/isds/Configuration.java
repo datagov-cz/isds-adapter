@@ -58,6 +58,7 @@ class Configuration {
             Properties properties, String property, String environment) {
         String environmentValue = System.getenv(environment);
         if ("".equals(environmentValue)) {
+            LOG.debug("Loading configuration property '{}' from '{}'.", property, environment);
             return environmentValue;
         }
         return getProperty(properties, property);

@@ -59,7 +59,7 @@ class SecurityManager {
         List<X509Certificate> certificates = new ArrayList<>();
         CertificateFactory certificateFactory =
                 CertificateFactory.getInstance("X.509");
-        LOG.info("Loading certificate:");
+        LOG.debug("Loading certificate:");
         File[] files = directory.listFiles();
         if (files == null) {
             throw new RuntimeException(
@@ -69,7 +69,7 @@ class SecurityManager {
             try (InputStream stream = new FileInputStream(file)) {
                 X509Certificate cert = readCertificate(
                         certificateFactory, stream);
-                LOG.info("    {} -> {}", file, cert.getIssuerDN().getName());
+                LOG.debug("{} -> {}", file, cert.getIssuerDN().getName());
                 certificates.add(cert);
             }
         }

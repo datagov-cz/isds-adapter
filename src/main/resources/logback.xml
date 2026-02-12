@@ -1,4 +1,8 @@
 <configuration>
+
+	<!-- This suppresses Logback's internal status messages that appear during initialization before your configuration is fully loaded. -->
+	<statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
 	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
 		<resetJUL>true</resetJUL>
 	</contextListener>
@@ -9,11 +13,12 @@
 
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%d{"HH:mm:ss,SSS"} [%-15thread] %-5level %-60logger - %msg%n</pattern>
+			<pattern>%d{"HH:mm:ss,SSS"} [%thread] %level %logger - %msg%n</pattern>
 		</encoder>
 	</appender>
 
-	<root level="INFO">
+	<!-- Use INGO of value from LOG_LEVEL variable. -->
+	<root level="${LOG_LEVEL:-INFO}">
 		<appender-ref ref="console"/>
 	</root>
 

@@ -57,7 +57,7 @@ public class AppEntry {
         } catch (IOException ex) {
             LOG.error("Can't load configuration.", ex);
         }
-        LOG.info("Creating security manager ...");
+        LOG.debug("Creating security manager ...");
         try {
             this.security = new SecurityManager(
                     this.configuration.getLogin(),
@@ -66,7 +66,7 @@ public class AppEntry {
         } catch (Exception ex) {
             LOG.error("Can't create security manager.", ex);
         }
-        LOG.info("Creating output directories ...");
+        LOG.debug("Creating output directories ...");
         (new File(configuration.getOutputMessages())).mkdirs();
         (new File(configuration.getOutputAttachments())).mkdirs();
         LOG.info("Downloading messages ...");
@@ -75,7 +75,7 @@ public class AppEntry {
         } catch (Exception ex) {
             LOG.error("Can't download messages.", ex);
         }
-        LOG.info("Done");
+        LOG.debug("Done");
     }
 
     private void downloadMessages() throws Exception {
@@ -215,21 +215,20 @@ public class AppEntry {
 
     private void logMessageInfo(Message message) {
         StringBuilder messageInfo = new StringBuilder();
-        messageInfo.append("Message:");
-        messageInfo.append("\n\tid: " + message.getId());
-        messageInfo.append("\n\tstatus: " + message.getStatus());
-        messageInfo.append("\n\tsender: " + message.getSender());
-        messageInfo.append("\n\trecipient: " + message.getRecipient());
-        messageInfo.append("\n\tannotation: " + message.getAnnotation());
-        messageInfo.append("\n\taccepted: " + message.getAcceptanceTime());
-        messageInfo.append("\n\tdelivery: " + message.getDeliveryTime());
+        messageInfo.append("\n\tid: ").append(message.getId());
+        messageInfo.append("\n\tstatus: ").append(message.getStatus());
+        messageInfo.append("\n\tsender: ").append(message.getSender());
+        messageInfo.append("\n\trecipient: ").append(message.getRecipient());
+        messageInfo.append("\n\tannotation: ").append(message.getAnnotation());
+        messageInfo.append("\n\taccepted: ").append(message.getAcceptanceTime());
+        messageInfo.append("\n\tdelivery: ").append(message.getDeliveryTime());
         messageInfo.append("\n\tfiles: ");
         for (Attachment attachment : message.getAttachments()) {
-            messageInfo.append("\n\t\t" + attachment.getType());
-            messageInfo.append("\t" + attachment.getMimeType());
-            messageInfo.append("\t" + attachment.getDescription());
+            messageInfo.append("\n\t\t").append(attachment.getType());
+            messageInfo.append("\t").append(attachment.getMimeType());
+            messageInfo.append("\t").append(attachment.getDescription());
         }
-        LOG.info(messageInfo.toString());
+        LOG.info("There is a new message: {}", messageInfo.toString());
     }
 
     private void markAsRead(DmInfoPortType port, Message message) {
