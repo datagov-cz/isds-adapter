@@ -22,7 +22,7 @@
 
 	<!-- Use INGO of value from LOG_LEVEL variable. -->
 	<root level="${LOG_LEVEL:-INFO}">
-		<appender-ref ref="console"/>
+		<appender-ref ref="json"/>
 	</root>
 
 </configuration>
