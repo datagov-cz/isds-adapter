@@ -55,6 +55,7 @@ public class AppEntry {
             this.configuration = new Configuration();
         } catch (IOException ex) {
             LOG.error("Can't load configuration.", ex);
+            return;
         }
         LOG.debug("Creating security manager ...");
         try {
@@ -64,6 +65,7 @@ public class AppEntry {
                     this.configuration.getCertificatesDirectory());
         } catch (Exception ex) {
             LOG.error("Can't create security manager.", ex);
+            return;
         }
         LOG.debug("Creating output directories ...");
         (new File(configuration.getOutputMessages())).mkdirs();
@@ -73,6 +75,7 @@ public class AppEntry {
             downloadMessages();
         } catch (Exception ex) {
             LOG.error("Can't download messages.", ex);
+            return;
         }
         LOG.info("Done");
     }
