@@ -132,15 +132,10 @@
                         </goals>
                         <configuration>
                             <target>
-                                <taskdef
-                                        resource="net/sf/antcontrib/antcontrib.properties"/>
-                                <copy todir="${basedir}/dist/certificates">
-                                    <fileset dir="${basedir}/certificates"/>
-                                </copy>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
                                 <if>
                                     <not>
-                                        <available
-                                                file="${basedir}/dist/configuration.properties"/>
+                                        <available file="${basedir}/dist/configuration.properties"/>
                                     </not>
                                     <then>
                                         <copy file="${basedir}/configuration.properties"

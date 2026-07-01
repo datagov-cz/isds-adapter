@@ -5,20 +5,12 @@ import jakarta.xml.ws.BindingProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManagerFactory;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import javax.net.ssl.*;
+import java.io.*;
 import java.security.KeyStore;
 import java.security.SecureRandom;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 class SecurityManager {
@@ -31,6 +23,9 @@ class SecurityManager {
     private final String password;
 
     private final SSLSocketFactory socketFactory;
+
+    private final CertificateFactory x509Factory =
+            CertificateFactory.getInstance("X.509");
 
     public SecurityManager(
             String username, String password, String certificatesDirectory)
@@ -56,38 +51,60 @@ class SecurityManager {
     }
 
     private KeyStore createKeyStore(File directory) throws Exception {
-        List<X509Certificate> certificates = new ArrayList<>();
-        CertificateFactory certificateFactory =
-                CertificateFactory.getInstance("X.509");
-        LOG.debug("Loading certificate:");
-        File[] files = directory.listFiles();
-        if (files == null) {
-            throw new RuntimeException(
-                    "Missing certificates directory: " + directory);
-        }
-        for (File file : files) {
-            try (InputStream stream = new FileInputStream(file)) {
-                X509Certificate cert = readCertificate(
-                        certificateFactory, stream);
-                LOG.debug("{} -> {}", file, cert.getIssuerDN().getName());
-                certificates.add(cert);
-            }
-        }
+        // Create keystore with the certificates.
         KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-        keyStore.load(null, null);
-        int counter = 0;
-        for (X509Certificate certificate : certificates) {
-            keyStore.setCertificateEntry(
-                    String.valueOf(counter++), certificate);
-        }
+        loadKeyStore(keyStore);
+        addCertificatesFromDirectory(keyStore, directory);
         return keyStore;
     }
 
-    private X509Certificate readCertificate(
-            CertificateFactory certificateFactory, InputStream stream)
-            throws CertificateException {
-        Certificate cert = certificateFactory.generateCertificate(stream);
-        return (X509Certificate) cert;
+    /**
+     * Add certificates from Java distribution.
+     */
+    private void loadKeyStore(KeyStore keyStore) throws Exception {
+        String trustStorePath = System.getProperty("javax.net.ssl.trustStore");
+        // 'changeit' is a default password.
+        String trustStorePassword = System.getProperty(
+                "javax.net.ssl.trustStorePassword", "changeit");
+        if (trustStorePath != null) {
+            try (InputStream stream = new FileInputStream(trustStorePath)) {
+                keyStore.load(stream, trustStorePassword.toCharArray());
+            }
+        }
+        // Load java certificates.
+        File javaStorePath = new File(
+                System.getProperty("java.home"), "lib/security/cacerts");
+        if (javaStorePath.exists()) {
+            // 'changeit' is a default password.
+            String password = "changeit";
+            try (InputStream stream = new FileInputStream(javaStorePath)) {
+                keyStore.load(stream, password.toCharArray());
+            }
+            return;
+        }
+        // Just use empty store.
+        keyStore.load(null, null);
+    }
+
+    private void addCertificatesFromDirectory(
+            KeyStore keyStore, File directory) throws Exception {
+        if (directory == null || !directory.isDirectory()) {
+            return;
+        }
+        File[] files = directory.listFiles();
+        if (files == null) {
+            return;
+        }
+        int counter = 0;
+        for (File file : files) {
+            // Load and add a certificate.
+            try (InputStream stream = new FileInputStream(file)) {
+                X509Certificate certificate =  (X509Certificate)
+                        x509Factory.generateCertificate(stream);
+                keyStore.setCertificateEntry(
+                        "extra-"+counter++, certificate);
+            }
+        }
     }
 
     public void bindService(BindingProvider provider, String uri) {
