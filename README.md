@@ -68,6 +68,7 @@ Program support following environment properties:
 - ISDS_LOGIN - replace `login`.
 - ISDS_PASSWORD - replace `password`.
 - ISDS_URL - replace `url`.
+- ISDS_ANNOTATION_FILTER - replace `annotation_filter`.
 
 Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0013983.
 ![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)

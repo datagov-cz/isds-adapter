@@ -165,7 +165,7 @@ public class AppEntry {
 
     private void processMessage(DmInfoPortType infoPort, Message message)
             throws IOException {
-        if (isForNkodMessage(message)) {
+        if (shouldProcessMessage(message)) {
             Attachment attachment = getFirstTxtAttachment(message);
             saveMessageTtl(
                     message,
@@ -177,10 +177,18 @@ public class AppEntry {
         }
     }
 
-    private boolean isForNkodMessage(Message message) {
+    private boolean shouldProcessMessage(Message message) {
         boolean containsTxtMessage = getFirstTxtAttachment(message) != null;
-        return message.getAnnotation().toLowerCase().contains("nkod")
-                && containsTxtMessage;
+        if (!containsTxtMessage) {
+            return false;
+        }
+        String annotation = message.getAnnotation().toLowerCase();
+        for (String filter : configuration.getAnnotationFilters()) {
+            if (annotation.contains(filter)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private Attachment getFirstTxtAttachment(Message message) {

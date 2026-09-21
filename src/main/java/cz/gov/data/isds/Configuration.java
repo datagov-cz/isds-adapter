@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
 
 class Configuration {
@@ -27,6 +30,12 @@ class Configuration {
     private String certificatesDirectory;
 
     private int downloadInterval;
+
+    /**
+     * Filter messages to be processed by this application.
+     * A message must contain at least one item in the lower-cased annotation.
+     */
+    private List<String> annotationFilters = Collections.emptyList();
 
     public Configuration() throws IOException {
         String configurationPath = System.getProperty("configurationFile");
@@ -52,6 +61,8 @@ class Configuration {
         this.certificatesDirectory = getProperty(properties, "certificates");
         this.downloadInterval = Integer.parseInt(
                 getProperty(properties, "download_interval_in_minutes"));
+        this.annotationFilters = parseAsList(getEnvOrProperty(
+                properties, "annotation_filter", "ISDS_ANNOTATION_FILTER"));
     }
 
     private String getEnvOrProperty(
@@ -81,6 +92,14 @@ class Configuration {
         }
     }
 
+    private List<String> parseAsList(String value) {
+        return Arrays.stream(value.split(","))
+                .map(String::trim)
+                .filter(item -> !item.isEmpty())
+                .map(String::toLowerCase)
+                .toList();
+    }
+
     public String getLogin() {
         return this.login;
     }
@@ -107,6 +126,10 @@ class Configuration {
 
     public int getDownloadInterval() {
         return downloadInterval;
+    }
+
+    public List<String> getAnnotationFilters() {
+        return this.annotationFilters;
     }
 
 }
